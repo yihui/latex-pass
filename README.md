@@ -26,18 +26,21 @@ Depending on if you have a LaTeX error `.log` file, or a `.tex` document, or an 
 - [`test.tex`](https://github.com/yihui/latex-pass/edit/master/test.tex): copy and paste your `.tex` file here (see [example in PR #1](https://github.com/yihui/latex-pass/pull/1)).
 - [`test.Rmd`](https://github.com/yihui/latex-pass/edit/master/test.Rmd): copy and paste your `.Rmd` file here; its output format should be PDF (see [example in PR #4](https://github.com/yihui/latex-pass/pull/4)).
 
-After you send the pull request, wait for about 2 minutes for [AppVeyor](https://ci.appveyor.com/project/yihui/latex-pass) to finish. After it finishes the job, you can click the `Details` link under your pull request to check the log on AppVeyor, which should tell you the list of LaTeX packages required to compile your document, e.g.,
+After you send the pull request, wait for about 2 minutes for [AppVeyor](https://ci.appveyor.com/project/yihui/latex-pass) to finish. After it finishes the job, you can click the link `Show all checks` under your pull request (or the status icon on the commit), and then click `Details` to check the log on AppVeyor, which should tell you the list of LaTeX packages required to compile your document, e.g.,
 
 ```
 Rscript 'latex-pass.R'
 
 The missing packages identified from the LaTeX log are:
+
   inconsolata
 
 If you are an R user using TinyTeX, you may install these packages via:
+
   tinytex::tlmgr_install(c("inconsolata"))
 
 If you use TinyTeX but are not an R user, you may install these packages via command line:
+
   tlmgr install inconsolata
 ```
 
