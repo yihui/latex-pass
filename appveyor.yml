@@ -8,9 +8,9 @@ init:
 
 install:
   - brew cask install r
-  - echo 'options(repos = "https://cran.rstudio.com")' >> '~/.Rprofile'
+  - echo 'options(repos = "https://cran.rstudio.com")' >> ~/.Rprofile
   - mkdir -p ~/R
-  - echo 'R_LIBS_USER="~/R"' >> '~/.Renviron'
+  - echo 'R_LIBS_USER="~/R"' >> ~/.Renviron
 
 build: off
 
