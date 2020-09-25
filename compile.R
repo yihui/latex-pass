@@ -1,5 +1,7 @@
 # install TinyTeX
-install.packages('xfun')
+pkg_install = function(...) install.packages(..., quiet = TRUE)
+pkg_install('xfun')
+options(xfun.install.package = pkg_install)
 xfun::pkg_load2('tinytex')
 tinytex::install_tinytex()
 
