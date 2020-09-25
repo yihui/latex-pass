@@ -33,7 +33,7 @@ for (f in list.files('.', '[.](Rmd|tex|log)$')) {
       x = xfun::read_utf8(f)
       if (length(grep('\\\\documentclass', x)) == 0) next
       n1 = length(i1 <- grep('\\\\begin\\{document\\}', x))
-      n2 = length(i2 <- grep('\\\\end\{document\\}', x))
+      n2 = length(i2 <- grep('\\\\end\\{document\\}', x))
       if (n1 * n2 == 0) next
       if (n1 > 1 || n2 > 1) {
         warning('More than one line of code contains \\begin{document} or \\end{document}')
