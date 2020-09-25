@@ -1,5 +1,7 @@
 # LaTeX Pass
 
+[![Build status](https://ci.appveyor.com/api/projects/status/0g8vduvn8aw58k4x/branch/master?svg=true)](https://ci.appveyor.com/project/yihui/latex-pass/branch/master)
+
 Upload a LaTeX error log file, or a LaTeX document, or an R Markdown document to this repository, and I will tell you which LaTeX packages you need to install in your local LaTeX distribution so you can compile your documents to PDF. You will no longer be confused by LaTeX error messages like this:
 
 ```latex
