@@ -31,6 +31,7 @@ for (f in list.files('.', '[.](Rmd|tex|log)$')) {
     },
     tex = {
       x = xfun::read_utf8(f)
+      # need to find \documentclass or \begin{document} in the .tex file
       if (length(grep('\\\\documentclass', x)) == 0) next
       n1 = length(i1 <- grep('\\\\begin\\{document\\}', x))
       n2 = length(i2 <- grep('\\\\end\\{document\\}', x))
@@ -43,11 +44,16 @@ for (f in list.files('.', '[.](Rmd|tex|log)$')) {
       # users forgot or didn't want to upload to this repo; this approach won't
       # work for bibliography, but users can upload their LaTeX log in this case
       xfun::write_utf8(c(x[1:i1], 'Hello world!', x[i2]), f)
-      # need to find \documentclass or \begin{document} in the .tex file
-      r = '.*?((?:pdf|xe|lua)?latex).*'
-      engine = if (length(grep(r, f))) gsub(r, '\\1', f) else 'pdflatex'
+      r = '.*?((?:pdf|xe|lua)latex).*'
+      engine = if (length(grep(r, f))) gsub(r, '\\1', f)
+      # also try to infer engine from the comment like "% !TeX program = xelatex"
+      r = '^(?:% !TeX program\\s*=\\s*)([[:alnum:]-]+).*'
+      if (length(i <- grep(r, x))) engine = gsub(r, '\\1', x[i][1])
+      # if I can't infer the engine, use pdflatex by default
+      if (is.null(engine)) engine = 'pdflatex'
       r = '.*?(bibtex|biber).*'
-      bib_engine = if (length(grep(r, f))) gsub(r, '\\1', f) else 'bibtex'
+      bib_engine = if (length(grep(r, f))) gsub(r, '\\1', f)
+      if (is.null(bib_engine)) bib_engine = 'bibtex'
       tinytex::latexmk(f, engine = engine, bib_engine = bib_engine)
     },
     log = {
