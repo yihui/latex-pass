@@ -29,7 +29,20 @@ for (f in list.files('.', '[.](Rmd|tex|log)$')) {
       }
       rmarkdown::render(f)
     },
-    tex = if (length(grep('\\\\(documentclass|begin\\{document\\})', readLines(f))) >= 2) {
+    tex = {
+      x = xfun::read_utf8(f)
+      if (length(grep('\\\\documentclass', x)) == 0) next
+      n1 = length(i1 <- grep('\\\\begin\\{document\\}', x))
+      n2 = length(i2 <- grep('\\\\end\{document\\}', x))
+      if (n1 * n2 == 0) next
+      if (n1 > 1 || n2 > 1) {
+        warning('More than one line of code contains \\begin{document} or \\end{document}')
+        next
+      }
+      # clear the document body, because it may have references to files that
+      # users forgot or didn't want to upload to this repo; this approach won't
+      # work for bibliography, but users can upload their LaTeX log in this case
+      xfun::write_utf8(c(x[1:n1], 'Hello world!', x[n2]), f)
       # need to find \documentclass or \begin{document} in the .tex file
       r = '.*?((?:pdf|xe|lua)?latex).*'
       engine = if (length(grep(r, f))) gsub(r, '\\1', f) else 'pdflatex'
