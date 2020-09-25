@@ -15,6 +15,10 @@ for (f in list.files('.', '[.](Rmd|tex|log)$')) {
     Rmd = if (length(grep('^---\\s*$', readLines(f, n = 1)))) {
       # the first line needs to be ---, in case it's a child Rmd file
       xfun::pkg_load2('rmarkdown')
+      # make sure pandoc and pandoc-citeproc are installed
+      for (i in c('pandoc', 'pandoc-citeproc')) {
+        if (Sys.which(i) == 0) system(paste('brew install', i))
+      }
       rmarkdown::render(f)
     },
     tex = if (length(grep('\\\\(documentclass|begin\\{document\\})', readLines(f))) >= 2) {

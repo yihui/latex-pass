@@ -4,7 +4,7 @@ cache:
   - $HOME/R
 
 init:
-  - brew install pandoc pandoc-citeproc p7zip > /dev/null
+  - brew install p7zip > /dev/null
 
 install:
   - brew cask install r
