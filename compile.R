@@ -8,8 +8,11 @@ pkg_install('xfun')
 options(xfun.install.package = pkg_install)
 xfun::pkg_load2(c('tinytex', 'rmarkdown'))
 
-# install TinyTeX if not installed
+# install TinyTeX if not installed, and cache a fresh copy at ~/TinyTeX
+unlink('~/Library/TinyTeX', recursive = TRUE)
+file.rename('~/TinyTeX', '~/Library/TinyTeX')
 suppressMessages(suppressWarnings(if (!tinytex:::is_tinytex()) tinytex::install_tinytex()))
+file.copy('~/Library/TinyTeX', '~/', recursive = TRUE)
 
 p0 = tinytex::tl_pkgs()  # the initial set of LaTeX packages installed
 p1 = NULL  # missing packages identified from the LaTeX log
