@@ -1,8 +1,14 @@
-# install TinyTeX
+options(repos = "https://cran.rstudio.com")
+dir.create('~/R', showWarnings = FALSE)
+.libPaths('~/R')
+
+# install xfun and tinytex
 pkg_install = function(...) install.packages(..., quiet = TRUE)
 pkg_install('xfun')
 options(xfun.install.package = pkg_install)
 xfun::pkg_load2('tinytex')
+
+# install TinyTeX
 tinytex::install_tinytex()
 
 p0 = tinytex::tl_pkgs()  # the initial set of LaTeX packages installed

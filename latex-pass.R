@@ -17,4 +17,6 @@ if (length(msg)) {
     paste(p, collapse = ' '),
     '\n\nIf you do not use TinyTeX, you need to figure out how to install them by yourself.'
   )
+} else {
+  message('I did not figure out which LaTeX packages you need to install. Sorry.')
 }

@@ -5,9 +5,6 @@ cache:
 
 install:
   - brew cask install r > /dev/null
-  - echo 'options(repos = "https://cran.rstudio.com")' >> ~/.Rprofile
-  - mkdir -p ~/R
-  - echo 'R_LIBS_USER="~/R"' >> ~/.Renviron
 
 build: off
 
