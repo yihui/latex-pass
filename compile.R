@@ -17,6 +17,7 @@ p1 = NULL  # missing packages identified from the LaTeX log
 # parse LaTeX errors from .log files, or compile .Rmd/.tex files to figure out
 # missing LaTeX packages
 for (f in list.files('.', '[.](Rmd|tex|log)$')) {
+  if (!file.exists(f)) next  # the file might have been deleted
   # different actions according to filenames extensions
   switch(
     xfun::file_ext(f),
