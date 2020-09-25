@@ -46,6 +46,6 @@ If you use TinyTeX but are not an R user, you may install these packages via com
 
 If you are familiar with GIT and Github, you can add or edit more than one file (e.g., multiple `.tex` and/or `.Rmd` files) to the repo and send a pull request.
 
-By default, the LaTeX engine to compile `.tex` documents is `pdflatex`. If the document requires a different engine to compile, you may name your file with the engine name, e.g., `xelatex.tex` or `lualatex.tex`, or add a comment of the form `% !TeX program = ENGINE` to your document, e.g., `% !TeX program = xelatex`. The bibliography may be processed by either `bibtex` (default) or `biber`. You may add the bibliography engine name to the filename if you want to use one specifically, e.g., `test-bbier.tex`.
+By default, the LaTeX engine to compile `.tex` documents is `pdflatex`. If the document requires a different engine to compile, you may name your file with the engine name, e.g., `xelatex.tex` or `lualatex.tex`, or add a comment of the form `% !TeX program = ENGINE` to your document, e.g., `% !TeX program = xelatex`. The bibliography may be processed by either `bibtex` (default) or `biber`. You may add the bibliography engine name to the filename if you want to use one specifically, e.g., `test-biber.tex`.
 
 If you are compiling an Rmd document, please see [Section 3.3.7.1 of the _R Markdown Definitive Guide_](https://bookdown.org/yihui/rmarkdown/pdf-document.html#latex-engine) for how to specify the LaTeX engine in the Rmd document.
