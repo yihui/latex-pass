@@ -9,9 +9,7 @@ options(xfun.install.package = pkg_install)
 xfun::pkg_load2('tinytex')
 
 # install TinyTeX if not installed
-if (!tinytex:::is_tinytex()) {
-  suppressMessages(suppressWarnings(tinytex::install_tinytex()))
-}
+suppressMessages(suppressWarnings(if (!tinytex:::is_tinytex()) tinytex::install_tinytex()))
 
 p0 = tinytex::tl_pkgs()  # the initial set of LaTeX packages installed
 p1 = NULL  # missing packages identified from the LaTeX log
