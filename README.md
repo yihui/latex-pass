@@ -18,6 +18,8 @@ l.276 ^^M
 !  ==> Fatal error occurred, no output PDF file produced!
 ```
 
+Note that if you use both the R package [**tinytex**](https://github.com/yihui/tinytex) and the LaTeX distribution [TinyTeX](https://yihui.org/tinytex/), you should not need to use this repository, because **tinytex** will automatically install missing LaTeX packages by default. This repository may only be useful to those who do not use R or TinyTeX.
+
 ## How does it work?
 
 Depending on if you have a LaTeX error `.log` file, or a `.tex` document, or an `.Rmd` document, you may click one of the links below to edit the file in this repo, and follow the Github instructions to send a pull request.
@@ -49,3 +51,7 @@ If you are familiar with GIT and Github, you can add or edit more than one file 
 By default, the LaTeX engine to compile `.tex` documents is `pdflatex`. If the document requires a different engine to compile, you may name your file with the engine name, e.g., `xelatex.tex` or `lualatex.tex`, or add a comment of the form `% !TeX program = ENGINE` to your document, e.g., `% !TeX program = xelatex`. The bibliography may be processed by either `bibtex` (default) or `biber`. You may add the bibliography engine name to the filename if you want to use one specifically, e.g., `test-biber.tex`.
 
 If you are compiling an Rmd document, please see [Section 3.3.7.1 of the _R Markdown Definitive Guide_](https://bookdown.org/yihui/rmarkdown/pdf-document.html#latex-engine) for how to specify the LaTeX engine in the Rmd document.
+
+## How to reproduce what this repo does locally
+
+If you do not want to wait for 2 minutes, you can find out the missing LaTeX packages by yourself locally via the R function `tinytex::parse_packages()`, which requires you to install TeX Live or TinyTeX. See more information at https://bookdown.org/yihui/rmarkdown-cookbook/install-latex-pkgs.html.
