@@ -2,7 +2,6 @@ image: macOS
 
 cache:
   - $HOME/R
-  - $HOME/TinyTeX
 
 install:
   - brew cask install r > /dev/null
