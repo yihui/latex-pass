@@ -61,6 +61,7 @@ for (f in list.files('.', '[.](Rmd|tex|log)$')) {
       tinytex::latexmk(f, engine = engine, bib_engine = bib_engine)
     },
     log = {
+      if (file.size(f) == 0) next
       p1 = c(p1, tinytex::parse_packages(f))
     }
   )
