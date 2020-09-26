@@ -1,3 +1,5 @@
+.libPaths('~/R')
+
 pp = readRDS('packages.rds')
 p1 = pp[[1]]; p2 = pp[[2]]
 
