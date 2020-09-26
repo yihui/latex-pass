@@ -55,3 +55,5 @@ If you are compiling an Rmd document, please see [Section 3.3.7.1 of the _R Mark
 ## How to reproduce what this repo does locally
 
 If you do not want to wait for 2 minutes, you can find out the missing LaTeX packages by yourself locally via the R function `tinytex::parse_packages()`, which requires you to install TeX Live or TinyTeX. See more information at https://bookdown.org/yihui/rmarkdown-cookbook/install-latex-pkgs.html.
+
+BTW, [Colin Fay was correct](https://twitter.com/_ColinFay/status/1309415115922509824) that this service was created [because of him](https://twitter.com/_ColinFay/status/1308061202938032138). That "fresh hell" could be easily avoided with TinyTeX.
