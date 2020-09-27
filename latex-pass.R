@@ -23,15 +23,5 @@ msg = if (length(msg)) {
   'I did not figure out which LaTeX packages you need to install. Sorry.'
 }
 message(msg)
-
-json_str = function(x) {
-  x = gsub('"', '\\\\"', x)
-  x = gsub('\n', '\\\\n', x)
-  x
-}
-# add a comment on the PR
-if (Sys.getenv('APPVEYOR_PULL_REQUEST_NUMBER') != '') system2('curl', c(
-  '-X', 'POST', '${APPVEYOR_API_URL}api/build/messages', '-d', shQuote(sprintf(
-    '{"message": "%s", "category": "information", "details": ""}', json_str(paste(msg, collapse = ''))
-  ))
-))
+msg = gsub('"', '\\\\"', msg)
+writeLines(paste(msg, collapse = ''), 'message.txt')
