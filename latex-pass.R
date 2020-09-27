@@ -30,8 +30,8 @@ json_str = function(x) {
   x
 }
 # add a comment on the PR
-if (length(msg) && Sys.getenv('APPVEYOR_PULL_REQUEST_NUMBER') != '') system2('curl', c(
-  '-X', 'POST', '-u', 'yihui:${GH_TOKEN}', '-H', '"Accept: application/vnd.github.v3+json"',
-  'https://api.github.com/repos/${APPVEYOR_REPO_NAME}/issues/${APPVEYOR_PULL_REQUEST_NUMBER}/comments',
-  '-d', shQuote(sprintf('{"body": "%s"}', json_str(paste(msg, collapse = ''))))
+if (Sys.getenv('APPVEYOR_PULL_REQUEST_NUMBER') != '') system2('curl', c(
+  '-X', 'POST', '${APPVEYOR_API_URL}api/build/messages', '-d', shQuote(sprintf(
+    '{"message": "%s", "category": "information", "details": ""}', json_str(paste(msg, collapse = ''))
+  ))
 ))
