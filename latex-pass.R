@@ -24,9 +24,14 @@ msg = if (length(msg)) {
 }
 message(msg)
 
+json_str = function(x) {
+  x = gsub('"', '\\\\"', x)
+  x = gsub('\n', '\\\\n', x)
+  x
+}
 # add a comment on the PR
 if (length(msg) && Sys.getenv('APPVEYOR_PULL_REQUEST_NUMBER') != '') system2('curl', c(
-  '-u', 'yihui:${GH_TOKEN}', '-X', 'POST', '-H', '"Accept: application/vnd.github.v3+json"',
+  '-X', 'POST', '-u', 'yihui:${GH_TOKEN}', '-H', '"Accept: application/vnd.github.v3+json"',
   'https://api.github.com/repos/${APPVEYOR_REPO_NAME}/issues/${APPVEYOR_PULL_REQUEST_NUMBER}/comments',
-  '-d', shQuote(xfun::tojson(list(body = paste(msg, collapse = ''))))
+  '-d', shQuote(sprintf('{"body": "%s"}', json_str(paste(msg, collapse = ''))))
 ))
