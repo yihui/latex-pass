@@ -13,7 +13,7 @@ msg = if (length(msg)) {
     msg,
     sprintf(
       '\n\nIf you are an R user using TinyTeX, you may install these packages via:\n\n    tinytex::tlmgr_install(c(%s))',
-      paste0('"', p, '"', collapse = ', ')
+      paste0("'", p, "'", collapse = ', ')
     ),
     '\n\nIf you use TinyTeX but are not an R user, you may install these packages via command line:\n\n    tlmgr install ',
     paste(p, collapse = ' '),
@@ -23,5 +23,4 @@ msg = if (length(msg)) {
   'I did not figure out which LaTeX packages you need to install. Sorry.'
 }
 message(msg)
-msg = gsub('"', '\\\\"', msg)
 writeLines(paste(msg, collapse = ''), 'message.txt')
