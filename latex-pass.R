@@ -14,7 +14,7 @@ msg = if (length(msg)) {
     msg,
     sprintf(
       '\n\nIf you are an R user using TinyTeX, you may install these packages via:\n\n    tinytex::tlmgr_install(c(%s))',
-      one_string("'", p, "'", s = ', ')
+      one_string(sprintf("'%s'", p), s = ', ')
     ),
     '\n\nIf you use TinyTeX but are not an R user, you may install these packages via command line:\n\n    tlmgr install ',
     one_string(p),
