@@ -11,4 +11,4 @@ build: off
 test_script:
   - Rscript 'compile.R'
   - Rscript 'latex-pass.R'
-  - appveyor AddMessage "$(cat message.txt)"
+  - appveyor AddMessage "$(cat message.txt)" -Details "$(cat details.txt)"
