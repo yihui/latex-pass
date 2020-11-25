@@ -15,7 +15,7 @@ msg2 = if (length(msg)) {
       '\n\nIf you are an R user using TinyTeX, you may install these packages via:\n\n    tinytex::tlmgr_install(c(%s))',
       one_string(sprintf("'%s'", p), s = ', ')
     ),
-    '\n\nIf you use TinyTeX but are not an R user, you may install these packages via command line:\n\n    tlmgr install ',
+    '\n\nIf you use TinyTeX, including LaTeX for Manim (https://chocolatey.org/packages/manim-latex), you may install these packages via command line:\n\n    tlmgr install ',
     one_string(p),
     '\n\nIf you do not use TinyTeX (https://yihui.org/tinytex/), you need to figure out how to install them by yourself.'
   )
