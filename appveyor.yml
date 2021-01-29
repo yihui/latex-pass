@@ -4,7 +4,7 @@ cache:
   - $HOME/R
 
 install:
-  - brew cask install r > /dev/null
+  - brew install --cask r > /dev/null
 
 build: off
 
