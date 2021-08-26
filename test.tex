@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}%
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{amsmath}%
+\usepackage{amsthm}%
+\usepackage{bbm}
+\usepackage{palatino}
+\usepackage{paralist}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{dsfont}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mwe}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage[hyperindex,breaklinks]{hyperref}
+\hypersetup{colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=red,       
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,      % color of file links
+	urlcolor=cyan           % color of external links
+}
+\usepackage{xskak}
+
+\usepackage{xcolor,csquotes,bm}
+\usepackage{tikz}
+
+\newcommand{\bluecheck}{}%
+\DeclareRobustCommand{\bluecheck}{%
+  \tikz\fill[scale=0.4, color=blue]
+  (0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;%
+}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+\newcommand{\mytimes}{ \tikz[baseline=-.55ex] \node [inner sep=0pt,cross out,draw,line width=1pt,minimum size=1ex] (a) {};}
+
+\newcommand{\bx}{\bm{x}}
+\newcommand{\by}{\bm{y}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+%\usepackage{setspace}
+%\doublespacing
+
+\usepackage[backend=biber, style=authoryear, url=false, eprint=false, doi=false, isbn=false, date=year, natbib]{biblatex}
+\bibliography{studies_paper}
+
+\setcounter{MaxMatrixCols}{10}
+\textwidth=6.6in
+\textheight=8.9in
+\headheight=0.0in
+\oddsidemargin=0.0in
+\headsep=0.0in
+\topmargin=0.0in
+\setlength\parindent{24pt}
+
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
