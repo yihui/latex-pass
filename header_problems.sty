@@ -1,0 +1,58 @@
+\ProvidesPackage{header_problems}
+\usepackage{header_base}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom styling for CS189 problems %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Question}[2][]{\section{{\Large \dunhb #2} {\normalsize #1}}}
+\newcommand{\Appendix}[1]{\section*{\Large \dunhb #1}}
+\newenvironment{Parts}{\begin{enumerate}[(a)]\newcommand\Part{\item}}{\end{enumerate}}
+
+% Standardize command font styles and environments
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name --
+                                % adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle
+  }\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command
+                                % argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command
+                                % argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command
+                                % specification environment\rangle}}
+
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with
+                            % XeLaTeX)
+
+% Homework Question Env.
+\theoremstyle{remark}
+\newtheorem{problem}{\vspace{5pt}\\\Large\textsc{Problem}}
+
+\providecommand\newthought[1]{%
+   \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
+   \noindent\textsc{#1} % small caps text out
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Solutions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{solspace}[1]{\vspace{#1 pt}}{}
+\newenvironment{solution}{\color{blue} \smallskip \textbf{Solution:}}{}
+\newif\ifexamnosol
+\newcommand{\examblank}{\ifexamnosol\newpage\begin{center}\framebox{\framebox{Extra page. If you want the work on this page to be graded, mention it on the problem’s main page.}}\end{center}\newpage\fi}
+\newcommand{\exambox}[1]{\framebox(80,50){#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\mcqb}{$\bigcirc$ }
+\newcommand{\mcqs}{\solution{\mcqb}{$\Large\newmoon$ }}
