@@ -1,0 +1,157 @@
+\ProvidesPackage{header_template}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom styling for CS189 design, structure %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcount\lecturenumber
+\def\lecture#1{\global\lecturenumber=#1}
+
+\newskip\saveskip
+\newskip\saveindent
+\saveskip=\baselineskip
+
+\newcommand{\define}[1]{\emph{#1}}
+
+\textheight=9in
+\textwidth=6.5in
+\addtolength{\voffset}{-1in}   %%% Required when using pdflatex on Mac
+%\topmargin=-.75in
+\oddsidemargin=0.25in
+\evensidemargin=-0.25in
+\parindent=0pt
+\parskip=5pt
+\itemsep=-1pt
+\floatsep 9pt plus 2pt minus 3pt
+\intextsep 9pt plus 2pt minus 3pt
+\textfloatsep=9pt plus 2pt minus 3pt
+\renewcommand{\baselinestretch}{1.0}
+\font\dunhd=cmdunh10 scaled \magstep5
+\font\dunhc=cmdunh10 scaled \magstep4
+\font\dunhbb=cmdunh10 scaled \magstep4
+\font\dunhb=cmdunh10 scaled \magstep2
+\font\dunha=cmdunh10 scaled \magstep2
+\date{}
+
+%%% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\maketitle{%
+ \begingroup
+ \newpage
+ \global\@topnum\z@ \@maketitle
+ \thispagestyle{myheadings}
+ \endgroup
+ \setcounter{footnote}{0}
+ \let\maketitle\relax
+ \let\@maketitle\relax}
+\def\@maketitle{\newpage
+\hrule height6pt \vskip .7em
+\makebox[1.3in][l]{\dunhb \coursenumber}
+{\dunhb \class \hfill \ }
+\vskip-0.1in
+\makebox[1.3in][l]{\dunhb \semester}
+{\dunhb \instructor \hfill \dunhbb \title \par}
+\vskip 0.6em
+\hrule height6pt
+ \par
+ \vskip .5em}
+\def\section{\@startsection {section}{1}{\z@}{-3.0ex plus -.6ex minus
+    -.2ex}{1.3ex plus .1ex}{\dunhb}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{-1.6ex plus -.5ex minus
+   -.1ex}{0.9ex plus .1ex}{\dunha}}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Page Headings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \def\oddfoottext{\begin{footnotesize}\coursenumber, \semester, \title \hfill\qquad\thepage\end{footnotesize}}
+% \def\evenfoottext{\begin{footnotesize}\thepage \hfill\qquad\coursenumber, \semester, \title\end{footnotesize}}
+\def\oddfoottext{\begin{footnotesize}\title, \textcopyright UCB \coursenumber, \semester. All Rights Reserved. This may not be publicly shared without explicit permission. \hfill\qquad\thepage\end{footnotesize}}
+\def\evenfoottext{\begin{footnotesize}\thepage \hfill\qquad \title, \textcopyright UCB \coursenumber, \semester. All Rights Reserved. This may not be publicly shared without explicit permission.\end{footnotesize}}
+
+\def\ps@myheadings{\let\@mkboth\@gobbletwo
+\def\@oddfoot{\oddfoottext}%
+\def\@evenfoot{\evenfoottext}%
+\def\@evenhead{}\def\@oddhead{}}
+
+\pagestyle{myheadings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Figures %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\fig#1{\centerline{\epsffile{#1}}}
+\def\twofig#1#2{%
+\noindent\epsfxsize=0.48\textwidth
+\noindent \epsffile{#1}\hfill
+\epsfxsize=0.48\textwidth
+\epsffile{#2}\\
+\makebox[0.48\textwidth]{(a)}\hfill\makebox[0.48\textwidth]{(b)}%
+}
+
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\renewcommand{\secref}[1]{Section~\ref{#1}}
+\renewcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\renewcommand{\exref}[1]{Exercise~\ref{#1}}
+%\newcommand{\eqref}[1]{Equation~(\ref{#1})}
+\newcommand{\partref}[1]{Part~\ref{#1}}
+\renewcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\sideref}[1]{the sidebar titled #1}
+\newcommand{\pgref}[1]{page~\pageref{#1}}
+% \renewcommand{\mat}[1]{\bm{#1}}
+\renewcommand{\mat}[1]{\boldsymbol{\mathbf{#1}}}
+% \renewcommand{\mat}[1]{\mathbf{#1}}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% code formatting
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  columns=flexible,
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  % numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  % numbersep=5pt,                   % how far the line-numbers are from the code
+  % numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  % stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  basicstyle=\scriptsize\ttfamily,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}
+\usepackage{times}
+\usepackage{url}
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usetikzlibrary{arrows}
+\usetikzlibrary{automata}
+\usepackage{txfonts}
+
+\usepackage{mathtools}
+
+% \newcommand{\norm}[2]{\left\lVert#1\right\rVert_#2}
+% \newcommand{\V}[2]{\begin{bsmallmatrix}#1 \\ #2\end{bsmallmatrix}}

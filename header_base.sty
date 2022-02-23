@@ -1,0 +1,216 @@
+\ProvidesPackage{header_base}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  _______  _______  ____  ______  ________
+% |       ||       ||   | |      | |       |
+% |       ||  _____||   | |   \  | |   \   |
+% |       || |_____ |   | \      / |___    |
+% |      _||_____  ||   | /      \     |   |
+% |     |_  _____| ||   | |   \  |     |   |
+% |_______||_______||___| |______|     |___|
+%
+% Header and Style File for CS189 TeX Files
+%
+% This package contains references to other packages, new commands, and values
+% for different parameters, common to all documents.
+% This file should be placed one level above the TeX files in the directory
+% tree.
+%
+% Please modify the appropriate section below with information about
+% the class: this information needs to be updated only once per semester.
+%
+% Compiled by Alvin Wan (http://alvinwan.com)
+% and Soroush Nasiriany (http://snasiriany.me)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% MODIFY THIS INFORMATION AS NECESSARY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\coursenumber{CS 189}
+\def\class{Introduction to Machine Learning}
+\def\semester{Spring 2022}
+\def\instructor{Jonathan Shewchuk}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Algorithm package does not work with standalone (for image generation)
+% Algorithm2e does however.
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}  % extended mathematics
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{bm}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{circuitikz}
+\usepackage{color}
+\usepackage{commath}
+\usepackage{comment}
+\usepackage{diagbox}
+\usepackage{enumerate}
+\usepackage{epsf}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim
+                              % environments
+\usepackage{float}
+\usepackage{graphicx} % allow embedded images
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage{latexsym}
+\usepackage{lipsum}   % filler text
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{nicefrac}
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{pdfsync}
+\usepackage{pgfplots}
+\usepackage{physics}
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{tcolorbox}
+\usepackage{tkz-euclide}
+\usepackage{xfrac}
+
+% \usetkzobj{all}
+\usetikzlibrary{decorations.pathreplacing}
+
+\DeclareMathOperator*{\softmax}{\sigma}
+\DeclareMathOperator*{\bern}{\text{Bern}}
+\DeclareMathOperator*{\argmax}{arg\,max\,}
+\DeclareMathOperator*{\argmin}{arg\,min\,}
+\DeclareMathOperator*{\dom}{dom}
+\DeclareMathOperator*{\range}{range}
+%\DeclareMathOperator*{\rank}{rank}
+
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\Null}{null}
+\DeclareMathOperator*{\sign}{sign}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calX}{\mathcal{X}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\rvec}[1]{\boldsymbol{\mathbf{#1}}}
+
+\newcommand{\isep}{\mathrel{{.}\,{.}}\nobreak}
+\newcommand{\Lagr}{\mathcal{L}}
+
+\newcommand{\tilw}{\vec{\tilde{w}}}
+\newcommand{\tilX}{\mat{\tilde{X}}}
+\newcommand{\tilv}{\vec{\tilde{v}}}
+\newcommand{\matX}{\mat{X}}
+\newcommand{\matA}{\mat{A}}
+
+% \newcommand{\mat}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\matlit}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\tran}{{}^{\!\top\!}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\fro}{_\textsc{f}}
+\newcommand{\halfpow}{^{\frac{1}{2}}}
+\newcommand{\neghalfpow}{^{-\frac{1}{2}}}
+\renewcommand{\angle}[1]{\langle #1 \rangle}
+\newcommand{\bigangle}[1]{\left\langle #1 \right\rangle}
+\newcommand{\inner}[2]{\angle{#1, #2}}
+\newcommand{\biginner}[2]{\bigangle{#1, #2}}
+\newcommand{\p}{p}
+\renewcommand{\P}{P}
+\renewcommand{\Pr}{\mathbf{P}}
+\newcommand{\pr}[1]{\P(#1)}
+\newcommand{\prbig}[1]{\P\big(#1\big)}
+\newcommand{\prbigg}[1]{\P\bigg(#1\bigg)}
+\newcommand{\prlr}[1]{\P\left(#1\right)}
+\newcommand{\comp}{^\text{c}}
+\newcommand{\given}{|}
+
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\ev}{\mathbb{E}}
+\newcommand{\evwrt}[2]{\mathbb{E}_{#1}[#2]}
+\renewcommand{\var}{\operatorname{Var}}
+\newcommand{\cov}{\operatorname{Cov}}
+\newcommand{\iid}{\overset{\text{iid}}{\sim}}
+\newcommand{\term}[1]{\textbf{#1}}
+\newcommand{\tab}{\hspace{0.5cm}}
+\renewcommand{\a}{\vec{a}}
+\renewcommand{\b}{\vec{b}}
+\newcommand{\e}{\vec{e}}
+\newcommand{\g}{\vec{g}}
+\newcommand{\h}{\vec{h}}
+\renewcommand{\o}{\vec{o}}
+\newcommand{\q}{\vec{q}}
+\renewcommand{\r}{\vec{r}}
+\newcommand{\s}{\vec{s}}
+\newcommand{\x}{\vec{x}}
+\newcommand{\y}{\vec{y}}
+\renewcommand{\r}{\vec{r}}
+\renewcommand{\v}{\vec{v}}
+\newcommand{\w}{\vec{w}}
+\newcommand{\z}{\vec{z}}
+\newcommand{\A}{\mat{A}}
+\newcommand{\B}{\mat{B}}
+\newcommand{\I}{\mat{I}}
+\newcommand{\X}{\mat{X}}
+\newcommand{\U}{\mat{U}}
+\newcommand{\V}{\mat{V}}
+\newcommand{\W}{\rvec{W}}
+\newcommand{\T}{\tran}
+\newcommand{\covw}[1]{
+\mat{\Sigma}_{\W}^{\sfrac{#1}{2}}
+}
+\newcommand{\Y}{\rvec{Y}}
+\newcommand{\vecdim}{d}
+\newcommand{\nummeas}{t}
+\newcommand{\el}[2]{(\vec{#1})_{#2}}
+\newcommand{\pe}[1]{^{(#1)}}
+% \newcommand{\trace}{\text{trace}}
+
+\newcommand{\Ind}{\mathbf{I}}
+% \renewcommand{\Sigma}{\bm{\Sigma}}
+\newcommand{\xye}{\tilde{\x}}
+\newcommand{\dotcup}{\mathbin{\dot{\cup}}}
+\newcommand{\bigdotcup}{\mathop{\dot{\bigcup}}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\tru}{_\text{true}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{corollary*}{Corollary}
+\theoremstyle{remark}
+\newtheorem*{note}{Note}
+\newtheorem*{example}{Example}
+
+\def\tab{\hbox{\kern10pt}}
+\newcommand{\mathbbm}[1]{\text{\usefont{U}{bbm}{m}{n}#1}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle,draw,inner sep=1](char) {#1};}}
+
+\allowdisplaybreaks
+
+\usepackage{etoolbox}
