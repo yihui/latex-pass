@@ -1,0 +1,6013 @@
+\documentclass{article}
+\pagestyle{empty}
+
+%\usepackage{color}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{comment}
+\usepackage{longtable}
+\usepackage{titlesec}
+\usepackage{chngpage}
+\usepackage{calc}
+\usepackage{url}
+\usepackage[utf8x]{inputenc}
+
+% Fontsetup
+\usepackage[T1]{fontenc}
+
+\DeclareUnicodeCharacter {135}{{\textascii ?}}
+\DeclareUnicodeCharacter {129}{{\textascii ?}}
+\DeclareUnicodeCharacter {128}{{\textascii ?}}
+
+\usepackage{colortbl}
+
+% must come last
+\usepackage{hyperref}
+\definecolor{linkblue}{rgb}{0.11,0.56,1}
+\definecolor{inactive}{rgb}{0.56,0.56,0.56}
+\definecolor{gvm_debug}{rgb}{0.78,0.78,0.78}
+\definecolor{gvm_false_positive}{rgb}{0.2275,0.2275,0.2275}
+\definecolor{gvm_log}{rgb}{0.2275,0.2275,0.2275}
+\definecolor{gvm_hole}{rgb}{0.7960,0.1137,0.0902}
+\definecolor{gvm_note}{rgb}{0.3255,0.6157,0.7961}
+\definecolor{gvm_report}{rgb}{0.68,0.74,0.88}
+\definecolor{gvm_user_note}{rgb}{1.0,1.0,0.5625}
+\definecolor{gvm_user_override}{rgb}{1.0,1.0,0.5625}
+\definecolor{gvm_warning}{rgb}{0.9764,0.6235,0.1922}
+\definecolor{chunk}{rgb}{0.9412,0.8275,1}
+\definecolor{line_new}{rgb}{0.89,1,0.89}
+\definecolor{line_gone}{rgb}{1.0,0.89,0.89}
+\hypersetup{colorlinks=true,linkcolor=linkblue,urlcolor=blue,bookmarks=true,bookmarksopen=true}
+\usepackage[all]{hypcap}
+
+%\geometry{verbose,a4paper,tmargin=24mm,bottom=24mm}
+\geometry{verbose,a4paper}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\title{Scan Report}
+\pagestyle{headings}
+\pagenumbering{arabic}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand{\abstractname}{Summary}
+\begin{abstract}
+This document reports on the results of an automatic security scan.
+All dates are displayed using the timezone ``Coordinated Universal Time'', which is abbreviated ``UTC''.
+The task was ``Unnamed''.  The scan started at Fri Apr 22 12:21:15 2022 UTC and ended at Fri Apr 22 13:15:09 2022 UTC.  The
+report first summarises the results found.  Then, for each host,
+the report describes every issue found.  Please consider the
+advice given in each description, in order to rectify the issue.
+\end{abstract}
+\tableofcontents
+\newpage
+\section{Result Overview}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+\hline
+\rowcolor{gvm_report}Host&High&Medium&Low&Log&False Positive\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Host&High&Medium&Low&Log&False Positive\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[host:192.168.178.2]{192.168.178.2}&0&0&0&18&0\\
+\hyperref[host:192.168.178.2]{gvm.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.37]{192.168.178.37}&0&0&0&22&0\\
+\hyperref[host:192.168.178.37]{dreambox.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.20]{192.168.178.20}&0&0&0&13&0\\
+\hyperref[host:192.168.178.20]{homeprinter.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.22]{192.168.178.22}&0&0&0&13&0\\
+\hyperref[host:192.168.178.22]{homeprinter.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.1]{192.168.178.1}&0&0&0&22&0\\
+\hyperref[host:192.168.178.1]{fritz.nas}&&&&&\\
+\hline
+\hyperref[host:192.168.178.24]{192.168.178.24}&0&0&0&2&0\\
+\hline
+\hyperref[host:192.168.178.23]{192.168.178.23}&0&0&0&3&0\\
+\hyperref[host:192.168.178.23]{amazon-f0c31363c.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.29]{192.168.178.29}&0&0&0&4&0\\
+\hyperref[host:192.168.178.29]{wohn-tl-sg108e.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.27]{192.168.178.27}&0&0&0&2&0\\
+\hline
+\hyperref[host:192.168.178.25]{192.168.178.25}&0&0&0&2&0\\
+\hline
+\hyperref[host:192.168.178.36]{192.168.178.36}&0&0&0&2&0\\
+\hyperref[host:192.168.178.36]{iphone-fj.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.28]{192.168.178.28}&0&0&0&4&0\\
+\hyperref[host:192.168.178.28]{s20-fe-von-carina.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.42]{192.168.178.42}&0&0&0&2&0\\
+\hyperref[host:192.168.178.42]{nasale.fritz.box}&&&&&\\
+\hline
+\hyperref[host:192.168.178.41]{192.168.178.41}&0&0&0&2&0\\
+\hyperref[host:192.168.178.41]{nasale.fritz.box}&&&&&\\
+\hline
+\hline
+Total: 14&0&0&0&111&0\\
+\hline
+\end{longtable}
+Vendor security updates are not trusted.\\
+Overrides are off.  Even when a result has an override, this report uses the actual threat of the result.\\
+Information on overrides is included in the report.\\
+Notes are included in the report.\\
+This report might not show details of all issues that were found.\\
+Issues with the threat level ``Debug'' are not shown.\\
+\\
+This report contains all 111 results selected by the filtering described above.  Before filtering there were 111 results.\subsection{Host Authentications}
+\begin{longtable}{|l|l|l|l|}
+\hline
+\rowcolor{gvm_report}Host&Protocol&Result&Port/User\\
+\hline
+\endfirsthead
+\multicolumn{4}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Host&Protocol&Result&Port/User\\
+\hline
+\endhead
+\hline
+\multicolumn{4}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+192.168.178.37 - dreambox.fritz.box & SMB & Success & Protocol SMB, Port 445, User \\ \hline192.168.178.20 - homeprinter.fritz.box & SMB & Success & Protocol SMB, Port 445, User \\ \hline192.168.178.22 - homeprinter.fritz.box & SMB & Success & Protocol SMB, Port 445, User \\ \hline192.168.178.22 - homeprinter.fritz.box & SMB & Success & Protocol SMB, Port 445, User \\ \hline\hline
+\end{longtable}
+\section{Results per Host}
+
+\subsection{192.168.178.2}
+\label{host:192.168.178.2}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:37:51 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.2 5432/tcp Log]{5432/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.2 25/tcp Log]{25/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.2 8081/tcp Log]{8081/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.2 9390/tcp Log]{9390/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.2 general/tcp Log]{general/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.2 22/tcp Log]{22/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.2}
+
+\subsubsection{Log 5432/tcp}
+\label{port:192.168.178.2 5432/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=An unknown service is running on this port.=}\\
+\rowcolor{white}{\verb=It is usually reserved for Postgres=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: PostgreSQL Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Detection of PostgreSQL, an open source object-relational
+  database system.\\
+  The script sends a connection request to the server (user:postgres, DB:postgres)
+  and attempts to extract the version number from the reply.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Detected PostgreSQL=}\\
+\rowcolor{white}{\verb=Version:       unknown=}\\
+\rowcolor{white}{\verb=Location:      5432/tcp=}\\
+\rowcolor{white}{\verb=CPE:           cpe:/a:postgresql:postgresql=}\\
+\rowcolor{white}{\verb=Concluded from version/product identification result:=}\\
+\rowcolor{white}{\verb=0x00:  52 00 00 00 0C 00 00 00 05 61 F9 DA 4B             R........a..K=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=PostgreSQL Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.100151\\
+Version used:
+\rowcolor{white}{\verb=2020-11-12T10:09:08Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://www.postgresql.org/=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.2]{[ return to 192.168.178.2 ]}\end{footnotesize}
+\subsubsection{Log 25/tcp}
+\label{port:192.168.178.2 25/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMTP Server type and version}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This detects the SMTP Server's type and version by connecting to
+  the server and processing the buffer received.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Remote SMTP server banner:=}\\
+\rowcolor{white}{\verb=220 localhost.fritz.box ESMTP Postfix (Debian/GNU)=}\\
+\rowcolor{white}{\verb=The remote SMTP server is announcing the following available ESMTP commands (EHL=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=O response) via an unencrypted connection:=}\\
+\rowcolor{white}{\verb=8BITMIME, CHUNKING, DSN, ENHANCEDSTATUSCODES, ETRN, PIPELINING, SIZE 10240000, S=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=MTPUTF8, STARTTLS, VRFY=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMTP Server type and version=}\\
+OID:1.3.6.1.4.1.25623.1.0.10263\\
+Version used:
+\rowcolor{white}{\verb=2022-02-01T10:00:18Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=An SMTP server is running on this port=}\\
+\rowcolor{white}{\verb=Here is its banner : =}\\
+\rowcolor{white}{\verb=220 localhost.fritz.box ESMTP Postfix (Debian/GNU)=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: SMTP 'STARTTLS' Command Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Checks if the remote SMTP server supports SSL/TLS with the
+  'STARTTLS' command.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote SMTP server supports SSL/TLS with the 'STARTTLS' command.=}\\
+\rowcolor{white}{\verb=The remote SMTP server is announcing the following available ESMTP commands (EHL=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=O response) before sending the 'STARTTLS' command:=}\\
+\rowcolor{white}{\verb=8BITMIME, CHUNKING, DSN, ENHANCEDSTATUSCODES, ETRN, PIPELINING, SIZE 10240000, S=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=MTPUTF8, STARTTLS, VRFY=}\\
+\rowcolor{white}{\verb=The remote SMTP server is announcing the following available ESMTP commands (EHL=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=O response) after sending the 'STARTTLS' command:=}\\
+\rowcolor{white}{\verb=8BITMIME, CHUNKING, DSN, ENHANCEDSTATUSCODES, ETRN, PIPELINING, SIZE 10240000, S=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=MTPUTF8, VRFY=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: SMTP 'STARTTLS' Command Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.103118\\
+Version used:
+\rowcolor{white}{\verb=2021-11-12T09:42:39Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://tools.ietf.org/html/rfc3207=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Version Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Enumeration and reporting of SSL/TLS protocol versions supported
+  by a remote service.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote SSL/TLS service supports the following SSL/TLS protocol version(s):=}\\
+\rowcolor{white}{\verb=TLSv1.0=}\\
+\rowcolor{white}{\verb=TLSv1.1=}\\
+\rowcolor{white}{\verb=TLSv1.2=}\\
+\rowcolor{white}{\verb=TLSv1.3=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Sends multiple connection requests to the remote service and
+  attempts to determine the SSL/TLS protocol versions supported by the service from the replies.\\
+  Note: The supported SSL/TLS protocol versions included in the report of this VT are reported
+  independently from the allowed / supported SSL/TLS ciphers.\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Version Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.105782\\
+Version used:
+\rowcolor{white}{\verb=2021-12-06T15:42:24Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Collect and Report Certificate Details}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script collects and reports the details of all SSL/TLS
+  certificates.\\
+  This data will be used by other tests to verify server certificates.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following certificate details of the remote service were collected.=}\\
+\rowcolor{white}{\verb=Certificate details:=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-1)             | DA9C7CB3E91B933B84FD4B8A51B0CF8C35763F02=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-256)           | 61FF73A8F85051B08467B262445A409CB9877252E66D0B=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=88C9EBDB01108D824E=}\\
+\rowcolor{white}{\verb=issued by                       | C=\verb-=-\verb=DE,L=\verb-=-\verb=Osnabrueck,O=\verb-=-\verb=GVM Users,OU=\verb-=-\verb=Certificate A=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=uthority for 48f7b451fe6e=}\\
+\rowcolor{white}{\verb=public key algorithm            | RSA=}\\
+\rowcolor{white}{\verb=public key size (bits)          | 3072=}\\
+\rowcolor{white}{\verb=serial                          | 2E9E3F1D5036BD870DBD2CCEF0748CC40AA6EA47=}\\
+\rowcolor{white}{\verb=signature algorithm             | sha256WithRSAEncryption=}\\
+\rowcolor{white}{\verb=subject                         | C=\verb-=-\verb=DE,L=\verb-=-\verb=Osnabrueck,O=\verb-=-\verb=GVM Users,CN=\verb-=-\verb=48f7b451fe6e=}\\
+\rowcolor{white}{\verb=subject alternative names (SAN) | None=}\\
+\rowcolor{white}{\verb=valid from                      | 2022-03-22 09:55:11 UTC=}\\
+\rowcolor{white}{\verb=valid until                     | 2024-03-21 09:55:11 UTC=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Collect and Report Certificate Details=}\\
+OID:1.3.6.1.4.1.25623.1.0.103692\\
+Version used:
+\rowcolor{white}{\verb=2021-12-10T12:48:00Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.2]{[ return to 192.168.178.2 ]}\end{footnotesize}
+\subsubsection{Log 8081/tcp}
+\label{port:192.168.178.2 8081/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.2]{[ return to 192.168.178.2 ]}\end{footnotesize}
+\subsubsection{Log 9390/tcp}
+\label{port:192.168.178.2 9390/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A TLScustom server answered on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Service Detection with '<xml/>' Request}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This plugin performs service detection.\\
+  This plugin is a complement of find\_service.nasl. It sends a '<xml/>'
+  request to the remaining unknown services and tries to identify them.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A OpenVAS / Greenbone Vulnerability Manager supporting the OMP/GMP protocol seem=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=s to be running on this port.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Service Detection with '<xml/>' Request=}\\
+OID:1.3.6.1.4.1.25623.1.0.108198\\
+Version used:
+\rowcolor{white}{\verb=2022-02-01T12:51:06Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OpenVAS / Greenbone Vulnerability Manager Detection (OMP/GMP)}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+OpenVAS Management Protocol (OMP) / Greenbone Management
+  Protocol (GMP) based detection of an OpenVAS Manager (openvasmd) or Greebone Vulnerability Manager
+  (gmvd).\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Detected Greenbone Vulnerability Manager=}\\
+\rowcolor{white}{\verb=Version:       21.4=}\\
+\rowcolor{white}{\verb=Location:      9390/tcp=}\\
+\rowcolor{white}{\verb=CPE:           cpe:/a:greenbone:greenbone_vulnerability_manager:21.4=}\\
+\rowcolor{white}{\verb=Concluded from version/product identification result:=}\\
+\rowcolor{white}{\verb= - GMP protocol version request:  <get_version/>=}\\
+\rowcolor{white}{\verb= - GMP protocol version response: <get_version_response status=\verb-=-\verb="200" status_text=}\\
+\rowcolor{white}{$\hookrightarrow$\verb==\verb-=-\verb="OK"><version>21.4</version>=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OpenVAS / Greenbone Vulnerability Manager Detection (OMP/GMP)=}\\
+OID:1.3.6.1.4.1.25623.1.0.103825\\
+Version used:
+\rowcolor{white}{\verb=2021-05-10T09:35:39Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Version Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Enumeration and reporting of SSL/TLS protocol versions supported
+  by a remote service.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote SSL/TLS service supports the following SSL/TLS protocol version(s):=}\\
+\rowcolor{white}{\verb=TLSv1.2=}\\
+\rowcolor{white}{\verb=TLSv1.3=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Sends multiple connection requests to the remote service and
+  attempts to determine the SSL/TLS protocol versions supported by the service from the replies.\\
+  Note: The supported SSL/TLS protocol versions included in the report of this VT are reported
+  independently from the allowed / supported SSL/TLS ciphers.\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Version Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.105782\\
+Version used:
+\rowcolor{white}{\verb=2021-12-06T15:42:24Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Collect and Report Certificate Details}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script collects and reports the details of all SSL/TLS
+  certificates.\\
+  This data will be used by other tests to verify server certificates.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following certificate details of the remote service were collected.=}\\
+\rowcolor{white}{\verb=Certificate details:=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-1)             | DA9C7CB3E91B933B84FD4B8A51B0CF8C35763F02=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-256)           | 61FF73A8F85051B08467B262445A409CB9877252E66D0B=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=88C9EBDB01108D824E=}\\
+\rowcolor{white}{\verb=issued by                       | C=\verb-=-\verb=DE,L=\verb-=-\verb=Osnabrueck,O=\verb-=-\verb=GVM Users,OU=\verb-=-\verb=Certificate A=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=uthority for 48f7b451fe6e=}\\
+\rowcolor{white}{\verb=public key algorithm            | RSA=}\\
+\rowcolor{white}{\verb=public key size (bits)          | 3072=}\\
+\rowcolor{white}{\verb=serial                          | 2E9E3F1D5036BD870DBD2CCEF0748CC40AA6EA47=}\\
+\rowcolor{white}{\verb=signature algorithm             | sha256WithRSAEncryption=}\\
+\rowcolor{white}{\verb=subject                         | C=\verb-=-\verb=DE,L=\verb-=-\verb=Osnabrueck,O=\verb-=-\verb=GVM Users,CN=\verb-=-\verb=48f7b451fe6e=}\\
+\rowcolor{white}{\verb=subject alternative names (SAN) | None=}\\
+\rowcolor{white}{\verb=valid from                      | 2022-03-22 09:55:11 UTC=}\\
+\rowcolor{white}{\verb=valid until                     | 2024-03-21 09:55:11 UTC=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Collect and Report Certificate Details=}\\
+OID:1.3.6.1.4.1.25623.1.0.103692\\
+Version used:
+\rowcolor{white}{\verb=2021-12-10T12:48:00Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.2]{[ return to 192.168.178.2 ]}\end{footnotesize}
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.2 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Hostname discovery from server certificate}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+It was possible to discover an additional hostname
+  of this server from its certificate Common or Subject Alt Name.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following additional but not resolvable hostnames were detected:=}\\
+\rowcolor{white}{\verb=48f7b451fe6e=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Hostname discovery from server certificate=}\\
+OID:1.3.6.1.4.1.25623.1.0.111010\\
+Version used:
+\rowcolor{white}{\verb=2021-11-22T15:32:39Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           Debian GNU/Linux=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:debian:debian_linux=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.105586 (Operating System (OS) Detection (SSH=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=))=}\\
+\rowcolor{white}{\verb=Concluded from SSH banner on port 22/tcp: SSH-2.0-OpenSSH_8.4p1 Debian-5=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+\rowcolor{white}{\verb=Other OS detections (in order of reliability):=}\\
+\rowcolor{white}{\verb=OS:           Debian GNU/Linux=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:debian:debian_linux=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.111068 (Operating System (OS) Detection (SMT=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P/POP3/IMAP))=}\\
+\rowcolor{white}{\verb=Concluded from SMTP banner on port 25/tcp: 220 localhost.fritz.box ESMTP Postfix=}\\
+\rowcolor{white}{$\hookrightarrow$\verb= (Debian/GNU)=}\\
+\rowcolor{white}{\verb=OS:           Linux/Unix=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.103825 (OpenVAS / Greenbone Vulnerability Ma=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=nager Detection (OMP/GMP))=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.2:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=gvm.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.2]{[ return to 192.168.178.2 ]}\end{footnotesize}
+\subsubsection{Log 22/tcp}
+\label{port:192.168.178.2 22/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=An ssh server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSH Server type and version}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This detects the SSH Server's type and version by connecting to the server
+  and processing the buffer received.\\
+  This information gives potential attackers additional information about the system they are attacking.
+  Versions and Types should be omitted where possible.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Remote SSH server banner: SSH-2.0-OpenSSH_8.4p1 Debian-5=}\\
+\rowcolor{white}{\verb=Remote SSH supported authentication: none,password,publickey,hostbased,keyboard-=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=interactive=}\\
+\rowcolor{white}{\verb=Remote SSH text/login banner: (not available)=}\\
+\rowcolor{white}{\verb=This is probably:=}\\
+\rowcolor{white}{\verb=- OpenSSH=}\\
+\rowcolor{white}{\verb=Concluded from remote connection attempt with credentials:=}\\
+\rowcolor{white}{\verb=Login:    OpenVASVT=}\\
+\rowcolor{white}{\verb=Password: OpenVASVT=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSH Server type and version=}\\
+OID:1.3.6.1.4.1.25623.1.0.10267\\
+Version used:
+\rowcolor{white}{\verb=2021-09-28T06:32:28Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.2]{[ return to 192.168.178.2 ]}\end{footnotesize}
+\subsection{192.168.178.37}
+\label{host:192.168.178.37}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:41:39 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.37 139/tcp Log]{139/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.37 80/tcp Log]{80/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.37 445/tcp Log]{445/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.37 8001/tcp Log]{8001/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.37 23/tcp Log]{23/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.37 general/tcp Log]{general/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.37 443/tcp Log]{443/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.37 22/tcp Log]{22/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.37 21/tcp Log]{21/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.37}
+
+\subsubsection{Log 139/tcp}
+\label{port:192.168.178.37 139/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB/CIFS Server Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A SMB server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB/CIFS Server Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.11011\\
+Version used:
+\rowcolor{white}{\verb=2020-11-10T15:30:28Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsubsection{Log 80/tcp}
+\label{port:192.168.178.37 80/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsubsection{Log 445/tcp}
+\label{port:192.168.178.37 445/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB/CIFS Server Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A CIFS server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB/CIFS Server Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.11011\\
+Version used:
+\rowcolor{white}{\verb=2020-11-10T15:30:28Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB NativeLanMan}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+It is possible to extract OS, domain and SMB server information
+  from the Session Setup AndX Response packet which is generated during NTLM authentication.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Detected Samba=}\\
+\rowcolor{white}{\verb=Version:       4.6.2=}\\
+\rowcolor{white}{\verb=Location:      445/tcp=}\\
+\rowcolor{white}{\verb=CPE:           cpe:/a:samba:samba:4.6.2=}\\
+\rowcolor{white}{\verb=Concluded from version/product identification result:=}\\
+\rowcolor{white}{\verb=Samba 4.6.2=}\\
+\rowcolor{white}{\verb=Extra information:=}\\
+\rowcolor{white}{\verb=Detected SMB workgroup: DREAMBOX=}\\
+\rowcolor{white}{\verb=Detected SMB server: Samba 4.6.2=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB NativeLanMan=}\\
+OID:1.3.6.1.4.1.25623.1.0.102011\\
+Version used:
+\rowcolor{white}{\verb=2021-09-06T06:22:50Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB NativeLanMan}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+It is possible to extract OS, domain and SMB server information
+  from the Session Setup AndX Response packet which is generated during NTLM authentication.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Detected SMB workgroup: DREAMBOX=}\\
+\rowcolor{white}{\verb=Detected SMB server: Samba 4.6.2=}\\
+\rowcolor{white}{\verb=Detected OS: Linux/Unix=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB NativeLanMan=}\\
+OID:1.3.6.1.4.1.25623.1.0.102011\\
+Version used:
+\rowcolor{white}{\verb=2021-09-06T06:22:50Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB log in}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script attempts to logon into the remote host using
+  login/password credentials.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=It was possible to log into the remote host using the SMB protocol.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB log in=}\\
+OID:1.3.6.1.4.1.25623.1.0.10394\\
+Version used:
+\rowcolor{white}{\verb=2021-08-11T09:39:10Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsubsection{Log 8001/tcp}
+\label{port:192.168.178.37 8001/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsubsection{Log 23/tcp}
+\label{port:192.168.178.37 23/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A telnet server seems to be running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Telnet Service Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This scripts tries to detect a Telnet service running
+  at the remote host.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A Telnet server seems to be running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Telnet Service Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.100074\\
+Version used:
+\rowcolor{white}{\verb=2020-11-10T15:30:28Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://tools.ietf.org/html/rfc854=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Telnet Banner Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This scripts reports the received banner of a Telnet service.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Remote Telnet banner:=}\\
+\rowcolor{white}{\verb=opendreambox 2.6.0 dreambox=}\\
+\rowcolor{white}{\verb=dreambox login: =}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Telnet Banner Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.10281\\
+Version used:
+\rowcolor{white}{\verb=2022-02-11T08:39:43Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.37 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Dropbear Detection Consolidation}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Consolidation of Dropbear detections.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Detected Dropbear SSH=}\\
+\rowcolor{white}{\verb=Version:       2016.74=}\\
+\rowcolor{white}{\verb=Location:      22/tcp=}\\
+\rowcolor{white}{\verb=CPE:           cpe:/a:dropbear_ssh_project:dropbear_ssh:2016.74=}\\
+\rowcolor{white}{\verb=Concluded from version/product identification result:=}\\
+\rowcolor{white}{\verb=SSH-2.0-dropbear_2016.74=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Dropbear Detection Consolidation=}\\
+OID:1.3.6.1.4.1.25623.1.0.112869\\
+Version used:
+\rowcolor{white}{\verb=2021-11-10T06:44:11Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://matt.ucc.asn.au/dropbear/dropbear.html=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Hostname discovery from server certificate}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+It was possible to discover an additional hostname
+  of this server from its certificate Common or Subject Alt Name.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following additional but not resolvable hostnames were detected:=}\\
+\rowcolor{white}{\verb=dreamone=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Hostname discovery from server certificate=}\\
+OID:1.3.6.1.4.1.25623.1.0.111010\\
+Version used:
+\rowcolor{white}{\verb=2021-11-22T15:32:39Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           Linux/Unix=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102011 (SMB NativeLanMan)=}\\
+\rowcolor{white}{\verb=Concluded from SMB/Samba banner on port 445/tcp: =}\\
+\rowcolor{white}{\verb=OS String:  Windows 6.1=}\\
+\rowcolor{white}{\verb=SMB String: Samba 4.6.2=}\\
+\rowcolor{white}{\verb=Note: The service is running on a Linux/Unix based OS but reporting itself with =}\\
+\rowcolor{white}{$\hookrightarrow$\verb=an Windows related OS string.=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+\rowcolor{white}{\verb=Other OS detections (in order of reliability):=}\\
+\rowcolor{white}{\verb=OS:           Linux/Unix=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.112869 (Dropbear Detection Consolidation)=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.37:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=dreambox.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsubsection{Log 443/tcp}
+\label{port:192.168.178.37 443/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A TLScustom server answered on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port through SSL=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Version Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Enumeration and reporting of SSL/TLS protocol versions supported
+  by a remote service.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote SSL/TLS service supports the following SSL/TLS protocol version(s):=}\\
+\rowcolor{white}{\verb=TLSv1.0=}\\
+\rowcolor{white}{\verb=TLSv1.1=}\\
+\rowcolor{white}{\verb=TLSv1.2=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Sends multiple connection requests to the remote service and
+  attempts to determine the SSL/TLS protocol versions supported by the service from the replies.\\
+  Note: The supported SSL/TLS protocol versions included in the report of this VT are reported
+  independently from the allowed / supported SSL/TLS ciphers.\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Version Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.105782\\
+Version used:
+\rowcolor{white}{\verb=2021-12-06T15:42:24Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Collect and Report Certificate Details}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script collects and reports the details of all SSL/TLS
+  certificates.\\
+  This data will be used by other tests to verify server certificates.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following certificate details of the remote service were collected.=}\\
+\rowcolor{white}{\verb=Certificate details:=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-1)             | 3226C9FA80F051BF085C95D6CD2E9ABA43678A13=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-256)           | 5D729D2F60BF2E7DDFF4017044F790DD8D059211B05C9D=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=9D30CF6E6BEC791DB3=}\\
+\rowcolor{white}{\verb=issued by                       | CN=\verb-=-\verb=dreamone,OU=\verb-=-\verb=STB,O=\verb-=-\verb=Dreambox,L=\verb-=-\verb=Home,ST=\verb-=-\verb=Home,C=}\\
+\rowcolor{white}{$\hookrightarrow$\verb==\verb-=-\verb=DE=}\\
+\rowcolor{white}{\verb=public key algorithm            | RSA=}\\
+\rowcolor{white}{\verb=public key size (bits)          | 2048=}\\
+\rowcolor{white}{\verb=serial                          | 2B95AD25=}\\
+\rowcolor{white}{\verb=signature algorithm             | sha256WithRSAEncryption=}\\
+\rowcolor{white}{\verb=subject                         | CN=\verb-=-\verb=dreamone,OU=\verb-=-\verb=STB,O=\verb-=-\verb=Dreambox,L=\verb-=-\verb=Home,ST=\verb-=-\verb=Home,C=}\\
+\rowcolor{white}{$\hookrightarrow$\verb==\verb-=-\verb=DE=}\\
+\rowcolor{white}{\verb=subject alternative names (SAN) | None=}\\
+\rowcolor{white}{\verb=valid from                      | 2012-01-01 00:00:00 UTC=}\\
+\rowcolor{white}{\verb=valid until                     | 2030-12-31 23:59:00 UTC=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Collect and Report Certificate Details=}\\
+OID:1.3.6.1.4.1.25623.1.0.103692\\
+Version used:
+\rowcolor{white}{\verb=2021-12-10T12:48:00Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsubsection{Log 22/tcp}
+\label{port:192.168.178.37 22/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=An ssh server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSH Server type and version}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This detects the SSH Server's type and version by connecting to the server
+  and processing the buffer received.\\
+  This information gives potential attackers additional information about the system they are attacking.
+  Versions and Types should be omitted where possible.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Remote SSH server banner: SSH-2.0-dropbear_2016.74=}\\
+\rowcolor{white}{\verb=Remote SSH supported authentication: password,publickey=}\\
+\rowcolor{white}{\verb=Remote SSH text/login banner: (not available)=}\\
+\rowcolor{white}{\verb=This is probably:=}\\
+\rowcolor{white}{\verb=- Dropbear SSH=}\\
+\rowcolor{white}{\verb=Concluded from remote connection attempt with credentials:=}\\
+\rowcolor{white}{\verb=Login:    OpenVASVT=}\\
+\rowcolor{white}{\verb=Password: OpenVASVT=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSH Server type and version=}\\
+OID:1.3.6.1.4.1.25623.1.0.10267\\
+Version used:
+\rowcolor{white}{\verb=2021-09-28T06:32:28Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsubsection{Log 21/tcp}
+\label{port:192.168.178.37 21/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=An FTP server is running on this port.=}\\
+\rowcolor{white}{\verb=Here is its banner : =}\\
+\rowcolor{white}{\verb=220 Welcome to the opendreambox FTP service!=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: FTP Banner Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This Plugin detects and reports a FTP Server Banner.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Remote FTP server banner:=}\\
+\rowcolor{white}{\verb=220 Welcome to the opendreambox FTP service!=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=FTP Banner Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.10092\\
+Version used:
+\rowcolor{white}{\verb=2022-02-16T13:39:14Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.37]{[ return to 192.168.178.37 ]}\end{footnotesize}
+\subsection{192.168.178.20}
+\label{host:192.168.178.20}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:27:11 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.20 22/tcp Log]{22/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.20 general/tcp Log]{general/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.20 139/tcp Log]{139/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.20 631/tcp Log]{631/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.20 53/tcp Log]{53/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.20 445/tcp Log]{445/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.20}
+
+\subsubsection{Log 22/tcp}
+\label{port:192.168.178.20 22/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSH Server type and version}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This detects the SSH Server's type and version by connecting to the server
+  and processing the buffer received.\\
+  This information gives potential attackers additional information about the system they are attacking.
+  Versions and Types should be omitted where possible.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Remote SSH server banner: SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.5=}\\
+\rowcolor{white}{\verb=Remote SSH supported authentication: password,publickey=}\\
+\rowcolor{white}{\verb=Remote SSH text/login banner: (not available)=}\\
+\rowcolor{white}{\verb=This is probably:=}\\
+\rowcolor{white}{\verb=- OpenSSH=}\\
+\rowcolor{white}{\verb=Concluded from remote connection attempt with credentials:=}\\
+\rowcolor{white}{\verb=Login:    OpenVASVT=}\\
+\rowcolor{white}{\verb=Password: OpenVASVT=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSH Server type and version=}\\
+OID:1.3.6.1.4.1.25623.1.0.10267\\
+Version used:
+\rowcolor{white}{\verb=2021-09-28T06:32:28Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=An ssh server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.20]{[ return to 192.168.178.20 ]}\end{footnotesize}
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.20 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           Ubuntu 20.04=}\\
+\rowcolor{white}{\verb=Version:      20.04=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:canonical:ubuntu_linux:20.04=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.105586 (Operating System (OS) Detection (SSH=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=))=}\\
+\rowcolor{white}{\verb=Concluded from SSH banner on port 22/tcp: SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=5=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+\rowcolor{white}{\verb=Other OS detections (in order of reliability):=}\\
+\rowcolor{white}{\verb=OS:           Linux/Unix=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.111067 (Operating System (OS) Detection (HTT=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from HTTP Server banner on port 631/tcp: Server: CUPS/2.3 IPP/2.1=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Hostname discovery from server certificate}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+It was possible to discover an additional hostname
+  of this server from its certificate Common or Subject Alt Name.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following additional and resolvable hostnames pointing to a different host i=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=p were detected:=}\\
+\rowcolor{white}{\verb=homeprinter=}\\
+\rowcolor{white}{\verb=The following additional but not resolvable hostnames were detected:=}\\
+\rowcolor{white}{\verb=homeprinter.local=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Hostname discovery from server certificate=}\\
+OID:1.3.6.1.4.1.25623.1.0.111010\\
+Version used:
+\rowcolor{white}{\verb=2021-11-22T15:32:39Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.20:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=homeprinter.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.20]{[ return to 192.168.178.20 ]}\end{footnotesize}
+\subsubsection{Log 139/tcp}
+\label{port:192.168.178.20 139/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB/CIFS Server Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A SMB server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB/CIFS Server Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.11011\\
+Version used:
+\rowcolor{white}{\verb=2020-11-10T15:30:28Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.20]{[ return to 192.168.178.20 ]}\end{footnotesize}
+\subsubsection{Log 631/tcp}
+\label{port:192.168.178.20 631/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A TLScustom server answered on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port through SSL=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Version Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Enumeration and reporting of SSL/TLS protocol versions supported
+  by a remote service.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote SSL/TLS service supports the following SSL/TLS protocol version(s):=}\\
+\rowcolor{white}{\verb=TLSv1.0=}\\
+\rowcolor{white}{\verb=TLSv1.1=}\\
+\rowcolor{white}{\verb=TLSv1.2=}\\
+\rowcolor{white}{\verb=TLSv1.3=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Sends multiple connection requests to the remote service and
+  attempts to determine the SSL/TLS protocol versions supported by the service from the replies.\\
+  Note: The supported SSL/TLS protocol versions included in the report of this VT are reported
+  independently from the allowed / supported SSL/TLS ciphers.\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Version Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.105782\\
+Version used:
+\rowcolor{white}{\verb=2021-12-06T15:42:24Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Collect and Report Certificate Details}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script collects and reports the details of all SSL/TLS
+  certificates.\\
+  This data will be used by other tests to verify server certificates.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following certificate details of the remote service were collected.=}\\
+\rowcolor{white}{\verb=Certificate details:=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-1)             | 69429852EE28F42AC047C8CF69BC994B46C15D0F=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-256)           | 03C38A23289F58F7BDB0626EEF393A1CC50E5C14986692=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=2AE072521C4F5B7A0E=}\\
+\rowcolor{white}{\verb=issued by                       | L=\verb-=-\verb=Unknown,ST=\verb-=-\verb=Unknown,OU=\verb-=-\verb=Unknown,O=\verb-=-\verb=homeprinter,=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=CN=\verb-=-\verb=homeprinter,C=\verb-=-\verb=DE=}\\
+\rowcolor{white}{\verb=public key algorithm            | RSA=}\\
+\rowcolor{white}{\verb=public key size (bits)          | 2048=}\\
+\rowcolor{white}{\verb=serial                          | 61DDAF12=}\\
+\rowcolor{white}{\verb=signature algorithm             | sha256WithRSAEncryption=}\\
+\rowcolor{white}{\verb=subject                         | L=\verb-=-\verb=Unknown,ST=\verb-=-\verb=Unknown,OU=\verb-=-\verb=Unknown,O=\verb-=-\verb=homeprinter,=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=CN=\verb-=-\verb=homeprinter,C=\verb-=-\verb=DE=}\\
+\rowcolor{white}{\verb=subject alternative names (SAN) | homeprinter, homeprinter.local, localhost=}\\
+\rowcolor{white}{\verb=valid from                      | 2022-01-11 16:23:46 UTC=}\\
+\rowcolor{white}{\verb=valid until                     | 2032-01-09 16:23:46 UTC=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Collect and Report Certificate Details=}\\
+OID:1.3.6.1.4.1.25623.1.0.103692\\
+Version used:
+\rowcolor{white}{\verb=2021-12-10T12:48:00Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.20]{[ return to 192.168.178.20 ]}\end{footnotesize}
+\subsubsection{Log 53/tcp}
+\label{port:192.168.178.20 53/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: DNS Server Detection (TCP)}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+TCP based detection of a DNS server.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+Vulnerability was detected according to the Vulnerability Detection Method.\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=DNS Server Detection (TCP)=}\\
+OID:1.3.6.1.4.1.25623.1.0.108018\\
+Version used:
+\rowcolor{white}{\verb=2021-11-30T08:05:58Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.20]{[ return to 192.168.178.20 ]}\end{footnotesize}
+\subsubsection{Log 445/tcp}
+\label{port:192.168.178.20 445/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB/CIFS Server Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A CIFS server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB/CIFS Server Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.11011\\
+Version used:
+\rowcolor{white}{\verb=2020-11-10T15:30:28Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB log in}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script attempts to logon into the remote host using
+  login/password credentials.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=It was possible to log into the remote host using the SMB protocol.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB log in=}\\
+OID:1.3.6.1.4.1.25623.1.0.10394\\
+Version used:
+\rowcolor{white}{\verb=2021-08-11T09:39:10Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.20]{[ return to 192.168.178.20 ]}\end{footnotesize}
+\subsection{192.168.178.22}
+\label{host:192.168.178.22}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:31:04 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.22 22/tcp Log]{22/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.22 139/tcp Log]{139/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.22 general/tcp Log]{general/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.22 53/tcp Log]{53/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.22 631/tcp Log]{631/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.22 445/tcp Log]{445/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.22}
+
+\subsubsection{Log 22/tcp}
+\label{port:192.168.178.22 22/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=An ssh server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSH Server type and version}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This detects the SSH Server's type and version by connecting to the server
+  and processing the buffer received.\\
+  This information gives potential attackers additional information about the system they are attacking.
+  Versions and Types should be omitted where possible.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Remote SSH server banner: SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.5=}\\
+\rowcolor{white}{\verb=Remote SSH supported authentication: password,publickey=}\\
+\rowcolor{white}{\verb=Remote SSH text/login banner: (not available)=}\\
+\rowcolor{white}{\verb=This is probably:=}\\
+\rowcolor{white}{\verb=- OpenSSH=}\\
+\rowcolor{white}{\verb=Concluded from remote connection attempt with credentials:=}\\
+\rowcolor{white}{\verb=Login:    OpenVASVT=}\\
+\rowcolor{white}{\verb=Password: OpenVASVT=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSH Server type and version=}\\
+OID:1.3.6.1.4.1.25623.1.0.10267\\
+Version used:
+\rowcolor{white}{\verb=2021-09-28T06:32:28Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.22]{[ return to 192.168.178.22 ]}\end{footnotesize}
+\subsubsection{Log 139/tcp}
+\label{port:192.168.178.22 139/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB/CIFS Server Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A SMB server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB/CIFS Server Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.11011\\
+Version used:
+\rowcolor{white}{\verb=2020-11-10T15:30:28Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.22]{[ return to 192.168.178.22 ]}\end{footnotesize}
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.22 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Hostname discovery from server certificate}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+It was possible to discover an additional hostname
+  of this server from its certificate Common or Subject Alt Name.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following additional and resolvable hostnames were detected:=}\\
+\rowcolor{white}{\verb=homeprinter=}\\
+\rowcolor{white}{\verb=The following additional but not resolvable hostnames were detected:=}\\
+\rowcolor{white}{\verb=homeprinter.local=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Hostname discovery from server certificate=}\\
+OID:1.3.6.1.4.1.25623.1.0.111010\\
+Version used:
+\rowcolor{white}{\verb=2021-11-22T15:32:39Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           Ubuntu 20.04=}\\
+\rowcolor{white}{\verb=Version:      20.04=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:canonical:ubuntu_linux:20.04=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.105586 (Operating System (OS) Detection (SSH=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=))=}\\
+\rowcolor{white}{\verb=Concluded from SSH banner on port 22/tcp: SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=5=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+\rowcolor{white}{\verb=Other OS detections (in order of reliability):=}\\
+\rowcolor{white}{\verb=OS:           Linux/Unix=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.111067 (Operating System (OS) Detection (HTT=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from HTTP Server banner on port 631/tcp: Server: CUPS/2.3 IPP/2.1=}\\
+\rowcolor{white}{\verb=OS:           Linux/Unix=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.111067 (Operating System (OS) Detection (HTT=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from HTTP Server default page on port 631/tcp: <title>Home - CUPS 2.3.=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=1</title>=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.22:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=homeprinter|SSL/TLS server certificate=}\\
+\rowcolor{white}{\verb=homeprinter.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.22]{[ return to 192.168.178.22 ]}\end{footnotesize}
+\subsubsection{Log 53/tcp}
+\label{port:192.168.178.22 53/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: DNS Server Detection (TCP)}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+TCP based detection of a DNS server.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote DNS server banner is:=}\\
+\rowcolor{white}{\verb=unbound 1.15.0=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=DNS Server Detection (TCP)=}\\
+OID:1.3.6.1.4.1.25623.1.0.108018\\
+Version used:
+\rowcolor{white}{\verb=2021-11-30T08:05:58Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.22]{[ return to 192.168.178.22 ]}\end{footnotesize}
+\subsubsection{Log 631/tcp}
+\label{port:192.168.178.22 631/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A TLScustom server answered on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port through SSL=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Version Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Enumeration and reporting of SSL/TLS protocol versions supported
+  by a remote service.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote SSL/TLS service supports the following SSL/TLS protocol version(s):=}\\
+\rowcolor{white}{\verb=TLSv1.0=}\\
+\rowcolor{white}{\verb=TLSv1.1=}\\
+\rowcolor{white}{\verb=TLSv1.2=}\\
+\rowcolor{white}{\verb=TLSv1.3=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Sends multiple connection requests to the remote service and
+  attempts to determine the SSL/TLS protocol versions supported by the service from the replies.\\
+  Note: The supported SSL/TLS protocol versions included in the report of this VT are reported
+  independently from the allowed / supported SSL/TLS ciphers.\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Version Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.105782\\
+Version used:
+\rowcolor{white}{\verb=2021-12-06T15:42:24Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Collect and Report Certificate Details}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script collects and reports the details of all SSL/TLS
+  certificates.\\
+  This data will be used by other tests to verify server certificates.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following certificate details of the remote service were collected.=}\\
+\rowcolor{white}{\verb=Certificate details:=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-1)             | 69429852EE28F42AC047C8CF69BC994B46C15D0F=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-256)           | 03C38A23289F58F7BDB0626EEF393A1CC50E5C14986692=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=2AE072521C4F5B7A0E=}\\
+\rowcolor{white}{\verb=issued by                       | L=\verb-=-\verb=Unknown,ST=\verb-=-\verb=Unknown,OU=\verb-=-\verb=Unknown,O=\verb-=-\verb=homeprinter,=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=CN=\verb-=-\verb=homeprinter,C=\verb-=-\verb=DE=}\\
+\rowcolor{white}{\verb=public key algorithm            | RSA=}\\
+\rowcolor{white}{\verb=public key size (bits)          | 2048=}\\
+\rowcolor{white}{\verb=serial                          | 61DDAF12=}\\
+\rowcolor{white}{\verb=signature algorithm             | sha256WithRSAEncryption=}\\
+\rowcolor{white}{\verb=subject                         | L=\verb-=-\verb=Unknown,ST=\verb-=-\verb=Unknown,OU=\verb-=-\verb=Unknown,O=\verb-=-\verb=homeprinter,=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=CN=\verb-=-\verb=homeprinter,C=\verb-=-\verb=DE=}\\
+\rowcolor{white}{\verb=subject alternative names (SAN) | homeprinter, homeprinter.local, localhost=}\\
+\rowcolor{white}{\verb=valid from                      | 2022-01-11 16:23:46 UTC=}\\
+\rowcolor{white}{\verb=valid until                     | 2032-01-09 16:23:46 UTC=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Collect and Report Certificate Details=}\\
+OID:1.3.6.1.4.1.25623.1.0.103692\\
+Version used:
+\rowcolor{white}{\verb=2021-12-10T12:48:00Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.22]{[ return to 192.168.178.22 ]}\end{footnotesize}
+\subsubsection{Log 445/tcp}
+\label{port:192.168.178.22 445/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB/CIFS Server Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A CIFS server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB/CIFS Server Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.11011\\
+Version used:
+\rowcolor{white}{\verb=2020-11-10T15:30:28Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SMB log in}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script attempts to logon into the remote host using
+  login/password credentials.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=It was possible to log into the remote host using the SMB protocol.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SMB log in=}\\
+OID:1.3.6.1.4.1.25623.1.0.10394\\
+Version used:
+\rowcolor{white}{\verb=2021-08-11T09:39:10Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.22]{[ return to 192.168.178.22 ]}\end{footnotesize}
+\subsection{192.168.178.1}
+\label{host:192.168.178.1}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 13:15:03 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.1 5060/tcp Log]{5060/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 8181/tcp Log]{8181/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 8182/tcp Log]{8182/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 21/tcp Log]{21/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 53/tcp Log]{53/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 8183/tcp Log]{8183/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 general/tcp Log]{general/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 8184/tcp Log]{8184/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 49000/tcp Log]{49000/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 80/tcp Log]{80/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.1 443/tcp Log]{443/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.1}
+
+\subsubsection{Log 5060/tcp}
+\label{port:192.168.178.1 5060/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Service Detection with 'GET' Request}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This plugin performs service detection.\\
+  This plugin is a complement of find\_service.nasl. It sends a 'GET' request
+  to the remaining unknown services and tries to identify them.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A service supporting the SIP protocol seems to be running on this port.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Service Detection with 'GET' Request=}\\
+OID:1.3.6.1.4.1.25623.1.0.17975\\
+Version used:
+\rowcolor{white}{\verb=2022-02-01T12:51:06Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Detect SIP Compatible Hosts (TCP)}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+A Voice Over IP service is listening on the remote port.\\
+  The remote host is running SIP (Session Initiation Protocol), a protocol
+  used for Internet conferencing and telephony.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=User-Agent: FRITZ!OS=}\\
+\rowcolor{white}{\verb=Full banner output:=}\\
+\rowcolor{white}{\verb=SIP/2.0 400 Illegal request line=}\\
+\rowcolor{white}{\verb=From: <sip:missing>=}\\
+\rowcolor{white}{\verb=To: <sip:missing>;tag=\verb-=-\verb=badrequest=}\\
+\rowcolor{white}{\verb=User-Agent: FRITZ!OS=}\\
+\rowcolor{white}{\verb=Content-Length: 0=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Detect SIP Compatible Hosts (TCP)=}\\
+OID:1.3.6.1.4.1.25623.1.0.108020\\
+Version used:
+\rowcolor{white}{\verb=2020-11-10T15:30:28Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: http://www.cs.columbia.edu/sip/=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 8181/tcp}
+\label{port:192.168.178.1 8181/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 8182/tcp}
+\label{port:192.168.178.1 8182/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 21/tcp}
+\label{port:192.168.178.1 21/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=An FTP server is running on this port.=}\\
+\rowcolor{white}{\verb=Here is its banner : =}\\
+\rowcolor{white}{\verb=220 FRITZ!Box7490 FTP server ready.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: FTP Banner Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This Plugin detects and reports a FTP Server Banner.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Remote FTP server banner:=}\\
+\rowcolor{white}{\verb=220 FRITZ!Box7490 FTP server ready.=}\\
+\rowcolor{white}{\verb=This is probably (a):=}\\
+\rowcolor{white}{\verb=- AVM FRITZ!Box FTP=}\\
+\rowcolor{white}{\verb=Server operating system information collected via "SYST" command:=}\\
+\rowcolor{white}{\verb=215 UNIX Type: L8 Version: Linux 3.10.107=}\\
+\rowcolor{white}{\verb=Server status information collected via "STAT" command:=}\\
+\rowcolor{white}{\verb=211- FRITZ!Box7490 FTP server status:=}\\
+\rowcolor{white}{\verb=     Connected to 192.168.178.2=}\\
+\rowcolor{white}{\verb=     Waiting for user name=}\\
+\rowcolor{white}{\verb=     TYPE: ASCII, FORM: Nonprint; STRUcture: File; transfer MODE: Stream=}\\
+\rowcolor{white}{\verb=     No data connection=}\\
+\rowcolor{white}{\verb=211 End of status=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=FTP Banner Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.10092\\
+Version used:
+\rowcolor{white}{\verb=2022-02-16T13:39:14Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: FTP 'AUTH TLS' Command Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Checks if the remote FTP server supports SSL/TLS (FTPS) with the 'AUTH TLS' command.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote FTP server supports TLS (FTPS) with the 'AUTH TLS' command.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: FTP 'AUTH TLS' Command Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.105009\\
+Version used:
+\rowcolor{white}{\verb=2020-08-24T08:40:10Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://tools.ietf.org/html/rfc4217=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 53/tcp}
+\label{port:192.168.178.1 53/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The service closed the connection after 3 seconds without sending any data=}\\
+\rowcolor{white}{\verb=It might be protected by some TCP wrapper=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 8183/tcp}
+\label{port:192.168.178.1 8183/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.1 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Hostname discovery from server certificate}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+It was possible to discover an additional hostname
+  of this server from its certificate Common or Subject Alt Name.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following additional and resolvable hostnames were detected:=}\\
+\rowcolor{white}{\verb=Breuelstrasse11=}\\
+\rowcolor{white}{\verb=fritz.nas=}\\
+\rowcolor{white}{\verb=myfritz.box=}\\
+\rowcolor{white}{\verb=www.fritz.box=}\\
+\rowcolor{white}{\verb=www.fritz.nas=}\\
+\rowcolor{white}{\verb=www.myfritz.box=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Hostname discovery from server certificate=}\\
+OID:1.3.6.1.4.1.25623.1.0.111010\\
+Version used:
+\rowcolor{white}{\verb=2021-11-22T15:32:39Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: AVM FRITZ!Box / FRITZ!OS Detection Consolidation}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Consolidation of AVM FRITZ!Box and FRITZ!OS detections.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Detected AVM FRITZ!OS=}\\
+\rowcolor{white}{\verb=Version:       unknown=}\\
+\rowcolor{white}{\verb=Location:      /=}\\
+\rowcolor{white}{\verb=CPE:           cpe:/o:avm:fritz%21_os=}\\
+\rowcolor{white}{\verb=Detected AVM FRITZ!Box 7490=}\\
+\rowcolor{white}{\verb=Location:      /=}\\
+\rowcolor{white}{\verb=CPE:           cpe:/h:avm:fritzbox:7490=}\\
+\rowcolor{white}{\verb=Exposed services:=}\\
+\rowcolor{white}{\verb=HTTP(s) on port 80/tcp=}\\
+\rowcolor{white}{\verb=HTTP(s) on port 443/tcp=}\\
+\rowcolor{white}{\verb=SIP on port 5060/tcp=}\\
+\rowcolor{white}{\verb=Banner: FRITZ!OS=}\\
+\rowcolor{white}{\verb=FTP on port 21/ftp=}\\
+\rowcolor{white}{\verb=Banner: 220 FRITZ!Box7490 FTP server ready.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=AVM FRITZ!Box / FRITZ!OS Detection Consolidation=}\\
+OID:1.3.6.1.4.1.25623.1.0.103910\\
+Version used:
+\rowcolor{white}{\verb=2022-03-28T10:48:38Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           AVM FRITZ!OS=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:avm:fritz%21_os=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.103910 (AVM FRITZ!Box / FRITZ!OS Detection C=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=onsolidation)=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+\rowcolor{white}{\verb=Other OS detections (in order of reliability):=}\\
+\rowcolor{white}{\verb=OS:           AVM FRITZ!OS=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:avm:fritz%21_os=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.108201 (Operating System (OS) Detection (SIP=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=))=}\\
+\rowcolor{white}{\verb=Concluded from SIP server banner on port 5060/tcp: User-Agent Banner: FRITZ!OS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.1:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=breuelstrasse11|SSL/TLS server certificate=}\\
+\rowcolor{white}{\verb=fritz.box|Reverse-DNS=}\\
+\rowcolor{white}{\verb=fritz.nas|SSL/TLS server certificate=}\\
+\rowcolor{white}{\verb=myfritz.box|SSL/TLS server certificate=}\\
+\rowcolor{white}{\verb=www.fritz.box|SSL/TLS server certificate=}\\
+\rowcolor{white}{\verb=www.fritz.nas|SSL/TLS server certificate=}\\
+\rowcolor{white}{\verb=www.myfritz.box|SSL/TLS server certificate=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 8184/tcp}
+\label{port:192.168.178.1 8184/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 49000/tcp}
+\label{port:192.168.178.1 49000/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 80/tcp}
+\label{port:192.168.178.1 80/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Response Time / No 404 Error Code Check}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This VT tests if the remote web server does not reply with a 404
+  error code and checks if it is replying to the scanners requests in a reasonable amount of time.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The service is responding with a 200 HTTP status code to non-existent files/urls=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=. The following pattern is used to work around possible false detections:=}\\
+\rowcolor{white}{\verb=-----=}\\
+\rowcolor{white}{\verb=MyFRITZ!=}\\
+\rowcolor{white}{\verb=-----=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+          \hline
+          \\
+\textbf{Vulnerability Insight}\\
+This web server might show the following issues:\\
+  - it is [mis]configured in that it does not return '404 Not Found' error codes when a non-existent
+  file is requested, perhaps returning a site map, search page, authentication page or redirect instead.\\
+  The Scanner might enabled some counter measures for that, however they might be insufficient. If a
+  great number of security issues are reported for this port, they might not all be accurate.\\
+  - it doesn't response in a reasonable amount of time to various HTTP requests sent by this VT.\\
+  In order to keep the scan total time to a reasonable amount, the remote web server might not be
+  tested. If the remote server should be tested it has to be fixed to have it reply to the scanners
+  requests in a reasonable amount of time.\\
+  Alternatively the 'Maximum response time (in seconds)' preference could be raised to a higher
+  value if longer scan times are accepted.\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Response Time / No 404 Error Code Check=}\\
+OID:1.3.6.1.4.1.25623.1.0.10386\\
+Version used:
+\rowcolor{white}{\verb=2020-11-27T13:32:50Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsubsection{Log 443/tcp}
+\label{port:192.168.178.1 443/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A TLScustom server answered on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port through SSL=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Version Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Enumeration and reporting of SSL/TLS protocol versions supported
+  by a remote service.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote SSL/TLS service supports the following SSL/TLS protocol version(s):=}\\
+\rowcolor{white}{\verb=TLSv1.2=}\\
+\rowcolor{white}{\verb=TLSv1.3=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Sends multiple connection requests to the remote service and
+  attempts to determine the SSL/TLS protocol versions supported by the service from the replies.\\
+  Note: The supported SSL/TLS protocol versions included in the report of this VT are reported
+  independently from the allowed / supported SSL/TLS ciphers.\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Version Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.105782\\
+Version used:
+\rowcolor{white}{\verb=2021-12-06T15:42:24Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Collect and Report Certificate Details}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script collects and reports the details of all SSL/TLS
+  certificates.\\
+  This data will be used by other tests to verify server certificates.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The following certificate details of the remote service were collected.=}\\
+\rowcolor{white}{\verb=Certificate details:=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-1)             | CFB7FD5D27141810D8F9CE8D1BD74B12E6E26780=}\\
+\rowcolor{white}{\verb=fingerprint (SHA-256)           | 5ECA6F620C8BC526BEA6FA3E37282C1FD1E98BDC85CAB6=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=F55C8C4DEDDEEEA99C=}\\
+\rowcolor{white}{\verb=issued by                       | CN=\verb-=-\verb=92.192.143.206=}\\
+\rowcolor{white}{\verb=public key algorithm            | RSA=}\\
+\rowcolor{white}{\verb=public key size (bits)          | 2048=}\\
+\rowcolor{white}{\verb=serial                          | 58C6BD4C62AC35CA3C7D9EA7569675FA4263ECDF=}\\
+\rowcolor{white}{\verb=signature algorithm             | sha256WithRSAEncryption=}\\
+\rowcolor{white}{\verb=subject                         | CN=\verb-=-\verb=92.192.143.206=}\\
+\rowcolor{white}{\verb=subject alternative names (SAN) | Breuelstrasse11, fritz.nas, www.fritz.nas, fri=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=tz.box, www.fritz.box, myfritz.box, www.myfritz.box=}\\
+\rowcolor{white}{\verb=valid from                      | 2022-04-22 05:53:04 UTC=}\\
+\rowcolor{white}{\verb=valid until                     | 2038-01-15 05:53:04 UTC=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Collect and Report Certificate Details=}\\
+OID:1.3.6.1.4.1.25623.1.0.103692\\
+Version used:
+\rowcolor{white}{\verb=2021-12-10T12:48:00Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Response Time / No 404 Error Code Check}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This VT tests if the remote web server does not reply with a 404
+  error code and checks if it is replying to the scanners requests in a reasonable amount of time.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote web server is very slow - it took 83 seconds (Maximum response time c=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=onfigured in 'Response Time / No 404 Error Code Check' (OID: 1.3.6.1.4.1.25623=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=.1.0.10386) preferences: 60 seconds) to execute the plugin no404.nasl (it usua=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=lly only takes a few seconds).=}\\
+\rowcolor{white}{\verb=In order to keep the scan total time to a reasonable amount, the remote web serv=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=er has not been tested.=}\\
+\rowcolor{white}{\verb=If the remote server should be tested it has to be fixed to have it reply to the=}\\
+\rowcolor{white}{$\hookrightarrow$\verb= scanners requests in a reasonable amount of time. Alternatively the 'Maximum =}\\
+\rowcolor{white}{$\hookrightarrow$\verb=response time (in seconds)' preference could be raised to a higher value if lo=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=nger scan times are accepted.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+          \hline
+          \\
+\textbf{Vulnerability Insight}\\
+This web server might show the following issues:\\
+  - it is [mis]configured in that it does not return '404 Not Found' error codes when a non-existent
+  file is requested, perhaps returning a site map, search page, authentication page or redirect instead.\\
+  The Scanner might enabled some counter measures for that, however they might be insufficient. If a
+  great number of security issues are reported for this port, they might not all be accurate.\\
+  - it doesn't response in a reasonable amount of time to various HTTP requests sent by this VT.\\
+  In order to keep the scan total time to a reasonable amount, the remote web server might not be
+  tested. If the remote server should be tested it has to be fixed to have it reply to the scanners
+  requests in a reasonable amount of time.\\
+  Alternatively the 'Maximum response time (in seconds)' preference could be raised to a higher
+  value if longer scan times are accepted.\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Response Time / No 404 Error Code Check=}\\
+OID:1.3.6.1.4.1.25623.1.0.10386\\
+Version used:
+\rowcolor{white}{\verb=2020-11-27T13:32:50Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.1]{[ return to 192.168.178.1 ]}\end{footnotesize}
+\subsection{192.168.178.24}
+\label{host:192.168.178.24}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:22:03 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.24 general/tcp Log]{general/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.24}
+
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.24 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.24:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=192.168.178.24|IP-address=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           OpenBSD=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:openbsd:openbsd=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+\rowcolor{white}{\verb=Other OS detections (in order of reliability):=}\\
+\rowcolor{white}{\verb=OS:           HP UX=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:hp:hp-ux=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+\rowcolor{white}{\verb=OS:           Cisco IOS=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:cisco:ios=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+\rowcolor{white}{\verb=OS:           NetBSD=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:netbsd:netbsd=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.24]{[ return to 192.168.178.24 ]}\end{footnotesize}
+\subsection{192.168.178.23}
+\label{host:192.168.178.23}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:25:25 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.23 general/tcp Log]{general/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.23 8009/tcp Log]{8009/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.23}
+
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.23 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           Linux Kernel=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.23:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=amazon-f0c31363c.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.23]{[ return to 192.168.178.23 ]}\end{footnotesize}
+\subsubsection{Log 8009/tcp}
+\label{port:192.168.178.23 8009/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.23]{[ return to 192.168.178.23 ]}\end{footnotesize}
+\subsection{192.168.178.29}
+\label{host:192.168.178.29}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:34:53 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.29 general/tcp Log]{general/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.29 80/tcp Log]{80/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.29}
+
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.29 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           HP JetDirect=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/h:hp:jetdirect=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.29:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=wohn-tl-sg108e.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.29]{[ return to 192.168.178.29 ]}\end{footnotesize}
+\subsubsection{Log 80/tcp}
+\label{port:192.168.178.29 80/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Services}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This routine attempts to guess which service is running on the
+  remote ports. For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A web server is running on this port=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Services=}\\
+OID:1.3.6.1.4.1.25623.1.0.10330\\
+Version used:
+\rowcolor{white}{\verb=2021-03-15T10:42:03Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Response Time / No 404 Error Code Check}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This VT tests if the remote web server does not reply with a 404
+  error code and checks if it is replying to the scanners requests in a reasonable amount of time.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The service is responding with a 200 HTTP status code to non-existent files/urls=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=. The following pattern is used to work around possible false detections:=}\\
+\rowcolor{white}{\verb=-----=}\\
+\rowcolor{white}{\verb=TYPE=\verb-=-\verb="password"=}\\
+\rowcolor{white}{\verb=-----=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+          \hline
+          \\
+\textbf{Vulnerability Insight}\\
+This web server might show the following issues:\\
+  - it is [mis]configured in that it does not return '404 Not Found' error codes when a non-existent
+  file is requested, perhaps returning a site map, search page, authentication page or redirect instead.\\
+  The Scanner might enabled some counter measures for that, however they might be insufficient. If a
+  great number of security issues are reported for this port, they might not all be accurate.\\
+  - it doesn't response in a reasonable amount of time to various HTTP requests sent by this VT.\\
+  In order to keep the scan total time to a reasonable amount, the remote web server might not be
+  tested. If the remote server should be tested it has to be fixed to have it reply to the scanners
+  requests in a reasonable amount of time.\\
+  Alternatively the 'Maximum response time (in seconds)' preference could be raised to a higher
+  value if longer scan times are accepted.\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Response Time / No 404 Error Code Check=}\\
+OID:1.3.6.1.4.1.25623.1.0.10386\\
+Version used:
+\rowcolor{white}{\verb=2020-11-27T13:32:50Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.29]{[ return to 192.168.178.29 ]}\end{footnotesize}
+\subsection{192.168.178.27}
+\label{host:192.168.178.27}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:22:28 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.27 general/tcp Log]{general/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.27}
+
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.27 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           Linux Kernel=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+\rowcolor{white}{\verb=Other OS detections (in order of reliability):=}\\
+\rowcolor{white}{\verb=OS:           FreeBSD=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:freebsd:freebsd=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.27:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=192.168.178.27|IP-address=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.27]{[ return to 192.168.178.27 ]}\end{footnotesize}
+\subsection{192.168.178.25}
+\label{host:192.168.178.25}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:22:28 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.25 general/tcp Log]{general/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.25}
+
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.25 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           Linux Kernel=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+\rowcolor{white}{\verb=Other OS detections (in order of reliability):=}\\
+\rowcolor{white}{\verb=OS:           FreeBSD=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:freebsd:freebsd=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.25:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=192.168.178.25|IP-address=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.25]{[ return to 192.168.178.25 ]}\end{footnotesize}
+\subsection{192.168.178.36}
+\label{host:192.168.178.36}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:23:47 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.36 general/tcp Log]{general/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.36}
+
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.36 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=No Best matching OS identified. Please see the VT 'Unknown OS and Service Banner=}\\
+\rowcolor{white}{$\hookrightarrow$\verb= Reporting' (OID: 1.3.6.1.4.1.25623.1.0.108441) for possible ways to identify =}\\
+\rowcolor{white}{$\hookrightarrow$\verb=this OS.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.36:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=iphone-fj.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.36]{[ return to 192.168.178.36 ]}\end{footnotesize}
+\subsection{192.168.178.28}
+\label{host:192.168.178.28}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:27 2022 UTC\\
+Host scan end&Fri Apr 22 12:25:01 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.28 5094/tcp Log]{5094/tcp}&Log\\
+\hline
+\hyperref[port:192.168.178.28 general/tcp Log]{general/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.28}
+
+\subsubsection{Log 5094/tcp}
+\label{port:192.168.178.28 5094/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Service Detection with 'HELP' Request'}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This plugin performs service detection.\\
+  This plugin is a complement of find\_service.nasl. It sends a 'HELP'
+  request to the remaining unknown services and tries to identify them.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=A service responding with an SSL/TLS alert seems to be running on this port.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Service Detection with 'HELP' Request'=}\\
+OID:1.3.6.1.4.1.25623.1.0.11153\\
+Version used:
+\rowcolor{white}{\verb=2022-01-31T16:15:30Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: SSL/TLS: Version Detection}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+Enumeration and reporting of SSL/TLS protocol versions supported
+  by a remote service.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=The remote SSL/TLS service supports the following SSL/TLS protocol version(s):=}\\
+\rowcolor{white}{\verb=TLSv1.3=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Sends multiple connection requests to the remote service and
+  attempts to determine the SSL/TLS protocol versions supported by the service from the replies.\\
+  Note: The supported SSL/TLS protocol versions included in the report of this VT are reported
+  independently from the allowed / supported SSL/TLS ciphers.\\
+Details:
+\rowcolor{white}{\verb=SSL/TLS: Version Detection=}\\
+OID:1.3.6.1.4.1.25623.1.0.105782\\
+Version used:
+\rowcolor{white}{\verb=2021-12-06T15:42:24Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.28]{[ return to 192.168.178.28 ]}\end{footnotesize}
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.28 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.28:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=s20-fe-von-carina.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Best matching OS:=}\\
+\rowcolor{white}{\verb=OS:           Linux Kernel=}\\
+\rowcolor{white}{\verb=CPE:          cpe:/o:linux:kernel=}\\
+\rowcolor{white}{\verb=Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICM=}\\
+\rowcolor{white}{$\hookrightarrow$\verb=P))=}\\
+\rowcolor{white}{\verb=Concluded from ICMP based OS fingerprint=}\\
+\rowcolor{white}{\verb=Setting key "Host/runs_unixoide" based on this information=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.28]{[ return to 192.168.178.28 ]}\end{footnotesize}
+\subsection{192.168.178.42}
+\label{host:192.168.178.42}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:31:43 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.42 general/tcp Log]{general/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.42}
+
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.42 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=No Best matching OS identified. Please see the VT 'Unknown OS and Service Banner=}\\
+\rowcolor{white}{$\hookrightarrow$\verb= Reporting' (OID: 1.3.6.1.4.1.25623.1.0.108441) for possible ways to identify =}\\
+\rowcolor{white}{$\hookrightarrow$\verb=this OS.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.42:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=nasale.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.42]{[ return to 192.168.178.42 ]}\end{footnotesize}
+\subsection{192.168.178.41}
+\label{host:192.168.178.41}
+
+\begin{tabular}{ll}
+Host scan start&Fri Apr 22 12:21:26 2022 UTC\\
+Host scan end&Fri Apr 22 12:31:44 2022 UTC\\
+\end{tabular}
+
+\begin{longtable}{|l|l|}
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\hfill\ldots (continued) \ldots}\\
+\hline
+\rowcolor{gvm_report}Service (Port)&Threat Level\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{l}{\ldots (continues) \ldots}\\
+\endfoot
+\hline
+\endlastfoot
+\hline
+\hyperref[port:192.168.178.41 general/tcp Log]{general/tcp}&Log\\
+\hline
+\end{longtable}
+
+
+%\subsection*{Security Issues and Fixes -- 192.168.178.41}
+
+\subsubsection{Log general/tcp}
+\label{port:192.168.178.41 general/tcp Log}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: OS Detection Consolidation and Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.\\
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.\\
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community portal.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=No Best matching OS identified. Please see the VT 'Unknown OS and Service Banner=}\\
+\rowcolor{white}{$\hookrightarrow$\verb= Reporting' (OID: 1.3.6.1.4.1.25623.1.0.108441) for possible ways to identify =}\\
+\rowcolor{white}{$\hookrightarrow$\verb=this OS.=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=OS Detection Consolidation and Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.105937\\
+Version used:
+\rowcolor{white}{\verb=2022-04-05T09:27:51Z=}\\
+
+      \hline
+      \\
+\textbf{References}\\
+\rowcolor{white}{\verb=url: https://community.greenbone.net/c/vulnerability-tests=}\\
+\end{longtable}
+
+\begin{longtable}{|p{\textwidth * 1}|}
+\hline
+\rowcolor{gvm_log}{\color{white}{Log (CVSS: 0.0) }}\\
+\rowcolor{gvm_log}{\color{white}{NVT: Hostname Determination Reporting}}\\
+\hline
+\endfirsthead
+\hfill\ldots continued from previous page \ldots \\
+\hline
+\endhead
+\hline
+\ldots continues on next page \ldots \\
+\endfoot
+\hline
+\endlastfoot
+\\
+\textbf{Summary}\\
+The script reports information on how the hostname
+  of the target was determined.\\
+
+        \hline
+        \\
+\textbf{Vulnerability Detection Result}\\
+\rowcolor{white}{\verb=Hostname determination for IP 192.168.178.41:=}\\
+\rowcolor{white}{\verb=Hostname|Source=}\\
+\rowcolor{white}{\verb=nasale.fritz.box|Reverse-DNS=}\\
+
+          \hline
+          \\
+\textbf{Solution:}\\
+\\
+
+
+        \hline
+        \\
+\textbf{Log Method}\\
+Details:
+\rowcolor{white}{\verb=Hostname Determination Reporting=}\\
+OID:1.3.6.1.4.1.25623.1.0.108449\\
+Version used:
+\rowcolor{white}{\verb=2018-11-19T11:11:31Z=}\\
+\end{longtable}
+
+\begin{footnotesize}\hyperref[host:192.168.178.41]{[ return to 192.168.178.41 ]}\end{footnotesize}
+
+\begin{center}
+\medskip
+\rule{\textwidth}{0.1pt}
+
+This file was automatically generated.
+\end{center}
+
+\end{document}
