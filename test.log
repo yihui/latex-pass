@@ -1,0 +1,49 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.25)  26 MAR 2023 14:13
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**d:/School/DECO1400/A1/DECO_1400_DESIGN_REPORT_TZE_CHIAN_KAM_46909455
+(d:/School/DECO1400/A1/DECO_1400_DESIGN_REPORT_TZE_CHIAN_KAM_46909455.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (c:/Users/Game02/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(c:/Users/Game02/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+
+! LaTeX Error: File `rgb.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+d:/School/DECO1400/A1/DECO_1400_DESIGN_REPORT_TZE_CHIAN_KAM_46909455.tex:5: Emergency stop.
+<read *> 
+         
+l.5 \usepackage{rgb}{
+                     xcolor}^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 236 strings out of 477985
+ 3302 string characters out of 5837248
+ 1849382 words of memory out of 5000000
+ 20523 multiletter control sequences out of 15000+600000
+ 512585 words of font info for 33 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 33i,0n,38p,181b,36s stack positions out of 10000i,1000n,20000p,200000b,200000s
+d:/School/DECO1400/A1/DECO_1400_DESIGN_REPORT_TZE_CHIAN_KAM_46909455.tex:5:  ==> Fatal error occurred, no output PDF file produced!
