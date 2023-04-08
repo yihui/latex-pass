@@ -1,0 +1,851 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.8)  9 APR 2023 00:09
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**hm.tex
+(./hm.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-03-30> (/home/wx/.TinyTeX/texmf-local/tex/latex/assignment/assignment.cls
+Document Class: assignment 2023/01/11 Class for assignments
+(/home/wx/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/home/wx/.TinyTeX/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count181
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@subparagraph=\count186
+\c@figure=\count187
+\c@table=\count188
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/ctex.sty (/home/wx/.TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-03-30 L3 programming layer (loader) 
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2023-03-30 L3 backend support: XeTeX
+\g__graphics_track_int=\count189
+\l__pdf_internal_box=\box51
+\g__pdf_backend_object_int=\count190
+\g__pdf_backend_annotation_int=\count191
+\g__pdf_backend_link_int=\count192
+))
+Package: ctex 2022/07/14 v2.5.10 Chinese adapter in LaTeX (CTEX)
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/ctexhook.sty
+Package: ctexhook 2022/07/14 v2.5.10 Document and package hooks (CTEX)
+) (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/ctexpatch.sty
+Package: ctexpatch 2022/07/14 v2.5.10 Patching commands (CTEX)
+) (/home/wx/.TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+\l__ctex_tmp_int=\count193
+\l__ctex_tmp_box=\box52
+\l__ctex_tmp_dim=\dimen141
+\g__ctex_section_depth_int=\count194
+\g__ctex_font_size_int=\count195
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
+File: ctexopts.cfg 2022/07/14 v2.5.10 Option configuration file (CTEX)
+) (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
+File: ctex-engine-xetex.def 2022/07/14 v2.5.10 XeLaTeX adapter (CTEX)
+ (/home/wx/.TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+Package: xtemplate 2023-02-02 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen142
+\l__xtemplate_tmp_int=\count196
+\l__xtemplate_tmp_muskip=\muskip16
+\l__xtemplate_tmp_skip=\skip50
+)
+\l__xeCJK_tmp_int=\count197
+\l__xeCJK_tmp_box=\box53
+\l__xeCJK_tmp_dim=\dimen143
+\l__xeCJK_tmp_skip=\skip51
+\g__xeCJK_space_factor_int=\count198
+\l__xeCJK_begin_int=\count199
+\l__xeCJK_end_int=\count266
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+\l__xeCJK_last_skip=\skip52
+\c__xeCJK_none_node=\count267
+\g__xeCJK_node_int=\count268
+\c__xeCJK_CJK_node_dim=\dimen144
+\c__xeCJK_CJK-space_node_dim=\dimen145
+\c__xeCJK_default_node_dim=\dimen146
+\c__xeCJK_CJK-widow_node_dim=\dimen147
+\c__xeCJK_normalspace_node_dim=\dimen148
+\c__xeCJK_default-space_node_skip=\skip53
+\l__xeCJK_ccglue_skip=\skip54
+\l__xeCJK_ecglue_skip=\skip55
+\l__xeCJK_punct_kern_skip=\skip56
+\l__xeCJK_indent_box=\box54
+\l__xeCJK_last_penalty_int=\count269
+\l__xeCJK_last_bound_dim=\dimen149
+\l__xeCJK_last_kern_dim=\dimen150
+\l__xeCJK_widow_penalty_int=\count270
+
+Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
+(xtemplate)             argument(s) on line 2396.
+
+\l__xeCJK_fixed_punct_width_dim=\dimen151
+\l__xeCJK_mixed_punct_width_dim=\dimen152
+\l__xeCJK_middle_punct_width_dim=\dimen153
+\l__xeCJK_fixed_margin_width_dim=\dimen154
+\l__xeCJK_mixed_margin_width_dim=\dimen155
+\l__xeCJK_middle_margin_width_dim=\dimen156
+\l__xeCJK_bound_punct_width_dim=\dimen157
+\l__xeCJK_bound_margin_width_dim=\dimen158
+\l__xeCJK_margin_minimum_dim=\dimen159
+\l__xeCJK_kerning_total_width_dim=\dimen160
+\l__xeCJK_same_align_margin_dim=\dimen161
+\l__xeCJK_different_align_margin_dim=\dimen162
+\l__xeCJK_kerning_margin_width_dim=\dimen163
+\l__xeCJK_kerning_margin_minimum_dim=\dimen164
+\l__xeCJK_bound_dim=\dimen165
+\l__xeCJK_reverse_bound_dim=\dimen166
+\l__xeCJK_margin_dim=\dimen167
+\l__xeCJK_minimum_bound_dim=\dimen168
+\l__xeCJK_kerning_margin_dim=\dimen169
+\g__xeCJK_family_int=\count271
+\l__xeCJK_fam_int=\count272
+\g__xeCJK_fam_allocation_int=\count273
+\l__xeCJK_verb_case_int=\count274
+\l__xeCJK_verb_exspace_skip=\skip57
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty (/home/wx/.TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-02-02 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count275
+\l__fontspec_language_int=\count276
+\l__fontspec_strnum_int=\count277
+\l__fontspec_tmp_int=\count278
+\l__fontspec_tmpa_int=\count279
+\l__fontspec_tmpb_int=\count280
+\l__fontspec_tmpc_int=\count281
+\l__fontspec_em_int=\count282
+\l__fontspec_emdef_int=\count283
+\l__fontspec_strong_int=\count284
+\l__fontspec_strongdef_int=\count285
+\l__fontspec_tmpa_dim=\dimen170
+\l__fontspec_tmpb_dim=\dimen171
+\l__fontspec_tmpc_dim=\dimen172
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/home/wx/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/home/wx/.TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
+File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
+))
+\ccwd=\dimen173
+\l__ctex_ccglue_skip=\skip58
+)
+\l__ctex_ziju_dim=\dimen174
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/zhnumber/zhnumber.sty
+Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
+\l__zhnum_scale_int=\count286
+\l__zhnum_tmp_int=\count287
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
+File: zhnumber-utf8.cfg 2022/07/14 v3.0 Chinese numerals with UTF8 encoding
+)) (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese.def
+File: ctex-scheme-chinese.def 2022/07/14 v2.5.10 Chinese scheme for generic (CTEX)
+ (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
+File: ctex-name-utf8.cfg 2022/07/14 v2.5.10 Caption with encoding UTF-8 (CTEX)
+)) (/home/wx/.TinyTeX/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/ctex-c5size.clo
+File: ctex-c5size.clo 2022/07/14 v2.5.10 c5size option (CTEX)
+) (/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def
+File: ctex-fontset-ubuntu.def 2022/07/14 v2.5.10 Ubuntu fonts definition (CTEX)
+
+Package fontspec Info: Could not resolve font "AR PL KaitiM GB/B" (it probably
+(fontspec)             doesn't exist).
+
+
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Package fontspec Error: The font "AR PL KaitiM GB" cannot be found.
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.85   }
+        
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Package fontspec Error: The font "AR PL KaitiM GB" cannot be found.
+
+For immediate help type H <return>.
+ ...                                              
+                                                  
+l.85   }
+        
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTcountfeatures with nullfont; not an OpenType Layout font.
+<argument> \XeTeXOTcountfeatures \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Missing = inserted for \ifnum.
+<to be read again> 
+                   \l__fontspec_script_int 
+l.85   }
+        
+I was expecting to see `<', `=', or `>'. Didn't.
+
+/home/wx/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def:85: Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l__fontspec_script_int \l...
+l.85   }
+        
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 6011 strings out of 478674
+ 185070 string characters out of 5848840
+ 1843296 words of memory out of 5000000
+ 26121 multiletter control sequences out of 15000+600000
+ 514017 words of font info for 45 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 104i,0n,111p,422b,271s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+No pages of output.
