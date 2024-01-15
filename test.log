@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.1)  15 JAN 2024 10:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.1)  15 JAN 2024 10:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -856,27 +856,372 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 132.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/untxmia.fd
+File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 132.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 132.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+)
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 132.
+ [1{/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}
+\openout3 = `templateV6.1.ist'.
 
-! Font OT1/ptm/bx/n/12=ptmb7t at 12.0pt not loadable: Metric (TFM) file not found.
+{/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 132.
+ [2]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 241.
+
+
+Package natbib Warning: Citation `myhre2013' on page 3 undefined on input line 259.
+
+
+Package natbib Warning: Citation `andersson2015' on page 3 undefined on input line 259.
+
+
+Package natbib Warning: Citation `mills2017' on page 3 undefined on input line 262.
+
+
+Package natbib Warning: Citation `hansen2005' on page 3 undefined on input line 262.
+
+
+Package natbib Warning: Citation `gregory2016' on page 3 undefined on input line 262.
+
+
+Package natbib Warning: Citation `marshall2020' on page 3 undefined on input line 262.
+
+
+Package natbib Warning: Citation `pitari2016b' on page 3 undefined on input line 262.
+
+
+Package natbib Warning: Citation `pitari2016b' on page 3 undefined on input line 265.
+
+
+Package natbib Warning: Citation `myhre2013' on page 3 undefined on input line 266.
+
+
+Package natbib Warning: Citation `robock2000' on page 3 undefined on input line 270.
+
+
+Package natbib Warning: Citation `robock2000' on page 3 undefined on input line 273.
+
+
+Package natbib Warning: Citation `robock2000' on page 3 undefined on input line 275.
+
+
+Package natbib Warning: Citation `marshall2019' on page 3 undefined on input line 278.
+
+
+Package natbib Warning: Citation `toohey2019' on page 3 undefined on input line 278.
+
+
+Package natbib Warning: Citation `marshall2019' on page 3 undefined on input line 279.
+
+
+Package natbib Warning: Citation `marshall2019' on page 3 undefined on input line 279.
+
+
+Package natbib Warning: Citation `pitari2016b' on page 3 undefined on input line 280.
+
+
+Package natbib Warning: Citation `toohey2011' on page 3 undefined on input line 281.
+
+
+Package natbib Warning: Citation `toohey2019' on page 3 undefined on input line 281.
+
+
+Package natbib Warning: Citation `robock2000' on page 3 undefined on input line 283.
+
+
+Package natbib Warning: Citation `liu2012' on page 3 undefined on input line 285.
+
+
+Package natbib Warning: Citation `sigl2022' on page 3 undefined on input line 289.
+
+
+Package natbib Warning: Citation `sigl2022' on page 3 undefined on input line 291.
+
+
+Package natbib Warning: Citation `gregory2016' on page 3 undefined on input line 292.
+
+
+Package natbib Warning: Citation `solomon2011' on page 3 undefined on input line 292.
+
+
+Package natbib Warning: Citation `andersson2015' on page 3 undefined on input line 294.
+
+
+Package natbib Warning: Citation `robock2000' on page 3 undefined on input line 298.
+
+
+Package natbib Warning: Citation `zanchettin2019' on page 3 undefined on input line 298.
+
+
+Package natbib Warning: Citation `marshall2020' on page 3 undefined on input line 298.
+
+
+Package natbib Warning: Citation `marshall2022' on page 3 undefined on input line 298.
+
+
+Package natbib Warning: Citation `marshall2020' on page 3 undefined on input line 300.
+
+
+Package natbib Warning: Citation `marshall2020' on page 3 undefined on input line 304.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+
+Package natbib Warning: Citation `mills2017' on page 4 undefined on input line 306.
+
+
+Package natbib Warning: Citation `hansen2005' on page 4 undefined on input line 306.
+
+
+Package natbib Warning: Citation `gregory2016' on page 4 undefined on input line 307.
+
+
+Package natbib Warning: Citation `myhre2013' on page 4 undefined on input line 309.
+
+
+Package natbib Warning: Citation `gregory2016' on page 4 undefined on input line 311.
+
+
+Package natbib Warning: Citation `mills2017' on page 4 undefined on input line 312.
+
+
+Package natbib Warning: Citation `marshall2020' on page 4 undefined on input line 313.
+
+
+Package natbib Warning: Citation `niemeier2015' on page 4 undefined on input line 319.
+
+
+LaTeX Warning: Reference `eq:niemeier_exponential' on page 4 undefined on input line 327.
+
+
+Package natbib Warning: Citation `jones2005' on page 4 undefined on input line 328.
+
+
+Package natbib Warning: Citation `timmreck2010' on page 4 undefined on input line 330.
+
+
+Package natbib Warning: Citation `niemeier2015' on page 4 undefined on input line 333.
+
+
+Package natbib Warning: Citation `boer2007' on page 4 undefined on input line 339.
+
+
+Package natbib Warning: Citation `marvel2016' on page 4 undefined on input line 339.
+
+
+Package natbib Warning: Citation `merlis2014' on page 4 undefined on input line 339.
+
+
+Package natbib Warning: Citation `ollila2016' on page 4 undefined on input line 339.
+
+
+Package natbib Warning: Citation `richardson2019' on page 4 undefined on input line 339.
+
+
+Package natbib Warning: Citation `salvi2022' on page 4 undefined on input line 339.
+
+
+Package natbib Warning: Citation `wigley2005' on page 4 undefined on input line 339.
+
+
+Package natbib Warning: Citation `boer2007' on page 4 undefined on input line 342.
+
+
+Package natbib Warning: Citation `pauling2023' on page 4 undefined on input line 343.
+
+
+Package natbib Warning: Citation `bender2010' on page 4 undefined on input line 345.
+
+
+Package natbib Warning: Citation `richardson2019' on page 4 undefined on input line 347.
+
+
+Package natbib Warning: Citation `douglass2006' on page 4 undefined on input line 349.
+
+
+Package natbib Warning: Citation `boer2007' on page 4 undefined on input line 350.
+
+
+Package natbib Warning: Citation `salvi2022' on page 4 undefined on input line 350.
+
+
+Package natbib Warning: Citation `marvel2016' on page 4 undefined on input line 352.
+
+
+Package natbib Warning: Citation `richardson2019' on page 4 undefined on input line 352.
+
+
+Package natbib Warning: Citation `pauling2023' on page 4 undefined on input line 353.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+
+Package natbib Warning: Citation `mills2017' on page 5 undefined on input line 358.
+
+
+Package natbib Warning: Citation `hansen2005' on page 5 undefined on input line 358.
+
+
+Package natbib Warning: Citation `gregory2016' on page 5 undefined on input line 358.
+
+
+Package natbib Warning: Citation `marshall2020' on page 5 undefined on input line 358.
+
+
+Package natbib Warning: Citation `pitari2016b' on page 5 undefined on input line 358.
+
+
+Package natbib Warning: Citation `marshall2020' on page 5 undefined on input line 360.
+
+
+Package natbib Warning: Citation `niemeier2015' on page 5 undefined on input line 360.
+
+
+Underfull \hbox (badness 3291) in paragraph at lines 355--363
+[]\OT1/minntx/m/n/12 Several stud-ies have demon-strated a lin-ear re-la-tion-ship of ap-prox-i-mately
+ []
+
+
+LaTeX Warning: Reference `sec:method' on page 5 undefined on input line 368.
+
+
+LaTeX Warning: Reference `sec:results' on page 5 undefined on input line 371.
+
+
+LaTeX Warning: Reference `sec:discussion' on page 5 undefined on input line 371.
+
+
+Package natbib Warning: Citation `niemeier2015' on page 5 undefined on input line 373.
+
+
+LaTeX Warning: Reference `sec:conclusions' on page 5 undefined on input line 374.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+
+Package natbib Warning: Citation `danabasoglu2020' on page 6 undefined on input line 380.
+
+
+Package natbib Warning: Citation `gettleman2019' on page 6 undefined on input line 381.
+
+
+Package natbib Warning: Citation `smith2010' on page 6 undefined on input line 382.
+
+
+Package natbib Warning: Citation `danabasoglu2020' on page 6 undefined on input line 382.
+
+
+Package natbib Warning: Citation `gettleman2019' on page 6 undefined on input line 387.
+
+
+Package natbib Warning: Citation `liu2016' on page 6 undefined on input line 388.
+
+
+Package natbib Warning: Citation `liu2012' on page 6 undefined on input line 388.
+
+
+Package natbib Warning: Citation `liu2016' on page 6 undefined on input line 393.
+
+
+Package natbib Warning: Citation `liu2012' on page 6 undefined on input line 398.
+
+
+Package natbib Warning: Citation `liu2016' on page 6 undefined on input line 399.
+
+
+LaTeX Warning: Reference `tab:simulation-overview' on page 6 undefined on input line 404.
+
+[6]
+
+Package natbib Warning: Citation `timmreck2018' on page 7 undefined on input line 411.
+
+
+Package natbib Warning: Citation `zanchettin2016' on page 7 undefined on input line 412.
+
+
+Package natbib Warning: Citation `toohey2017' on page 7 undefined on input line 414.
+
+
+Package natbib Warning: Citation `ottobliesner2016' on page 7 undefined on input line 414.
+
+
+Package natbib Warning: Citation `jones2005' on page 7 undefined on input line 416.
+
+
+Package natbib Warning: Citation `gregory2016' on page 7 undefined on input line 428.
+
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.5pt on input line 438.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/sc' will be
+(Font)              scaled to size 10.5pt on input line 438.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 438.
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 438.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 438.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 438.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 438.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.66495> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 438.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.77502> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 438.
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 441.
+(/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+)
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 441.
+
+! Font TS1/ntxtlf/m/n/12=ts1-qtmr at 12.0pt not loadable: Metric (TFM) file not found.
 <to be read again> 
                    relax 
-l.132 \maketitle
-                {} \glsresetall{}
+l.441 ...  & Lat, lon, alt [\si{\degree\mathrm{N}}
+                                                  , \si{\degree\mathrm{E}}, ...
 ? 
 ! Emergency stop.
 <to be read again> 
                    relax 
-l.132 \maketitle
-                {} \glsresetall{}
+l.441 ...  & Lat, lon, alt [\si{\degree\mathrm{N}}
+                                                  , \si{\degree\mathrm{E}}, ...
 End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
- 20882 strings out of 476115
- 396549 string characters out of 5793983
- 1928457 words of memory out of 5000000
- 42651 multiletter control sequences out of 15000+600000
- 575673 words of font info for 73 fonts, out of 8000000 for 9000
+ 21104 strings out of 476115
+ 400579 string characters out of 5793983
+ 1939457 words of memory out of 5000000
+ 42825 multiletter control sequences out of 15000+600000
+ 611825 words of font info for 154 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 95i,13n,107p,2370b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 95i,17n,107p,2370b,756s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
