@@ -1,0 +1,858 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.1)  15 JAN 2024 10:10
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**templateV6.1.tex
+(./templateV6.1.tex
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-12-11>
+(./ametsocV6.1.cls
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen143
+)) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen144
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count194
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count195
+\leftroot@=\count196
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count197
+\DOTSCASE@=\count198
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen145
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count199
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count266
+\dotsspace@=\muskip16
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
+\tag@help=\toks19
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
+\andhelp@=\toks20
+\eqnshift@=\dimen146
+\alignsep@=\dimen147
+\tagshift@=\dimen148
+\tagwidth@=\dimen149
+\totwidth@=\dimen150
+\lineht@=\dimen151
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup9
+\symitalic=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/newtxtext.sty
+Package: newtxtext 2023/12/18 v1.735(Michael Sharpe) latex and unicode latex support for TeXGyreTermesX
+ `newtxtext' v1.735, 2023/12/18 Text macros taking advantage of TeXGyre Termes and its extensions (msharpe) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/xpatch/xpatch.sty (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-12-11 L3 programming layer (loader) 
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count272
+\l__pdf_internal_box=\box53
+))
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count273
+)) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
+)
+\XKV@depth=\count274
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/xstring/xstring.sty (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/xstring/xstring.tex
+\xs_counta=\count275
+\xs_countb=\count276
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/kastrup/binhex.tex)
+\ntx@tmpcnta=\count277
+\ntx@cnt=\count278
+\ntxsups@scale=\dimen152
+\ntxsups@raise=\dimen153
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+Package: fontaxes 2020/07/21 v1.0e Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \swshape on input line 35.
+LaTeX Info: Redefining \scshape on input line 37.
+LaTeX Info: Redefining \sscshape on input line 39.
+LaTeX Info: Redefining \ulcshape on input line 41.
+LaTeX Info: Redefining \textsw on input line 47.
+LaTeX Info: Redefining \textssc on input line 48.
+LaTeX Info: Redefining \textulc on input line 49.
+)
+\tx@sixem=\dimen154
+\tx@y=\dimen155
+\tx@x=\dimen156
+\tx@tmpdima=\dimen157
+\tx@tmpdimb=\dimen158
+\tx@tmpdimc=\dimen159
+\tx@tmpdimd=\dimen160
+\tx@tmpdime=\dimen161
+\tx@tmpdimf=\dimen162
+\tx@dimA=\dimen163
+\tx@dimAA=\dimen164
+\tx@dimB=\dimen165
+\tx@dimBB=\dimen166
+\tx@dimC=\dimen167
+LaTeX Info: Redefining \oldstylenums on input line 888.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/newtxmath.sty
+Package: newtxmath 2023/11/05 v1.732
+ `newtxmath' v1.732, 2023/11/05 Math macros based originally on txfonts (msharpe) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
+\tx@cntz=\count279
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/kastrup/binhex.tex)
+\tx@Isdigit=\count280
+\tx@IsAlNum=\count281
+\tx@tA=\toks25
+\tx@tB=\toks26
+\tx@su=\read2
+
+amsthm NOT loaded
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 390.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/ztmcm/m/n --> OT1/minntx/m/n on input line 390.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/ztmcm/m/n --> OT1/minntx/m/n on input line 390.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/minntx/m/n --> OT1/minntx/b/n on input line 391.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 397.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/qhv/m/n on input line 397.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/qhv/m/n on input line 397.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 398.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/ptm/m/it --> OT1/minntx/m/it on input line 398.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/ptm/m/it --> OT1/minntx/m/it on input line 398.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 399.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 399.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 399.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 401.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/ptm/bx/n --> OT1/minntx/b/n on input line 401.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/ptm/bx/n --> OT1/minntx/b/n on input line 401.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/minntx/m/it --> OT1/minntx/b/it on input line 402.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/qhv/m/n --> OT1/qhv/b/n on input line 403.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/ntxtt/m/n --> OT1/ntxtt/b/n on input line 404.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 506.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/ztmcm/m/it --> OML/ntxmi/m/it on input line 506.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/ztmcm/m/it --> OML/ntxmi/m/it on input line 506.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 507.
+\symlettersA=\mathgroup11
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 562.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 564.
+Now handling font encoding LMS ...
+... no UTF-8 mapping file for font encoding LMS
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 583.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 583.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/ztmcm/m/n --> LMS/ntxsy/m/n on input line 583.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 583.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/ztmcm/m/n --> LMS/ntxsy/m/n on input line 583.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 584.
+\symAMSm=\mathgroup12
+LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
+(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 609.
+\symsymbolsC=\mathgroup13
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 630.
+Now handling font encoding LMX ...
+... no UTF-8 mapping file for font encoding LMX
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 643.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 643.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/ztmcm/m/n --> LMX/ntxexx/m/n on input line 643.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 643.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/ztmcm/m/n --> LMX/ntxexx/m/n on input line 643.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 644.
+\symlargesymbolsTXA=\mathgroup14
+LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
+(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 658.
+\tx@sbptoks=\toks27
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 889.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 890.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 892.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 894.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 898.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 899.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 970.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 971.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 2044.
+LaTeX Info: Redefining \Bbbk on input line 2834.
+LaTeX Info: Redefining \not on input line 2982.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip53
+\f@nch@O@elh=\skip54
+\f@nch@O@erh=\skip55
+\f@nch@O@olh=\skip56
+\f@nch@O@orh=\skip57
+\f@nch@O@elf=\skip58
+\f@nch@O@erf=\skip59
+\f@nch@O@olf=\skip60
+\f@nch@O@orf=\skip61
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip62
+\bibsep=\skip63
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count282
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
+\c@tracingmulticols=\count283
+\mult@box=\box54
+\multicol@leftmargin=\dimen168
+\c@unbalance=\count284
+\c@collectmore=\count285
+\doublecol@number=\count286
+\multicoltolerance=\count287
+\multicolpretolerance=\count288
+\full@width=\dimen169
+\page@free=\dimen170
+\premulticols=\dimen171
+\postmulticols=\dimen172
+\multicolsep=\skip64
+\multicolbaselineskip=\skip65
+\partial@page=\box55
+\last@line=\box56
+\mc@boxedresult=\box57
+\maxbalancingoverflow=\dimen173
+\mult@rightbox=\box58
+\mult@grightbox=\box59
+\mult@firstbox=\box60
+\mult@gfirstbox=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\c@minrows=\count289
+\c@columnbadness=\count290
+\c@finalcolumnbadness=\count291
+\last@try=\dimen174
+\multicolovershoot=\dimen175
+\multicolundershoot=\dimen176
+\mult@nat@firstbox=\box98
+\colbreak@box=\box99
+\mc@col@check@num=\count292
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count293
+\rotFPtop=\skip66
+\rotFPbot=\skip67
+\rot@float@box=\box100
+\rot@mess@toks=\toks28
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+
+
+Package appendix Warning: No \appendix command in this document class!
+(appendix)                Trying to create an appendix will probably fail.
+
+\c@@pps=\count294
+\c@@ppsavesec=\count295
+\c@@ppsaveapp=\count296
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+\linenopenalty=\count297
+\output=\toks29
+\linenoprevgraf=\count298
+\linenumbersep=\dimen177
+\linenumberwidth=\dimen178
+\c@linenumber=\count299
+\c@pagewiselinenumber=\count300
+\c@LN@truepage=\count301
+\c@internallinenumber=\count302
+\c@internallinenumbers=\count303
+\quotelinenumbersep=\dimen179
+\bframerule=\dimen180
+\bframesep=\dimen181
+\bframebox=\box101
+\linenoamsmath@ams@eqpen=\count304
+LaTeX Info: Redefining \\ on input line 3180.
+)
+\c@loopnum=\count305
+\thanksnum=\count306
+\savethanksnum=\count307
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count308
+\Gm@cntv=\count309
+\c@Gm@tempcnt=\count310
+\Gm@bindingoffset=\dimen182
+\Gm@wd@mp=\dimen183
+\Gm@odd@mp=\dimen184
+\Gm@even@mp=\dimen185
+\Gm@layoutwidth=\dimen186
+\Gm@layoutheight=\dimen187
+\Gm@layouthoffset=\dimen188
+\Gm@layoutvoffset=\dimen189
+\Gm@dimlist=\toks30
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen190
+\ar@mcellbox=\box102
+\extrarowheight=\dimen191
+\NC@list=\toks31
+\extratabsurround=\skip68
+\backup@length=\skip69
+\ar@cellbox=\box103
+)
+\everycr=\toks32
+\minrowclearance=\skip70
+\rownum=\count311
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip71
+\multirow@cntb=\count312
+\multirow@dima=\skip72
+\bigstrutjot=\dimen192
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2023-11-14 v3.3.9 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count313
+\l__siunitx_number_exponent_fixed_int=\count314
+\l__siunitx_number_min_decimal_int=\count315
+\l__siunitx_number_min_integer_int=\count316
+\l__siunitx_number_round_precision_int=\count317
+\l__siunitx_number_lower_threshold_int=\count318
+\l__siunitx_number_upper_threshold_int=\count319
+\l__siunitx_number_group_first_int=\count320
+\l__siunitx_number_group_size_int=\count321
+\l__siunitx_number_group_minimum_int=\count322
+\l__siunitx_angle_tmp_dim=\dimen193
+\l__siunitx_angle_marker_box=\box104
+\l__siunitx_angle_unit_box=\box105
+\l__siunitx_compound_count_int=\count323
+\l__siunitx_table_tmp_box=\box106
+\l__siunitx_table_tmp_dim=\dimen194
+\l__siunitx_table_column_width_dim=\dimen195
+\l__siunitx_table_integer_box=\box107
+\l__siunitx_table_decimal_box=\box108
+\l__siunitx_table_uncert_box=\box109
+\l__siunitx_table_before_box=\box110
+\l__siunitx_table_after_box=\box111
+\l__siunitx_table_before_dim=\dimen196
+\l__siunitx_table_carry_dim=\dimen197
+\l__siunitx_unit_tmp_int=\count324
+\l__siunitx_unit_position_int=\count325
+\l__siunitx_unit_total_int=\count326
+
+Package siunitx Info: Option "separate-uncertainty" has been deprecated in
+(siunitx)             this release.
+(siunitx)             
+(siunitx)             Use "uncertainty-mode = separate" as a replacement.
+
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/mhchem/mhchem.sty
+Package: mhchem 2021/12/31 v4.09 for typesetting chemical formulae
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count327
+\calc@Bcount=\count328
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
+\calc@Askip=\skip73
+\calc@Bskip=\skip74
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count329
+\calc@Cskip=\skip75
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/chemgreek/chemgreek.sty
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
+\l__chemgreek_tmpa_int=\count330
+\g__chemgreek_tmpa_int=\count331
+)
+\l__mhchem_ce_distanceFromLastComma_int=\count332
+\__mhchem_arrow_extPgfLength_skip=\skip76
+\mhchem@minispace@tmp=\skip77
+\mhchem@minibackspace@tmp=\skip78
+\mhchem@bondwidth=\skip79
+\mhchem@bondheight=\skip80
+\mhchem@smallbondwidth@tmpA=\skip81
+\mhchem@smallbondwidth@tmpB=\skip82
+\mhchem@smallbondwidth=\skip83
+\mhchem@bondtmp@minussidebearingleft=\skip84
+\mhchem@bondtmp@minussidebearingright=\skip85
+\l__mhchem_option_version_int=\count333
+\mhchem@option@minusmathsidebearingleft=\dimen256
+\mhchem@option@minusmathsidebearingright=\dimen257
+\mhchem@option@minustextsidebearingleft=\dimen258
+\mhchem@option@minustextsidebearingright=\dimen259
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2023/09/29 v4.53 (NLCT)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2022/10/14 v2.08 (NLCT)
+\@glsmfirst=\toks33
+\@glsmrest=\toks34
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2019/09/27 v2.32 (NLCT)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count334
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2019/09/27 v2.32 (NLCT)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+ `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count335
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count336
+\FP@xia=\count337
+\FP@xib=\count338
+\FP@xfa=\count339
+\FP@xfb=\count340
+\FP@rega=\count341
+\FP@regb=\count342
+\FP@regs=\count343
+\FP@times=\count344
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count345
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks35
+\@dtl@tmpcount=\count346
+\dtl@tmplength=\skip86
+\dtl@sortresult=\count347
+\@dtl@numgrpsepcount=\count348
+\@dtl@datatype=\count349
+\dtl@codeA=\count350
+\dtl@codeB=\count351
+\@dtl@foreach@level=\count352
+)
+\gls@level=\count353
+\@gls@tmpb=\toks36
+\gls@tmplen=\skip87
+\glskeylisttok=\toks37
+\glslabeltok=\toks38
+\glsshorttok=\toks39
+\glslongtok=\toks40
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
+Package: glossary-hypernav 2023/09/29 v4.53 (NLCT)
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+Package: glossary-list 2023/09/29 v4.53 (NLCT)
+\glslistdottedwidth=\skip88
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+Package: glossary-long 2023/09/29 v4.53 (NLCT)
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip89
+\LTright=\skip90
+\LTpre=\skip91
+\LTpost=\skip92
+\LTchunksize=\count354
+\LTcapwidth=\dimen260
+\LT@head=\box112
+\LT@firsthead=\box113
+\LT@foot=\box114
+\LT@lastfoot=\box115
+\LT@gbox=\box116
+\LT@cols=\count355
+\LT@rows=\count356
+\c@LT@tables=\count357
+\c@LT@chunks=\count358
+\LT@p@ftn=\toks41
+)
+\glsdescwidth=\skip93
+\glspagelistwidth=\skip94
+) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+Package: glossary-tree 2023/09/29 v4.53 (NLCT)
+\glstreeindent=\skip95
+)) (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
+Package: glossaries-extra 2023/09/29 v1.53 (NLCT)
+\@glsxtr@leveloffset=\count359
+\glsxtrresourcecount=\count360
+\@glsxtrnewgls@inner=\count361
+\glsshortpltok=\toks42
+\glslongpltok=\toks43
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def
+File: glossaries-extra-abbrstyles.def 2023/06/28 v1.52 (NLCT)
+)
+\mglselementindex=\count362
+)
+runsystem(makeindex -s templateV6.1.ist -t templateV6.1.glg -o templateV6.1.gls templateV6.1.glo)...executed safely (allowed).
+
+\glswrite=\write3
+\glo@main@file=\write4
+\openout4 = `templateV6.1.glo'.
+
+Package glossaries Info: Writing glossary file templateV6.1.glo on input line 41.
+ (./definitions/acronyms.tex)
+LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 129.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
+File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
+)
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 129.
+ (./templateV6.1.aux)
+\openout1 = `templateV6.1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 129.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 129.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/omlntxmi.fd
+File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
+)
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 129.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 129.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/untxexa.fd
+File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
+)
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 129.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 129.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
+)
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 129.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 129.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/lmxntxexx.fd
+File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
+)
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Info: Command `\dddot' is already robust on input line 129.
+LaTeX Info: Command `\ddddot' is already robust on input line 129.
+\c@mv@tabular=\count363
+\c@mv@boldtabular=\count364
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.70166pt, 418.25368pt, 107.55254pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=-0.56833pt
+* \evensidemargin=35.28255pt
+* \topmargin=5.13666pt
+* \headheight=12.0pt
+* \headsep=12.0pt
+* \topskip=10.0pt
+* \footskip=35.0pt
+* \marginparwidth=48.0pt
+* \marginparsep=10.0pt
+* \columnsep=12.0pt
+* \skip\footins=6.0pt plus 0.1pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=-36.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Package chemgreek Info: Activating mapping `newtx' on line 129.
+
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 14.4pt on input line 132.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 132.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 5.0pt on input line 132.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 132.
+(/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 4.85pt on input line 132.
+
+! Font OT1/phv/m/n/5=phvr7t at 4.85pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   relax 
+l.132 \maketitle
+                {} \glsresetall{}
+? 
+! Emergency stop.
+<to be read again> 
+                   relax 
+l.132 \maketitle
+                {} \glsresetall{}
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 20711 strings out of 476115
+ 393373 string characters out of 5793983
+ 1925457 words of memory out of 5000000
+ 42509 multiletter control sequences out of 15000+600000
+ 561271 words of font info for 41 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 95i,3n,107p,2370b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
