@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.1)  15 JAN 2024 10:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.1)  15 JAN 2024 10:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -832,8 +832,32 @@ File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 4.85pt on input line 132.
+LaTeX Font Info:    Trying to load font information for OT1+ntxsupsalt on input line 132.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/ot1ntxsupsalt.fd
+File: ot1ntxsupsalt.fd 2023/09/17 v1.0
+)
+LaTeX Font Info:    Font shape `OT1/ntxsupsalt/m/n' will be
+(Font)              scaled to size 12.0pt on input line 132.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.5pt on input line 132.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
+(Font)              scaled to size 8.5pt on input line 132.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 132.
+LaTeX Font Info:    Font shape `OT1/ntxsupsalt/m/it' will be
+(Font)              scaled to size 12.0pt on input line 132.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 132.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/newtx/ot1minntx.fd
+File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 132.
+ (/home/een023/.local/share/mise/installs/tinytex/2024.01/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
 
-! Font OT1/phv/m/n/5=phvr7t at 4.85pt not loadable: Metric (TFM) file not found.
+! Font OT1/ptm/bx/n/12=ptmb7t at 12.0pt not loadable: Metric (TFM) file not found.
 <to be read again> 
                    relax 
 l.132 \maketitle
@@ -848,11 +872,11 @@ End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
- 20711 strings out of 476115
- 393373 string characters out of 5793983
- 1925457 words of memory out of 5000000
- 42509 multiletter control sequences out of 15000+600000
- 561271 words of font info for 41 fonts, out of 8000000 for 9000
+ 20882 strings out of 476115
+ 396549 string characters out of 5793983
+ 1928457 words of memory out of 5000000
+ 42651 multiletter control sequences out of 15000+600000
+ 575673 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 95i,3n,107p,2370b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 95i,13n,107p,2370b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
