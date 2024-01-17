@@ -1,0 +1,50 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=latex 2024.1.17)  17 JAN 2024 21:13
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**C:/Users/Gekata/Documents/GitProjects/Lol/test.tex
+(c:/Users/Gekata/Documents/GitProjects/Lol/test.tex
+LaTeX2e <2023-11-01>
+L3 programming layer <2024-01-04>
+(c:/Users/Gekata/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(c:/Users/Gekata/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+
+! LaTeX Error: File `cmap.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: x
+
+! Emergency stop.
+<read *> 
+         
+l.6 \usepackage
+               {mathtext} 				% русские буквы в формулах
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 233 strings out of 476126
+ 3134 string characters out of 5792640
+ 1924525 words of memory out of 5000000
+ 22379 multiletter control sequences out of 15000+600000
+ 558367 words of font info for 37 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 35i,0n,38p,163b,36s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.
