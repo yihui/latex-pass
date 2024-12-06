@@ -1,0 +1,1036 @@
+---
+title: Quant Study 2 - Report
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+  # html_document:
+  #   toc: true
+  #   toc_float: true
+---
+
+<!-- custom functions/hooks -->
+```{r, include = FALSE}
+# custom functions/hooks
+knitr::knit_hooks$set(chunk = function(x, options) {
+  if (identical(options$pagebreak, TRUE)) {
+    paste("\\pagebreak", x, "\\pagebreak", sep = "\n")
+  } else {
+    x
+  }
+})
+```
+
+<!-- GLOBAL KNIT OPTIONS -->
+```{r, include = FALSE}
+# GLOBAL KNIT OPTIONS
+
+# global chunk options
+# echo = FALSE -> no code in final document
+# warning = FALSE -> no warning messages in final document
+# message = FALSE -> no messages in final document
+# pagebreak = TRUE -> custom function defined above to put each plot on extra page
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+<!-- load all necessary packages -->
+```{r}
+# load all necessary packages
+
+library(dplyr) # data cleaning
+library(tidyr) # data cleaning
+library(knitr) # tables
+library(here) 
+library(brms) # bayesian models
+library(emmeans) # pairwise contrast comparison
+library(tidybayes) # plotting Bayesian results
+library(ggplot2) # plotting
+library(ggrepel) # labeling of plots
+library(pastecs) # desc stats
+library(kableExtra) # making tables,captions etc.
+
+# specify decimal settings
+options(scipen = 5)
+
+# set seed for reproducibility
+set.seed(1001)
+
+# panel.grid.minor.x -> set white theme
+# panel.grid.minor.y -> disable minor grid lines
+# panel.border -> no border around plot
+theme_set(
+  theme_bw() %+replace%
+  theme(
+    panel.grid.minor.x = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.border = element_blank(),
+    axis.text.y = element_text(hjust = 0)
+  )
+)
+```
+
+<!-- define often reoccurring labels etc -->
+```{r}
+# define often reoccuring labels etc
+labels_likert_1_7 <- c("1\nstimme\ngar nicht zu", 2, 3, 4, 5, 6, "7\nstimme\nvollkommen\nzu")
+labels_likert_1_7_english <- c("1\nstrongly\ndisagree", 2, 3, 4, 5, 6, "7\nstrongly\nagree")
+
+labels_likert_extremes <- c("Stimme\ngar nicht\nzu", "Stimme\nvollkommen\nzu")
+labels_likert_extremes_english <- c("Strongly\ndisagree", "Strongly\nagree")
+
+# specify order of purposes and study groups
+# BANNER
+purpose_order_BANNER <- c(
+  "BANNER_website_adjustment_STATE_ULTIMO",
+  "BANNER_website_statistics_STATE_ULTIMO",
+  "BANNER_content_customization_STATE_ULTIMO",
+  "BANNER_advertisement_customization_STATE_ULTIMO"
+)
+# EA
+purpose_order_EA <- c(
+  "EA_website_adjustment_STATE_ULTIMO",
+  "EA_website_statistics_STATE_ULTIMO",
+  "EA_content_customization_STATE_ULTIMO",
+  "EA_advertisement_customization_STATE_ULTIMO"
+)
+
+# study groups
+group_desc_order <- c(
+  "CB (status quo)",
+  "CB (our version)",
+  "CA + CB (our version)",
+  "CA + CB (our version) + seal",
+  "CA + CB (our version) + risk reduction"
+)
+```
+
+<!-- create our own colour palette -->
+```{r}
+# create our own colour palette
+color_palette <- c(
+  "accept_all" = "#f8766d",
+  "reject_all" = "#7cae00",
+  "save" = "#00bfc4",
+  "timeout" = "#c77cff"
+)
+
+```
+
+<!-- Import data -->
+```{r}
+# import cleaned data
+d <- readRDS(file <- here::here("data", "quant2_data_readyForAnalysis.Rds"))
+
+d <- d %>%
+  mutate(
+    group_desc = case_when(
+      group == 1 ~ "CB (status quo)",
+      group == 2 ~ "CB (our version)",
+      group == 3 ~ "CA + CB (our version)",
+      group == 4 ~ "CA + CB (our version) + seal",
+      group == 5 ~ "CA + CB (our version) + risk reduction"
+    )
+  ) %>%
+  mutate(
+    group_desc = factor(group_desc, levels = group_desc_order)
+  )
+
+# drop factor levels with 0 observations
+d$group <- droplevels(d$group)
+```
+
+
+# Information on the study population
+## Number of participants
+We have currently collected data from *N* = `r length(unique(d$userID))`.
+
+```{r}
+tab_participant_info <- d %>%
+  group_by(group_desc) %>%
+  summarise(n = n_distinct(userID))
+
+kable(
+  tab_participant_info,
+  col.names = c("Study group", "Number of participants"),
+  caption = "How many study participants are currently in each study group?"
+)
+```
+
+## Age of participants
+```{r}
+ggplot(d, aes(SD01)) +
+    geom_bar(fill = "#084594") +
+    theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
+    xlab(NULL) +
+    ylab("study participants")
+```
+
+## Gender of participants
+```{r}
+table(d$SD02)
+```
+
+# Descriptive statistics
+```{r}
+# descriptive stats for:
+#   - perceived control
+#   - privacy fatigue
+#   - privacy concerns
+#   - 
+d %>%
+  ungroup() %>%
+  transmute(
+    wgkontrolle_mean = rowMeans(select(d, starts_with("WK01"))),
+    privmuedigkeit_mean = rowMeans(select(d, starts_with("PM01"))),
+    privbedenken_coll_mean = rowMeans(select(d, PB01_01, PB01_02, PB01_03, PB01_04)),
+    privbedenken_awa_mean = rowMeans(select(d, PB01_05, PB01_08)),
+    privbedenken_ctrl_mean = rowMeans(select(d, PB01_06, PB01_07))
+  ) %>%
+  pastecs::stat.desc(.)
+```
+
+## Cronbach's alpha
+```{r}
+# Cronbach's alpha
+#  wahrgenommene kontrolle (perceived control)
+cronbach_wgkontrolle <- psych::alpha(d[, c(
+  "WK01_01",
+  "WK01_02",
+  "WK01_03",
+  "WK01_04",
+  "WK01_05"
+)])
+
+# privacy concerns IUIPC-8 (3 sub-scales)
+# coll = PB01_01, PB01_02, PB01_03, PB01_04 (collection)
+# awa = PB01_05, PB01_08 (awareness)
+# ctrl = PB01_06, PB01_07 (control)
+
+cronbach_privbedenken_coll <- psych::alpha(d[, c(
+  "PB01_01",
+  "PB01_02",
+  "PB01_03",
+  "PB01_04"
+)])
+cronbach_privbedenken_awa <- psych::alpha(d[, c(
+  "PB01_05",
+  "PB01_08"
+)])
+cronbach_privbedenken_ctrl <- psych::alpha(d[, c(
+  "PB01_06",
+  "PB01_07"
+)])
+
+# privacy fatigue
+cronbach_privmuedigkeit <- psych::alpha(d[, c(
+  "PM01_01",
+  "PM01_02",
+  "PM01_03",
+  "PM01_04",
+  "PM01_05",
+  "PM01_06"
+)])
+
+# get Cronbach's alpha results
+cronbach_wgkontrolle
+print("cronbach_wgkontrolle: excellent internal consistency raw alpha =  0.92 (no item increases overall alpha)")
+
+cronbach_privbedenken_coll
+print("cronbach_privbedenken_coll: good internal consistency raw alpha =  0.83 (no item increases overall alpha)")
+
+cronbach_privbedenken_awa
+print("cronbach_privbedenken_awa: good internal consistency raw alpha =  0.72 (no item increases overall alpha)")
+
+cronbach_privbedenken_ctrl
+print("cronbach_privbedenken_ctrl: acceptable internal consistency raw alpha =  0.64 (no item increases overall alpha)")
+
+cronbach_privmuedigkeit
+print("cronbach_privmuedigkeit: good internal consistency raw alpha =  0.84 (no item increases overall alpha)")
+
+```
+
+# Informedness
+True positives = risk/benefit is present and is (correctly) recognised as present  
+True negative = risk/benefit is not present and is (correctly) recognised as absent
+
+## Informedness - dividing the Likert scale into right / wrong 
+```{r}
+# Calculate the baseline values for "CB (Status Quo)"
+baseline <- d %>%
+  group_by(group_desc) %>%
+  filter(group_desc == "CB (status quo)") %>%
+  summarise(
+    baseline_true_positives_perc = mean(IF_true_pos_perc),
+    baseline_true_negatives_perc = mean(IF_true_neg_perc)
+  )
+
+tab_informedness <- d %>%
+  group_by(group_desc) %>%
+  summarise(
+    true_positives_perc = mean(IF_true_pos_perc),
+    true_negatives_perc = mean(IF_true_neg_perc)
+  )
+
+# Calculate the differences and the overall change
+tab_informedness_test <- d %>%
+  group_by(group_desc) %>%
+  summarise(
+    true_positives_perc = mean(IF_true_pos_perc),
+    diff_toBaseline_true_positives = true_positives_perc - baseline$baseline_true_positives_perc,
+    true_negatives_perc = mean(IF_true_neg_perc),
+    diff_toBaseline_true_negatives = true_negatives_perc - baseline$baseline_true_negatives_perc,
+    overall_diff = diff_toBaseline_true_positives + diff_toBaseline_true_negatives
+  )
+
+
+kable(
+  tab_informedness_test,
+  col.names = c("Study group", "% True Positives (TP)", "% Dif TP to Status Quo", "% True Negatives (TN)", "% Dif TN to Status Quo", "Dif Total"),
+  digits = 1,
+  caption = "What percentage of risks and benefits were correctly recognised by the study participants on average?"
+)
+
+```
+
+## Informedness - Descriptive statistics
+### Informedness true positives
+```{r}
+# plot informedness_true_pos_mean by group
+d %>%
+  ggplot(., aes(x = group, y = informedness_true_pos_mean)) +
+  geom_violin(trim = T, fill = "grey") +
+  geom_boxplot(width = 0.2) +
+  scale_y_continuous(
+    breaks = 1:7,
+    limits = c(1, 7)
+  )
+
+# get summary stats for informedness_true_pos_mean by group
+d %>%
+  group_by(group) %>%
+  summarise(
+    mean = mean(informedness_true_pos_mean),
+    sd = sd(informedness_true_pos_mean),
+    min = min(informedness_true_pos_mean),
+    max = max(informedness_true_pos_mean),
+    n = n()
+  )
+```
+
+### Informedness true negatives
+```{r}
+# plot informedness_true_neg_mean by group
+d %>%
+  ggplot(., aes(x = group, y = informedness_true_neg_mean)) +
+  geom_violin(trim = T, fill = "grey") +
+  geom_boxplot(width = 0.2) +
+  scale_y_continuous(
+    breaks = 1:7,
+    limits = c(1, 7)
+  )
+
+# get summary stats for informedness_true_neg_mean by group
+d %>%
+  group_by(group) %>%
+  summarise(
+    mean = mean(informedness_true_neg_mean),
+    sd = sd(informedness_true_neg_mean),
+    min = min(informedness_true_neg_mean),
+    max = max(informedness_true_neg_mean),
+    n = n()
+  )
+```
+
+## Informedness - statistical model results (m1)
+### Informedness true positives
+```{r}
+# import m1 = informedness model
+m1 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "m1.rds"
+  )
+)
+
+m1 %>%
+  emmeans(pairwise ~ group, resp = "informednesstrueposmeanrounded") %>%
+  gather_emmeans_draws() %>%
+  filter(.grid == "contrasts") %>%
+  ggplot(aes(x = .value, y = contrast)) +
+  stat_halfeye() +
+  xlab("Posterior distributions with mean and 95% credible interval")
+
+# import informedness_true_pos_bygroup_mean95qi_m1
+informedness_true_pos_bygroup_mean95qi_m1 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "informedness_true_pos_bygroup_mean95qi_m1.rds"
+  )
+)
+
+informedness_true_pos_bygroup_mean95qi_m1
+```
+**Interpretation - informedness true positives**:  
+group1 vs group2: no substantial difference  
+group1 vs group3: group 1 is substantially lower than group 3  
+group1 vs group4: (!on the edge!) group 1 is potentially lower than group 4  
+group1 vs group5: no substantial difference  
+group2 vs group3: no substantial difference  
+group2 vs group4: no substantial difference  
+group2 vs group5: no substantial difference  
+group3 vs group4: no substantial difference  
+group3 vs group5: no substantial difference  
+group4 vs group5: no substantial difference  
+
+### Informedness true negatives
+```{r}
+m1 %>%
+  emmeans(pairwise ~ group, resp = "informednesstruenegmeanrounded") %>%
+  gather_emmeans_draws() %>%
+  filter(.grid == "contrasts") %>%
+  ggplot(aes(x = .value, y = contrast)) +
+  stat_halfeye() +
+  xlab("Posterior distributions with mean and 95% credible interval")
+
+# import informedness_true_neg_bygroup_mean95qi_m1
+informedness_true_neg_bygroup_mean95qi_m1 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "informedness_true_neg_bygroup_mean95qi_m1.rds"
+  )
+)
+
+informedness_true_neg_bygroup_mean95qi_m1
+```
+**Interpretation - informedness true negatives**:  
+group1 vs group2: group 1 is substantially higher than group 2  
+group1 vs group3: group 1 is substantially higher than group 3  
+group1 vs group4: no substantial difference  
+group1 vs group5: no substantial difference  
+group2 vs group3: no substantial difference  
+group2 vs group4: no substantial difference  
+group2 vs group5: no substantial difference  
+group3 vs group4: group 3 is substantially lower than group 4  
+group3 vs group5: group 3 is substantially lower than group 5  
+group4 vs group5: no substantial difference  
+
+### Informedness true positives and negatives (averaged)
+```{r}
+m1 %>%
+  emmeans(pairwise ~ group, resp = c("informednesstrueposmeanrounded", "informednesstruenegmeanrounded")) %>%
+  gather_emmeans_draws() %>%
+  filter(.grid == "contrasts") %>%
+  ggplot(aes(x = .value, y = contrast)) +
+  stat_halfeye() +
+  xlab("Posterior distributions with mean and 95% credible interval")
+
+# import informedness_combined_bygroup_mean95qi_m1
+informedness_combined_bygroup_mean95qi_m1 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "informedness_combined_bygroup_mean95qi_m1.rds"
+  )
+)
+
+informedness_combined_bygroup_mean95qi_m1
+```
+**Interpretation - informedness true postives and negatives (averaged)**:  
+group1 vs group2: no substantial difference  
+group1 vs group3: no substantial difference  
+group1 vs group4: no substantial difference  
+group1 vs group5: no substantial difference  
+group2 vs group3: no substantial difference  
+group2 vs group4: no substantial difference  
+group2 vs group5: no substantial difference  
+group3 vs group4: no substantial difference  
+group3 vs group5: no substantial difference  
+group4 vs group5: no substantial difference  
+
+### Results of model m1_2 (comparison to m1)
+This model excluded those participants who didn't have any tracking data, while still answering the informedness questions (none of them complained about technical issues). 
+
+```{r}
+tab_participant_info <- d %>%
+  filter(!is.na(BANNER_LAYER_TIME_TOTAL)) %>%
+  group_by(group_desc) %>%
+  summarise(n = n_distinct(userID))
+
+kable(
+  tab_participant_info,
+  col.names = c("Study group", "Number of participants"),
+  caption = "How many participants are in each study group after removing those without tracking data?"
+)
+```
+
+#### Informedness true positives (m1_2)
+```{r}
+# import m1_2
+m1_2 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "m1_2.rds"
+  )
+)
+
+# import informedness_true_pos_bygroup_mean95qi_m1_2
+informedness_true_pos_bygroup_mean95qi_m1_2 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "informedness_true_pos_bygroup_mean95qi_m1_2.rds"
+  )
+)
+
+informedness_true_pos_bygroup_mean95qi_m1_2
+```
+**Comparison to m1 - informedness true positives**:  
+The results stayed the same except for the comparison of group1 vs group4 where no substantial difference can be observed anymore. However, also in m1 the difference between group 1 vs group4 was very weak / on the edge
+
+#### Informedness true negatives (m1_2)
+```{r}
+# import informedness_true_neg_bygroup_mean95qi_m1_2
+informedness_true_neg_bygroup_mean95qi_m1_2 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "informedness_true_neg_bygroup_mean95qi_m1_2.rds"
+  )
+)
+
+informedness_true_neg_bygroup_mean95qi_m1_2
+```
+**Comparison to m1 - informedness true negatives**:  
+The results stayed the same except for the comparison of group1 vs group2 where no substantial difference can be observed anymore (in m1 group1 was substantially higher than group2). 
+
+#### Informedness true positives and negatives (averaged) (m1_2)
+```{r}
+# import informedness_combined_bygroup_mean95qi_m1_2
+informedness_combined_bygroup_mean95qi_m1_2 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "informedness_combined_bygroup_mean95qi_m1_2.rds"
+  )
+)
+
+informedness_combined_bygroup_mean95qi_m1_2
+```
+**Comparison to m1 - informedness true positives and negatives (averaged)**:  
+The results stayed the same.
+
+\pagebreak
+
+# Consent rate
+
+## Consent rate - Descriptive statistics
+```{r}
+# import plot
+p_consent_bypurpose_bygroup <- readRDS(
+  here(
+    "data",
+    "savedPlots",
+    "p_consent_bypurpose_bygroup.rds"
+  )
+)
+
+p_consent_bypurpose_bygroup
+```
+
+## Consent rate - statistical model results (m2)
+
+### Consent rate - Website adjustment
+```{r}
+# import model result
+consent_websiteadjustment_bygroup_mean95qi_m2 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "consent_websiteadjustment_bygroup_mean95qi_m2.rds"
+  )
+)
+
+consent_websiteadjustment_bygroup_mean95qi_m2
+```
+**Interpretation - consent rate - website adjustment**:  
+group1 vs group2: no substantial difference  
+group1 vs group3: no substantial difference  
+group1 vs group4: group 1 consented substantially less than group 4  
+group1 vs group5: group 1 consented substantially less than group 5  
+group2 vs group3: group 2 consented substantially less than group 3  
+group2 vs group4: group 2 consented substantially less than group 4  
+group2 vs group5: group 2 consented substantially less than group 5  
+group3 vs group4: no substantial difference  
+group3 vs group5: no substantial difference  
+group4 vs group5: no substantial difference  
+
+
+### Consent rate - Website statistics
+```{r}
+# import model result
+consent_websitestatistics_bygroup_mean95qi_m2 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "consent_websitestatistics_bygroup_mean95qi_m2.rds"
+  )
+)
+
+consent_websitestatistics_bygroup_mean95qi_m2
+```
+**Interpretation - consent rate - website statistics**:  
+group1 vs group2: no substantial difference  
+group1 vs group3: no substantial difference  
+group1 vs group4: no substantial difference  
+group1 vs group5: no substantial difference  
+group2 vs group3: no substantial difference  
+group2 vs group4: no substantial difference  
+group2 vs group5: group 2 consented substantially less than group 5  
+group3 vs group4: no substantial difference  
+group3 vs group5: no substantial difference  
+group4 vs group5: no substantial difference
+
+### Consent rate - Content customization
+```{r}
+# import model result
+consent_contentcustomization_bygroup_mean95qi_m2 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "consent_contentcustomization_bygroup_mean95qi_m2.rds"
+  )
+)
+
+consent_contentcustomization_bygroup_mean95qi_m2
+```
+**Interpretation - consent rate - content customization**:  
+group1 vs group2: no substantial difference  
+group1 vs group3: group 1 consented substantially more than group 3  
+group1 vs group4: no substantial difference  
+group1 vs group5: no substantial difference  
+group2 vs group3: no substantial difference  
+group2 vs group4: no substantial difference  
+group2 vs group5: no substantial difference  
+group3 vs group4: no substantial difference  
+group3 vs group5: group 3 consented substantially less than group 5  
+group4 vs group5: no substantial difference
+
+### Consent rate - Advertisement customization
+```{r}
+# import model result
+consent_advertisementcustomization_bygroup_mean95qi_m2 <- readRDS(
+  here(
+    "data",
+    "savedModelResults",
+    "consent_advertisementcustomization_bygroup_mean95qi_m2.rds"
+  )
+)
+
+consent_advertisementcustomization_bygroup_mean95qi_m2
+```
+**Interpretation - consent rate - advertisment customization**:  
+group1 vs group2: no substantial difference  
+group1 vs group3: group 1 consented substantially more than group 3  
+group1 vs group4: group 1 consented substantially more than group 4  
+group1 vs group5: no substantial difference  
+group2 vs group3: no substantial difference  
+group2 vs group4: no substantial difference  
+group2 vs group5: no substantial difference  
+group3 vs group4: no substantial difference  
+group3 vs group5: no substantial difference  
+group4 vs group5: no substantial difference
+
+### Consent rate - button click in cookie banner
+accept_all = allow all purposes  
+reject_all = reject all purposes  
+save = define purposes individually in the CB  
+timeout = adopt default settings from the CA
+
+```{r}
+#################################
+# GROUP 1 - CB (status quo)
+#################################
+# which button did people use?
+d_consentrate_group1 <- d %>%
+  # filter for group 1; filter out empty observations
+  filter(group == 1, BANNER_STATE_FINAL != "") %>%
+  count(BANNER_STATE_FINAL) %>%
+  ungroup() %>%
+  mutate(
+    BANNER_STATE_FINAL = as.factor(BANNER_STATE_FINAL),
+    percent = round((n / sum(n)) * 100, 0)
+  )
+
+# Create the pie chart with percentage labels
+ggplot(d_consentrate_group1, aes(x = "", y = n, fill = BANNER_STATE_FINAL)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar(theta = "y") +
+  geom_label_repel(aes(label = paste0(percent, "%")), 
+                   position = position_stack(vjust = 0.5),
+                   show.legend = FALSE) +
+  labs(title = "CB (status quo)", fill = "BANNER_STATE_FINAL") +
+  scale_fill_manual(values = color_palette) +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+# which purposes did those pps who clicked "save" allow?
+tab_g1_save <- d %>%
+  filter(group == 1) %>%
+  filter(BANNER_STATE_FINAL == "save") %>%
+  pivot_longer(
+    cols = matches("^BANNER.*ULTIMO$"),
+    names_to = "ULTIMO_variable",
+    values_to = "ULTIMO_value"
+  ) %>%
+  mutate(ULTIMO_variable = factor(ULTIMO_variable, levels = purpose_order_BANNER)) %>%
+  group_by(ULTIMO_variable) %>%
+  summarise(
+    total_users = n_distinct(userID),
+    true_users = n_distinct(userID[ULTIMO_value == "True"]),
+    percent_true = round((true_users / total_users) * 100, 1)
+  ) %>%
+  select(ULTIMO_variable, percent_true)
+
+kable(
+  tab_g1_save,
+  digits = 1,
+  col.names = c("Purpose", "% allowed"),
+  caption = "What percentage of study participants (CB - status quo) who clicked on ‘save’ in the cookie banner allowed a purpose?"
+)
+
+#################################
+# GROUP 2 - CB (unsere Version)
+#################################
+# which button did people use?
+d_consentrate_group2 <- d %>%
+  # filter for group 2; filter out empty observations
+  filter(group == 2, BANNER_STATE_FINAL != "") %>%
+  count(BANNER_STATE_FINAL) %>%
+  ungroup() %>%
+  mutate(
+    BANNER_STATE_FINAL = as.factor(BANNER_STATE_FINAL),
+    percent = round((n / sum(n)) * 100, 0)
+  )
+
+# Create the pie chart with percentage labels
+ggplot(d_consentrate_group2, aes(x = "", y = n, fill = BANNER_STATE_FINAL)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar(theta = "y") +
+  geom_label_repel(aes(label = paste0(percent, "%")), 
+                   position = position_stack(vjust = 0.5),
+                   show.legend = FALSE) +
+  labs(title = "CB (our version)", fill = "BANNER_STATE_FINAL") +
+  scale_fill_manual(values = color_palette) +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+# which purposes did those pps who clicked "save" allow?
+tab_g2_save <- d %>%
+  filter(group == 2) %>%
+  filter(BANNER_STATE_FINAL == "save") %>%
+  pivot_longer(
+    cols = matches("^BANNER.*ULTIMO$"),
+    names_to = "ULTIMO_variable",
+    values_to = "ULTIMO_value"
+  ) %>%
+  mutate(ULTIMO_variable = factor(ULTIMO_variable, levels = purpose_order_BANNER)) %>%
+  group_by(ULTIMO_variable) %>%
+  summarise(
+    total_users = n_distinct(userID),
+    true_users = n_distinct(userID[ULTIMO_value == "True"]),
+    percent_true = round((true_users / total_users) * 100, 1)
+  ) %>%
+  select(ULTIMO_variable, percent_true)
+
+kable(
+  tab_g2_save,
+  digits = 1,
+  col.names = c("Purpose", "% allowed"),
+  caption = "What percentage of study participants (CB - our version) who clicked on ‘save’ in the cookie banner allowed a purpose?"
+)
+
+#################################
+# GROUP 3 - CA + CB (our version)
+#################################
+# which button did people use?
+d_consentrate_group3 <- d %>%
+  # filter for group 3; filter out empty observations
+  filter(group == 3, BANNER_STATE_FINAL != "") %>%
+  count(BANNER_STATE_FINAL) %>%
+  ungroup() %>%
+  mutate(
+    BANNER_STATE_FINAL = as.factor(BANNER_STATE_FINAL),
+    percent = round((n / sum(n)) * 100, 0)
+  )
+
+# Create the pie chart with percentage labels
+ggplot(d_consentrate_group3, aes(x = "", y = n, fill = BANNER_STATE_FINAL)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar(theta = "y") +
+  geom_label_repel(aes(label = paste0(percent, "%")), 
+                   position = position_stack(vjust = 0.5),
+                   show.legend = FALSE) +
+  labs(title = "CA + CB (our version)", fill = "BANNER_STATE_FINAL") +  scale_fill_manual(values = color_palette) +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# EA pre-settings of timeout group 
+tab_g3_timeout_preset <- d %>%
+  filter(group == 3) %>%
+  filter(BANNER_STATE_FINAL == "timeout") %>%
+  pivot_longer(
+    cols = matches("^EA.*ULTIMO$"),
+    names_to = "ULTIMO_variable",
+    values_to = "ULTIMO_value"
+  ) %>%
+  mutate(ULTIMO_variable = factor(ULTIMO_variable, levels = purpose_order_EA)) %>%
+  group_by(ULTIMO_variable) %>%
+  summarise(
+    total_users = n_distinct(userID),
+    true_users = n_distinct(userID[ULTIMO_value == "True"]),
+    percent_true = round((true_users / total_users) * 100, 1)
+  ) %>%
+  select(ULTIMO_variable, percent_true)
+
+kable(
+  tab_g3_timeout_preset,
+  digits = 1,
+  col.names = c("Purpose", "% allowed"),
+  caption = "What percentage of study participants (CA + CB - our version) who made use of the automatic sharing of their preferences (timeout) allowed a purpose in their CA preferences?"
+)
+
+# EA pre-settings of save group --> commented out because to few people in group
+# tab_g3_save_preset <- d %>%
+#   filter(group == 3) %>%
+#   filter(BANNER_STATE_FINAL == "save") %>% #nrow()
+#   pivot_longer(
+#     cols = matches("^EA.*ULTIMO$"),
+#     names_to = "ULTIMO_variable",
+#     values_to = "ULTIMO_value"
+#   ) %>%
+#   filter(ULTIMO_value == "True") %>%
+#   group_by(ULTIMO_variable) %>%
+#   summarise(proportion_true = n() / nrow(.) * 100)
+
+# kable(
+#   tab_g3_save_preset,
+#   digits = 0,
+#   col.names = c("Purpose", "% allowed"),
+#   caption = "Wie viel Prozent der Studienteilnehmer (EA + CB - unsere Version), die im Cookie Banner Banner auf 'save' geklickt haben, haben einen Purpose in ihren EA-Voreinstellungen erlaubt?"
+# )
+
+# which purposes did those pps who clicked "save" allow? --> commented out because to few people in group
+tab_g3_save <- d %>%
+  filter(group == 3) %>%
+  filter(BANNER_STATE_FINAL == "save") %>%
+  pivot_longer(
+    cols = matches("^BANNER.*ULTIMO$"),
+    names_to = "ULTIMO_variable",
+    values_to = "ULTIMO_value"
+  ) %>%
+  mutate(ULTIMO_variable = factor(ULTIMO_variable, levels = purpose_order_BANNER)) %>%  
+  group_by(ULTIMO_variable) %>%
+  summarise(
+    total_users = n_distinct(userID),
+    true_users = n_distinct(userID[ULTIMO_value == "True"]),
+    percent_true = round((true_users / total_users) * 100, 1)
+  ) %>%
+  select(ULTIMO_variable, percent_true)
+
+kable(
+  tab_g3_save,
+  digits = 1,
+  col.names = c("Purpose", "% allowed"),
+  caption = "What percentage of study participants (CA + CB - our version) who clicked ‘save’ in the cookie banner allowed a purpose in the cookie banner? (NOTE: Data based on 3 study participants only)"
+)
+
+#################################
+# GROUP 4 - CA + CB (our version) + seal
+#################################
+# which button did people use?
+d_consentrate_group4 <- d %>%
+  # filter for group 4; filter out empty observations
+  filter(group == 4, BANNER_STATE_FINAL != "") %>%
+  count(BANNER_STATE_FINAL) %>%
+  ungroup() %>%
+  mutate(
+    BANNER_STATE_FINAL = as.factor(BANNER_STATE_FINAL),
+    percent = round((n / sum(n)) * 100, 0)
+  )
+
+# Create the pie chart with percentage labels
+ggplot(d_consentrate_group4, aes(x = "", y = n, fill = BANNER_STATE_FINAL)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar(theta = "y") +
+  geom_label_repel(aes(label = paste0(percent, "%")),
+    position = position_stack(vjust = 0.5),
+    show.legend = FALSE
+  ) +
+  labs(title = "CA + CB (our version) + seal", fill = "BANNER_STATE_FINAL") +
+  scale_fill_manual(values = color_palette) +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# EA pre-settings of timeout group
+tab_g4_timeout_preset <- d %>%
+  filter(group == 4) %>%
+  filter(BANNER_STATE_FINAL == "timeout") %>%
+  pivot_longer(
+    cols = matches("^EA.*ULTIMO$"),
+    names_to = "ULTIMO_variable",
+    values_to = "ULTIMO_value"
+  ) %>%
+  mutate(ULTIMO_variable = factor(ULTIMO_variable, levels = purpose_order_EA)) %>%  
+  group_by(ULTIMO_variable) %>%
+  summarise(
+    total_users = n_distinct(userID),
+    true_users = n_distinct(userID[ULTIMO_value == "True"]),
+    percent_true = round((true_users / total_users) * 100, 1)
+  ) %>%
+  select(ULTIMO_variable, percent_true)
+
+kable(
+  tab_g4_timeout_preset,
+  digits = 1,
+  col.names = c("Purpose", "% allowed"),
+  caption = "What percentage of study participants (CA + CB - our version + seal) who made use of the automatic sharing of their preferences (timeout) allowed a purpose in their CA preferences?"
+)
+
+# which purposes did those pps who clicked "save" allow? --> commented out because to few people in group
+tab_g4_save <- d %>%
+  filter(group == 4) %>%
+  filter(BANNER_STATE_FINAL == "save") %>%
+  pivot_longer(
+    cols = matches("^BANNER.*ULTIMO$"),
+    names_to = "ULTIMO_variable",
+    values_to = "ULTIMO_value"
+  ) %>%
+  mutate(ULTIMO_variable = factor(ULTIMO_variable, levels = purpose_order_BANNER)) %>%  
+  group_by(ULTIMO_variable) %>%
+  summarise(
+    total_users = n_distinct(userID),
+    true_users = n_distinct(userID[ULTIMO_value == "True"]),
+    percent_true = round((true_users / total_users) * 100, 1)
+  ) %>%
+  select(ULTIMO_variable, percent_true)
+
+kable(
+  tab_g4_save,
+  digits = 1,
+  col.names = c("Purpose", "% allowed"),
+  caption = "What percentage of study participants (CA + CB - our version) who clicked ‘save’ in the cookie banner allowed a purpose in the cookie banner? (NOTE: Data based on 2 study participants only)"
+)
+
+#################################
+# GROUP 5 - CA + CB (our version) + risk reduction
+#################################
+# which button did people use?
+d_consentrate_group5 <- d %>%
+  # filter for group 4; filter out empty observations
+  filter(group == 5, BANNER_STATE_FINAL != "") %>%
+  count(BANNER_STATE_FINAL) %>%
+  ungroup() %>%
+  mutate(
+    BANNER_STATE_FINAL = as.factor(BANNER_STATE_FINAL),
+    percent = round((n / sum(n)) * 100, 0)
+  )
+
+# Create the pie chart with percentage labels
+ggplot(d_consentrate_group5, aes(x = "", y = n, fill = BANNER_STATE_FINAL)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar(theta = "y") +
+  geom_label_repel(aes(label = paste0(percent, "%")),
+    position = position_stack(vjust = 0.5),
+    show.legend = FALSE
+  ) +
+  labs(title = "CA + CB (our version) + risk reduction", fill = "BANNER_STATE_FINAL") +
+  scale_fill_manual(values = color_palette) +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# EA pre-settings of timeout group
+tab_g5_timeout_preset <- d %>%
+  filter(group == 5) %>%
+  filter(BANNER_STATE_FINAL == "timeout") %>%
+  pivot_longer(
+    cols = matches("^EA.*ULTIMO$"),
+    names_to = "ULTIMO_variable",
+    values_to = "ULTIMO_value"
+  ) %>%
+  mutate(ULTIMO_variable = factor(ULTIMO_variable, levels = purpose_order_EA)) %>%  
+  group_by(ULTIMO_variable) %>%
+  summarise(
+    total_users = n_distinct(userID),
+    true_users = n_distinct(userID[ULTIMO_value == "True"]),
+    percent_true = round((true_users / total_users) * 100, 1)
+  ) %>%
+  select(ULTIMO_variable, percent_true)
+
+kable(
+  tab_g5_timeout_preset,
+  digits = 1,
+  col.names = c("Purpose", "% allowed"),
+  caption = "What percentage of study participants (CA + CB - our version + risk reduction) who made use of the automatic sharing of their preferences (timeout) allowed a purpose in their CA preferences?"
+)
+
+# which purposes did those pps who clicked "save" allow? --> commented out because to few people in group
+tab_g5_save <- d %>%
+  filter(group == 5) %>%
+  filter(BANNER_STATE_FINAL == "save") %>%
+  pivot_longer(
+    cols = matches("^BANNER.*ULTIMO$"),
+    names_to = "ULTIMO_variable",
+    values_to = "ULTIMO_value"
+  ) %>%
+  mutate(ULTIMO_variable = factor(ULTIMO_variable, levels = purpose_order_BANNER)) %>%  
+  group_by(ULTIMO_variable) %>%
+  summarise(
+    total_users = n_distinct(userID),
+    true_users = n_distinct(userID[ULTIMO_value == "True"]),
+    percent_true = round((true_users / total_users) * 100, 1)
+  ) %>%
+  select(ULTIMO_variable, percent_true)
+
+kable(
+  tab_g5_save,
+  digits = 1,
+  col.names = c("Purpose", "% allowed"),
+  caption = "What percentage of study participants (CA + CB - our version) who clicked ‘save’ in the cookie banner allowed a purpose in the cookie banner? (NOTE: Data based on 2 study participants only)"
+)
+```
+
+<!-- # Überraschung -->
+```{r, eval = FALSE}
+d %>%
+  ggplot(., aes(x = group, y = UE_true_positive_risks_mean)) +
+  geom_violin(trim = T, fill = "grey") +
+  geom_boxplot(width = 0.2) +
+  scale_y_continuous(
+    breaks = c(1:7),
+    labels = labels_likert_1_7,
+    name = NULL
+  )
+
+d %>%
+  ggplot(aes(x = group, y = UE_true_positive_risks_mean)) +
+  geom_violin(trim = TRUE, fill = "grey") +
+  geom_boxplot(width = 0.2, position = position_dodge(0.8)) +
+  scale_y_continuous(
+    breaks = c(1:7),
+    labels = labels_likert_1_7,
+    name = NULL
+  )
+```
+
+# Info for paper
+- informedness means were rounded to whole numbers for statistical model (cumulative probit)
+- why are presettings of group 3,4,5 different? -> Erklärungsversuche: Während das Handover Notice noch abläuft, wechselt die Person nochmal zum EA (währenddessen stoppt das HN) und ändert ihre Einstellungen. Ganz klären lässt es sich nicht, da wir keine Daten haben bevor das Handover notice nicht abgelaufen ist
