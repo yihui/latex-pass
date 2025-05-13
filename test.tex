@@ -1,0 +1,384 @@
+\nonstopmode{}
+\documentclass[a4paper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\makeatletter\@ifl@t@r\fmtversion{2018/04/01}{}{\usepackage[utf8]{inputenc}}\makeatother
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `LSAFrestapi'}}
+\par\bigskip{\large \today}
+\end{center}
+\ifthenelse{\boolean{Rd@use@hyper}}{\hypersetup{pdftitle = {LSAFrestapi: Functions to Access LSAF Files from RStudio}}}{}
+\ifthenelse{\boolean{Rd@use@hyper}}{\hypersetup{pdfauthor = {John Hendrickx}}}{}
+\begin{description}
+\raggedright{}
+\item[Type]\AsIs{Package}
+\item[Title]\AsIs{Functions to Access LSAF Files from RStudio}
+\item[Version]\AsIs{0.1.2}
+\item[Description]\AsIs{This package uses REST APIs to access files on LSAF.
+These functions use version 1.1 of the REST APIs for LSAF 5.4.2.}
+\item[License]\AsIs{file LICENSE}
+\item[Encoding]\AsIs{UTF-8}
+\item[Imports]\AsIs{httr2, keyring, curl, rmarkdown}
+\item[RoxygenNote]\AsIs{7.3.2}
+\item[NeedsCompilation]\AsIs{no}
+\item[Author]\AsIs{John Hendrickx [aut, cre]}
+\item[Maintainer]\AsIs{John Hendrickx }\email{John.Hendrickx@external.danone.com}\AsIs{}
+\end{description}
+\Rdcontents{Contents}
+\HeaderA{Get\_LSAF\_File}{Get\_LSAF\_File function}{Get.Rul.LSAF.Rul.File}
+%
+\begin{Description}
+Get\_LSAF\_File function
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+Get_LSAF_File(
+  LSAF_area,
+  LSAF_path = NULL,
+  LSAF_dir = NULL,
+  milestone = NULL,
+  local_path = ".",
+  filename = NULL,
+  token = NULL
+)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{LSAF\_area}] The full URL for either the repository or workspace
+
+\item[\code{LSAF\_path}] The path in LSAF from where the file should be read
+
+\item[\code{LSAF\_dir}] The subdirectory of the milestone folder where the file should
+be read
+
+\item[\code{milestone}] A path to the milestone folder where the file should be read
+
+\item[\code{local\_path}] A local directory to store the file
+
+\item[\code{filename}] The name of the file
+
+\item[\code{token}] A valid token, see \code{\LinkA{Get\_LSAF\_Token}{Get.Rul.LSAF.Rul.Token}}
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A file is copied from LSAF to the current directory (if `local\_path`
+was not specified)
+\end{Value}
+%
+\begin{Section}{Details}
+Usually, `lsaf\_path` containing the full pathname in LSAF
+will be specified. Alternatively, `milestone` and `filename` can be specified.
+In that case, "50 Output Programs" will be used if `LSAF\_dir` ws not specified
+\end{Section}
+%
+\begin{Examples}
+\begin{ExampleCode}
+## Not run: 
+ tokenurl <- "https://xadprod.ondemand.sas.com/lsaf/api/logon"
+ token <- Get_LSAF_Token(tokenurl,"xadprod")
+
+ workspace <- "https://xadprod.ondemand.sas.com/lsaf/api/workspace/files/"
+ repository <- "https://xadprod.ondemand.sas.com/lsaf/api/repository/files"
+
+ Get_LSAF_File(
+   repository,
+   LSAF_path = "/SAS/999 Training 13/Files/60 Study Report/50 Output Programs/prog1.sas"
+ )
+
+ # Alternatively, specify a milestone and filename
+ StudyMilestone <- "/SAS/999 Training 13/Files/60 Study Report"
+ Get_LSAF_File(repository, milestone=StudyMilestone, filename = "prog1.sas")
+
+## End(Not run)
+\end{ExampleCode}
+\end{Examples}
+\HeaderA{Get\_LSAF\_Token}{Get\_LSAF\_Token function}{Get.Rul.LSAF.Rul.Token}
+%
+\begin{Description}
+Get\_LSAF\_Token function
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+Get_LSAF_Token(url_name, keyring_name)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{url\_name}] An URL to logon to LSAF
+
+\item[\code{keyring\_name}] A name for a keyring
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+An LSAF API token
+\end{Value}
+%
+\begin{Section}{Details}
+The token is only valid for a certain amount of time
+\end{Section}
+%
+\begin{Examples}
+\begin{ExampleCode}
+## Not run: 
+ library(keyring)
+
+ # https://solutions.posit.co/connections/db/best-practices/managing-credentials/
+
+ # You will be prompted to enter your LSAF password
+ # Your credentials will be stored in encrypted form on your local filesystem
+ keyring::key_set(service = "xadprod",
+                  username = "hendrijh")
+
+ key_list("xadprod")
+ 
+## End(Not run)
+
+\end{ExampleCode}
+\end{Examples}
+\HeaderA{Put\_LSAF}{Put\_LSAF function}{Put.Rul.LSAF}
+%
+\begin{Description}
+Put\_LSAF function
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+Put_LSAF(
+  LSAF_area,
+  milestone,
+  local_file,
+  local_path = ".",
+  LSAF_dir = NULL,
+  token = NULL,
+  overwrite = FALSE
+)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{LSAF\_area}] The full URL for either the repository or workspace
+
+\item[\code{milestone}] A path to an LSAF milestone folder where the file should be written
+
+\item[\code{local\_file}] The name of the file to be uploaded
+
+\item[\code{local\_path}] Specify a path to `local\_file` if the current directory
+is not to be used
+
+\item[\code{LSAF\_dir}] The subdirectory of the milestone folder where the file should
+be read
+
+\item[\code{token}] A valid token, see \code{\LinkA{Get\_LSAF\_Token}{Get.Rul.LSAF.Rul.Token}}
+
+\item[\code{overwrite}] Use `overwrite=TRUE` to overwrite an existing file
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A file is uploaded to LSAF
+\end{Value}
+%
+\begin{Section}{Details}
+This is a front end to `Put\_LSAF\_File`. Only a milestone
+need be specified, the subfolder will be derived based on the file extension
+\end{Section}
+%
+\begin{Examples}
+\begin{ExampleCode}
+## Not run: 
+ tokenurl <- "https://xadprod.ondemand.sas.com/lsaf/api/logon"
+ token <- Get_LSAF_Token(tokenurl,"xadprod")
+
+ workspace <- "https://xadprod.ondemand.sas.com/lsaf/api/workspace/files/"
+ repository <- "https://xadprod.ondemand.sas.com/lsaf/api/repository/files"
+
+ StudyMilestone <- "/SAS/999 Training 13/Files/60 Study Report"
+ Put_LSAF(repository,milestone=StudyMilestone,local_file="gtsummary test.docx", overwrite=TRUE)
+
+## End(Not run)
+\end{ExampleCode}
+\end{Examples}
+\HeaderA{Put\_LSAF\_File}{Put\_LSAF\_File function}{Put.Rul.LSAF.Rul.File}
+%
+\begin{Description}
+Put\_LSAF\_File function
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+Put_LSAF_File(
+  LSAF_area,
+  lsaf_path,
+  local_path,
+  token,
+  overwrite = FALSE,
+  verbosity = 0
+)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{LSAF\_area}] The full URL for either the repository or workspace
+
+\item[\code{lsaf\_path}] The path in LSAF where the file should be written
+
+\item[\code{local\_path}] The location of the file on the local file system
+
+\item[\code{token}] A valid token, see \code{\LinkA{Get\_LSAF\_Token}{Get.Rul.LSAF.Rul.Token}}
+
+\item[\code{overwrite}] Default FALSE.
+
+\item[\code{verbosity}] Default 0. Use \code{verbosity = 3} to see curl status
+messages. See \code{\LinkA{req\_perform}{req.Rul.perform}} for other options
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A list containing the HTTP response
+\end{Value}
+%
+\begin{Section}{Details}
+\code{Put\_LSAF\_File()} can write files to the repository
+or the workspace. If the upload failed, a message will be printed.
+Note that a response status of 20012 signifies:
+
+File exists and overwrite is set to false (Warning)
+
+In that case, use the option `overwrite=TRUE`.
+\end{Section}
+%
+\begin{Examples}
+\begin{ExampleCode}
+## Not run: 
+ tokenurl <- "https://xadprod.ondemand.sas.com/lsaf/api/logon"
+ token <- Get_LSAF_Token(tokenurl,"xadprod")
+
+ workspace <- "https://xadprod.ondemand.sas.com/lsaf/api/workspace/files/"
+ repository <- "https://xadprod.ondemand.sas.com/lsaf/api/repository/files"
+ LSAF_loc <- "/SAS/999 Training 14/Files/60 Study Report/55 Output Results/02 RTF/test.docx"
+ Put_LSAF_File(workspace,lsaf_path = LSAF_loc,local_path="./test.docx",token=token,overwrite=T)
+ 
+## End(Not run)
+
+\end{ExampleCode}
+\end{Examples}
+\HeaderA{Read\_LSAF}{Read\_LSAF function}{Read.Rul.LSAF}
+%
+\begin{Description}
+Read\_LSAF function
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+Read_LSAF(LSAF_area, lsaf_path, token, verbosity = 0)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{LSAF\_area}] The full URL for either the repository or workspace
+
+\item[\code{lsaf\_path}] The path in LSAF from where the file should be read
+
+\item[\code{token}] A valid token, see \code{\LinkA{Get\_LSAF\_Token}{Get.Rul.LSAF.Rul.Token}}
+
+\item[\code{verbosity}] Default 0. Use \code{verbosity = 3} to see curl status
+messages. See \code{\LinkA{req\_perform}{req.Rul.perform}} for other options
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+The LSAF file is read into memory
+\end{Value}
+%
+\begin{Examples}
+\begin{ExampleCode}
+## Not run: 
+ tokenurl <- "https://xadprod.ondemand.sas.com/lsaf/api/logon"
+ token <- Get_LSAF_Token(tokenurl,"xadprod")
+
+ workspace <- "https://xadprod.ondemand.sas.com/lsaf/api/workspace/files/"
+ repository <- "https://xadprod.ondemand.sas.com/lsaf/api/repository/files"
+ LSAF_loc <- "/SAS/999 Training 14/Files/60 Study Report/55 Output Results/02 RTF/test.docx"
+
+ # Read_LSAF will return a list, use the $body element for the raw data
+ sasdata <- Read_LSAF(repository,fpath,token)
+ df <- read_sas(sasdata)
+
+ # This reads an R program to memory, use `writeBin` to create a local program file
+ my_prog <- Read_LSAF(
+   repository,"/SAS/999 Training 14/Files/60 Study Report/50 Output Programs/prog_trn_st_01.R",
+   token,
+   verbosity=2
+ )
+ writeBin(my_prog, "prog_trn_st_01.R")
+ 
+## End(Not run)
+
+\end{ExampleCode}
+\end{Examples}
+\HeaderA{save2PDF}{save2PDF function}{save2PDF}
+%
+\begin{Description}
+save2PDF function
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+save2PDF(x, output_file, latex_engine = "lualatex", align = "left", ...)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] A `gtsummary` object
+
+\item[\code{output\_file}] Path the PDF output file, extension must be ".pdf" (case ignored)
+
+\item[\code{latex\_engine}] Default "lualatex". "xelatex" can also be used. "pdflatex"
+will print a warning above the output unless `set\_flextable\_defaults(fonts\_ignore=TRUE)`
+is set. "pdflatex" will always use a serif font.
+
+\item[\code{align}] Default "left". Passed on to `rmarkdown::render()`
+
+\item[\code{...}] Additional arguments can be passed on to `rmarkdown::pdf\_document()`.
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A pdf document
+\end{Value}
+%
+\begin{Section}{Details}
+A PDF document cannot be updated if `output\_file` already
+exists but is open in Acrobat Reader. Use  a different PDF reader or close
+`output\_file` in Acrobat Reader.
+
+`print(tblsum, preview = "pdf", latex\_engine="lualatex")` will also produce
+a PDF file but this will always be in a temporary directory with an auto-generated
+filename.
+\end{Section}
+%
+\begin{Examples}
+\begin{ExampleCode}
+## Not run: 
+save2PDF(tblsum, "gtsummary test.pdf", latex_engine = "lualatex", align="left")
+
+## End(Not run)
+\end{ExampleCode}
+\end{Examples}
+\printindex{}
+\end{document}
