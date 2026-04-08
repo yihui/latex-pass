@@ -17,9 +17,10 @@ jobs:
 
       - uses: r-lib/actions/setup-tinytex@v2
 
-      - uses: yihui/actions/setup-r-dependencies@v1
+      - uses: yihui/actions/setup-r-dependencies@HEAD
         with:
           extra-packages: rmarkdown
+          system-packages: pandoc
 
       - name: Compile and find missing packages
         run: Rscript compile.R
