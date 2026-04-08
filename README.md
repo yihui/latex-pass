@@ -1,6 +1,6 @@
 # LaTeX Pass
 
-[![Build status](https://ci.appveyor.com/api/projects/status/0g8vduvn8aw58k4x/branch/master?svg=true)](https://ci.appveyor.com/project/yihui/latex-pass/branch/master)
+[![R-CMD-check](https://github.com/yihui/latex-pass/actions/workflows/latex-pass.yml/badge.svg)](https://github.com/yihui/latex-pass/actions/workflows/latex-pass.yml)
 
 Upload a LaTeX error log file, or a LaTeX document, or an R Markdown document to this repository, and I will tell you which LaTeX packages you need to install in your local LaTeX distribution so you can compile your documents to PDF. You will no longer be confused by LaTeX error messages like this:
 
@@ -28,7 +28,7 @@ Depending on if you have a LaTeX error `.log` file, or a `.tex` document, or an 
 - [`test.tex`](https://github.com/yihui/latex-pass/edit/master/test.tex): copy and paste your `.tex` file here (see [example in PR #1](https://github.com/yihui/latex-pass/pull/1)).
 - [`test.Rmd`](https://github.com/yihui/latex-pass/edit/master/test.Rmd): copy and paste your `.Rmd` file here; its output format should be PDF (see [example in PR #4](https://github.com/yihui/latex-pass/pull/4)).
 
-After you send the pull request, wait for about 2 minutes for [AppVeyor](https://ci.appveyor.com/project/yihui/latex-pass) to finish. Then it should tell you the list of LaTeX packages required to compile your document in a comment (you may also get an email notification from Github if you have subscribed to notifications), e.g.,
+After you send the pull request, wait for about 2 minutes for [GitHub Actions](https://github.com/yihui/latex-pass/actions) to finish. Then it should tell you the list of LaTeX packages required to compile your document in a comment (you may also get an email notification from Github if you have subscribed to notifications), e.g.,
 
 ```
 The missing packages identified from the LaTeX log are:
