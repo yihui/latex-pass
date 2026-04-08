@@ -1,3 +1,5 @@
+tinytex::r_texmf()
+
 p0 = tinytex::tl_pkgs()  # the initial set of LaTeX packages installed
 p1 = NULL  # missing packages identified from the LaTeX log
 
