@@ -1,16 +1,3 @@
-options(repos = "https://cran.rstudio.com")
-dir.create('~/R', showWarnings = FALSE)
-.libPaths('~/R')
-
-# install xfun and tinytex
-pkg_install = function(...) install.packages(..., quiet = TRUE)
-pkg_install('xfun')
-options(xfun.install.package = pkg_install)
-xfun::pkg_load2(c('tinytex', 'rmarkdown'))
-
-# install TinyTeX
-suppressMessages(suppressWarnings(if (!tinytex:::is_tinytex()) tinytex::install_tinytex()))
-
 p0 = tinytex::tl_pkgs()  # the initial set of LaTeX packages installed
 p1 = NULL  # missing packages identified from the LaTeX log
 
@@ -23,11 +10,6 @@ for (f in list.files('.', '[.](Rmd|tex|log)$')) {
     xfun::file_ext(f),
     Rmd = if (length(grep('^---\\s*$', readLines(f, n = 1)))) {
       # the first line needs to be ---, in case it's a child Rmd file
-      xfun::pkg_load2('rmarkdown')
-      # make sure pandoc and pandoc-citeproc are installed
-      for (i in c('pandoc', 'pandoc-citeproc')) {
-        if (Sys.which(i) == '') system(paste('brew install', i))
-      }
       rmarkdown::render(f)
     },
     tex = {
