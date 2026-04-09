@@ -21,6 +21,4 @@ msg2 = if (length(msg)) {
   msg = 'I did not figure out which LaTeX packages you need to install. Sorry.'
   ""
 }
-message(msg, msg2)
-writeLines(one_string(msg, s = ''), 'message.txt')
-writeLines(one_string(msg2, s = ''), 'details.txt')
+writeLines(one_string(c(msg, msg2), s = ''), 'comment.txt')

@@ -1,0 +1,30 @@
+name: comment
+
+on:
+  workflow_run:
+    workflows: [latex-pass]
+    types: [completed]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Download comment artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: latex-pass-comment
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Post comment on PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          pr_number=$(cat pr-number.txt)
+          body=$(cat comment.txt)
+          gh pr comment "$pr_number" --body "$body"
