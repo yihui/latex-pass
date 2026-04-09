@@ -1,14 +1,10 @@
 name: latex-pass
 
-on:
-  pull_request:
-    branches: [master]
+on: pull_request
 
 jobs:
   check:
     runs-on: macos-latest
-    permissions:
-      pull-requests: write
 
     steps:
       - uses: actions/checkout@v4
@@ -28,9 +24,13 @@ jobs:
       - name: Generate message
         run: Rscript latex-pass.R
 
-      - name: Post comment on PR
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          body="$(cat message.txt)$(cat details.txt)"
-          gh pr comment "${{ github.event.pull_request.number }}" --body "$body"
+      - name: Save PR number
+        run: echo "${{ github.event.pull_request.number }}" > pr-number.txt
+
+      - name: Upload comment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-pass-comment
+          path: |
+            comment.txt
+            pr-number.txt
