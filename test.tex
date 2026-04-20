@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{eurosym}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{minted}
+\usepackage{bbm}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{titlesec}% http://ctan.org/pkg/titlesec
+\titleformat{\section}%
+  [hang]% <shape>
+  {\normalfont\bfseries\Large}% <format>
+  {}% <label>
+  {0pt}% <sep>
+  {}% <before code>
+\renewcommand{\thesection}{\arabic{section}}% Remove section references...
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}%
+
+\title{Probability Distributions '22 \\ Assignment 06 \\ Group 51}
+\author{Hithesh Chavan \\ S4233956 \\ \\ Ran Faber \\ S4522958 }
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\setcounter{section}{6}
+\section*{BH.9.25}
+\subsection{}
+\includegraphics[scale = 0.7]{PD'22 assignment 6.pdf} \\ 
+\begin{figure}
+    \centering
+    \includegraphics[scale = 0.2]{BH_25.jpeg}
+    \caption{Hithesh Chavan - S4233956}
+    \label{fig:my_label_1}
+\end{figure}
+
+\subsection{}
+
+S is a 10 by 5 matrix filled with the outcomes of 10 binomial(5, 0.5) distributions. the outcomes of S are either 0 or 1, that is why we multiply by 2, which causes values of 2 or values of 0, if we now subtract -1, we have values with -1 or 1 which represent winning or losing.\\
+every row of the matrices represent one game, kelly will play 5 turns and wins or loses in all turns. X is the matrix with 100 in the first column(kelly starts with 100 every time) and combining the results of the binomial distribution(stored in S) the 100 euros gets updated every time. the colmeans represent the average value after i- 1 turns, so second entry represents average value after 2-1= 1 turn. which is either 125 or 71 (with this f =0.25). the last thing that gets printed is the standard deviation of each turn. so second entry is the sd of the money after the first turn.
+
+\subsection{}
+Notice that previous exercise had one game each row and this version had one game on each column, so first row is equal to start amount = 100. The second row corresponds to the value after one round etc. Also notice that values go from around 12 to 300, so there is lots of money to be made or lost in this kind of game.
+
+\begin{enumerate}
+    \item We use the python code for this exercise because the R code did not function correctly. \\
+    \item We notice that each column of x represents a game played. The outcomes of the game are diverse. Only 4 of the 50 games had Kelly leaving the game with atleast as much money as she began with. \\
+    \item As the uniform distribution is a continous distribution, the probability that we land the same number in the interval twice is zero. Thus, this would mean that using the uniform distribution for noise would ensure no 2 points will perfectly overlap. \\
+    \item The bins attribute defines the number intervals over the range of values. If we decrease the number of bins, then we cannot make any intuition on the results. \\ \includegraphics[scale = 0.7]{6.3.png}
+\end{enumerate}
+
+\subsection{}
+\includegraphics[scale = 0.15]{IMG_5931.jpeg} \newpage
+\includegraphics[scale = 0.15, angle = 270]{IMG_5914.jpeg} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.2]{BH_37_p1.jpeg}\\
+    \includegraphics[scale = 0.2]{BH_37_p2.jpeg}\\
+    \caption{Hithesh Chavan - S4233956}
+    \label{fig:my_label_2}
+\end{figure}
+
+\subsection{}
+Sample is a vector with 100 values randomly chosen with replacement between 1 and 200.\\
+bootstrap is a zero matrix with 5000 rows and 100 columns.\\
+in the for loop, a row of bootstrap gets replaced by 100 randomly sampled entries from sample, replacement is true.\\
+Medians is now the median of a row of Bootstrap.\\
+Axis doesnt get used in the R code.
+
+\subsection{}
+\includegraphics[scale = 0.8]{Plot_week_6.png}
+
+\begin{minted}{R}
+library(ggplot2)
+library(matrixStats)
+
+set.seed(3)
+
+sample = sample(1:1313, 131, replace=TRUE)
+n_boot = 1331
+bootstrap = matrix(0, n_boot, length(sample))
+for(i in 1:nrow(bootstrap)){
+  bootstrap[i,] = sample(sample, length(sample), replace = TRUE)
+}
+
+medians = rowMedians(bootstrap)
+#print(paste(mean(medians), sd(medians)))
+#print(quantile(medians, c(.025, 0.975)))
+
+pdf(file="figures/bootstrap.pdf",
+    width = 8, height = 7, bg = "white",
+    colormodel = "cmyk", paper = "A4")
+
+df1 = data.frame(medians)
+ggplot()+
+  geom_histogram(df1, mapping = aes(x = medians, y = ..density..), bins = 100)+
+  geom_vline(xintercept = quantile(medians, 0.025), color = "red", size=2) +
+  geom_vline(xintercept = quantile(medians, 0.9725), color = "red", size=2)+
+  geom_vline(xintercept = mean(medians), color = "red", size=2)
+
+
+\end{minted}
+
+\subsection{}
+The real population is the sum of $X_1$ to t$X_n$.\\
+Bootstrapping is less costly probably because you dont need the whole population and hence can choose a sample of people in a range of 15 km for example, which is easier to construct and hence less coslty.\\
+we take 500000 samples and put the outcomes of this in a 5000 + 100 matrix\\
+the big difference is that in the first part, we take 5000 times a sample of 100 and put every batch of samples in a row. in the second part we just take 500000 samples and put these all in a matrix. it is supposed to show the difference between bootstrap sampling and real sampling. 
+
+%Exercise 6.8 onwards
+\subsection{} %6.8
+\includegraphics[scale = 0.3]{WhatsApp Image 2022-03-21 at 14.36.28.jpeg}
+\newpage
+\includegraphics[scale = 0.3]{6.8(2).jpeg}\\
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[scale = 0.3]{BH_50.jpeg}
+    \caption{Hithesh Chavan - S4233956}
+    \label{fig:my_label_3}
+\end{figure}
+
+
+\subsection{} %6.9
+We define the seed as usual while simulating and define the number of samples to pick up from the distribution. We define the distribution of labda as defined by the prior (Expo(1)) and create a vector containing labdas picked from the distribution, simulating multiple samples. We use these values of labdas from our samples to define the distribution of N. We take the mean of the samples of N taken above and its variance as well. We prove adam and eve's law by comparing it to the following lines WE notice that, if we increase the number of simulations. As num increases, the values of N.mean() and N.var() converge to adam and eve respectively.
+
+\subsection{} %6.10
+We prove adam and eve's law by comparing it to the following lines We notice that, if we increase the number of simulations. As num increases, the values of N.mean() and N.var() converge to adam and eve respectively. Increasing num to 10,000 will cause the values to converge until they're extremely close. We learn that to understand the true implication of a simulation and to compare it to the theoretical implications, we require a large number of samples. 
+
+\subsection{} %6.11
+We define the prior distribution of lambda and also chose arbitrary parameters $\mu $ and $\sigma^2$ for the $X$ which defines the claim size of a single claim. We define X to be log-normally distributed, as suggested by the problem. We know that S is the sum of "n" i.i.d. Xs, because we are told the claim size are uniformly distributed and independent. In the for loop, we define N, which is poisson distributed with it's parameter $\lambda$ being an r.v.. Using our realizations from previous simulations, we can define N and then subsequently use the value of N to define S, where N defines the number of i.i.d. Log-Normal r.v.s we will be summing in S. \\ We compare these values to the theoretical mean and notice that the mean of the simulation as well as the variance of S converge to the theoretical mean and variance (calculated using Adam and Eve's Law).
+
+\subsection{} %6.12
+\includegraphics[]{Ex6_12.png}\\
+
+\subsection{} %6.13 
+We define the pmf of N using the define integrand function. As N is a poisson r.v., the integrand function is the pmf of the poisson r.v. with its inputs being $\lambda$ where $\lambda \sim Exp(1)$. We notice the similarities between the integrand and the geometric distribution, as we state previously in our answer, following the gamma-poisson conjugacy, we know N is negative binomially distributed. The geometric distribution is a special case of the NBin. The geom function let's us define the geometric distribution, with the wanted parameter, and find the solution of the pmf. 
+\end{document}
